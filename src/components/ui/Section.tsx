@@ -1,4 +1,4 @@
-import { type ElementType, type ReactNode } from "react";
+import { createElement, type ElementType, type ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import { Container } from "@/components/ui/Container";
 
@@ -25,13 +25,13 @@ export function Section({
     <Container className={containerClassName}>{children}</Container>
   );
 
-  return (
-    <Tag
-      id={id}
-      className={cn("w-full", className)}
-      style={{ paddingBlock: "var(--section-padding-y)" }}
-    >
-      {content}
-    </Tag>
+  return createElement(
+    Tag,
+    {
+      id,
+      className: cn("w-full", className),
+      style: { paddingBlock: "var(--section-padding-y)" },
+    },
+    content,
   );
 }

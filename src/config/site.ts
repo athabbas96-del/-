@@ -9,6 +9,11 @@ export const siteConfig = {
     name: "Atheer Abbas",
     email: "ath.abbas96@gmail.com",
   },
+  roles: [
+    "Creative Marketing Strategist",
+    "AI Consultant",
+    "Creative Director",
+  ],
   locale: "en",
   keywords: ["Atheer Abbas", "portfolio", "ATH Portfolio"],
 } as const;

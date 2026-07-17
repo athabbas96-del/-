@@ -1,4 +1,4 @@
-import { type ElementType, type ReactNode } from "react";
+import { createElement, type ElementType, type ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
 interface ContainerProps {
@@ -12,12 +12,12 @@ export function Container({
   children,
   className,
 }: ContainerProps) {
-  return (
-    <Tag
-      className={cn("mx-auto w-full max-w-[var(--container-max)]", className)}
-      style={{ paddingInline: "var(--container-padding)" }}
-    >
-      {children}
-    </Tag>
+  return createElement(
+    Tag,
+    {
+      className: cn("mx-auto w-full max-w-[var(--container-max)]", className),
+      style: { paddingInline: "var(--container-padding)" },
+    },
+    children,
   );
 }
