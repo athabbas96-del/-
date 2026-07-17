@@ -1,15 +1,39 @@
+export type ProjectCategory =
+  "brand-identity" | "printing-packaging" | "social-media";
+
+export interface CategoryDef {
+  slug: ProjectCategory;
+  label: string;
+}
+
+export interface MediaItem {
+  type: "image" | "video";
+  src: string;
+  poster?: string;
+  alt: string;
+}
+
+export interface BeforeAfter {
+  before: string;
+  after: string;
+  beforeAlt: string;
+  afterAlt: string;
+  caption?: string;
+}
+
 export interface Project {
   slug: string;
   title: string;
+  client: string;
+  category: ProjectCategory;
   summary: string;
-  description: string;
-  role: string;
+  brief: string;
   year: number;
-  tags: string[];
+  tools: string[];
   coverImage: string;
-  gallery?: string[];
-  liveUrl?: string;
-  repoUrl?: string;
+  coverAlt: string;
+  gallery: MediaItem[];
+  beforeAfter?: BeforeAfter;
   featured?: boolean;
 }
 
