@@ -11,7 +11,6 @@ import { SocialLinks } from "@/components/ui/SocialLinks";
 import { buttonVariants } from "@/components/ui/button-variants";
 import { cn } from "@/lib/utils";
 import { showreel } from "@/content/resume";
-import { downloads } from "@/config/site";
 
 const AuroraBackground = dynamic(
   () => import("@/components/three/AuroraBackground"),
@@ -20,7 +19,12 @@ const AuroraBackground = dynamic(
   },
 );
 
-export function ResumeShowcase() {
+interface ResumeShowcaseProps {
+  cvUrl: string | null;
+  portfolioUrl: string | null;
+}
+
+export function ResumeShowcase({ cvUrl, portfolioUrl }: ResumeShowcaseProps) {
   return (
     <section className="bg-navy relative overflow-hidden py-20 sm:py-28">
       <div className="absolute inset-0">
@@ -65,29 +69,35 @@ export function ResumeShowcase() {
             />
           </motion.div>
 
-          <motion.div
-            variants={fadeInUp}
-            className="mt-10 flex flex-col gap-4 sm:flex-row"
-          >
-            <a
-              href={downloads.cv}
-              download
-              className={buttonVariants({ variant: "accent", size: "lg" })}
+          {(cvUrl || portfolioUrl) && (
+            <motion.div
+              variants={fadeInUp}
+              className="mt-10 flex flex-col gap-4 sm:flex-row"
             >
-              <Download className="h-4 w-4" />
-              Download CV
-            </a>
-            <a
-              href={downloads.portfolio}
-              download
-              className={cn(
-                "inline-flex h-14 items-center justify-center gap-2 rounded-[var(--radius-xs)] border border-white/25 px-8 text-base font-medium text-white transition-colors hover:bg-white/10",
+              {cvUrl && (
+                <a
+                  href={cvUrl}
+                  download
+                  className={buttonVariants({ variant: "accent", size: "lg" })}
+                >
+                  <Download className="h-4 w-4" />
+                  Download CV
+                </a>
               )}
-            >
-              <Download className="h-4 w-4" />
-              Download Portfolio PDF
-            </a>
-          </motion.div>
+              {portfolioUrl && (
+                <a
+                  href={portfolioUrl}
+                  download
+                  className={cn(
+                    "inline-flex h-14 items-center justify-center gap-2 rounded-[var(--radius-xs)] border border-white/25 px-8 text-base font-medium text-white transition-colors hover:bg-white/10",
+                  )}
+                >
+                  <Download className="h-4 w-4" />
+                  Download Portfolio PDF
+                </a>
+              )}
+            </motion.div>
+          )}
 
           <motion.div
             variants={fadeInUp}

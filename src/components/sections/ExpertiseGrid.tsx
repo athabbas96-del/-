@@ -5,9 +5,9 @@ import { Section } from "@/components/ui/Section";
 import { Grid } from "@/components/ui/Grid";
 import { FeatureCard } from "@/components/ui/FeatureCard";
 import { staggerChildren, viewportOnce } from "@/lib/motion";
-import { expertise } from "@/content/about";
+import type { FeatureItem } from "@/types";
 
-export function ExpertiseGrid() {
+export function ExpertiseGrid({ services }: { services: FeatureItem[] }) {
   return (
     <Section className="bg-surface">
       <span className="text-accent font-mono text-xs tracking-[0.15em] uppercase">
@@ -25,7 +25,7 @@ export function ExpertiseGrid() {
         className="mt-12"
       >
         <Grid cols={4}>
-          {expertise.map((item) => (
+          {services.map((item) => (
             <FeatureCard key={item.title} {...item} cardVariant="elevated" />
           ))}
         </Grid>

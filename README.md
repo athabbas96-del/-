@@ -20,6 +20,34 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Admin Dashboard
+
+A no-code admin panel lives at `/admin` for managing projects, services,
+clients, articles, site texts, and media (images/videos/PDFs) without
+touching code.
+
+**Login:** `/admin/login`, username `admin`. The password was generated for
+this session — see the chat where it was created, or reset it:
+
+```bash
+node -e "console.log(require('bcryptjs').hashSync('your-new-password', 10))"
+```
+
+Put the result in `.env.local` as `ADMIN_PASSWORD_HASH`. **Escape every `$`
+as `\$`** — Next.js expands `$VAR` in `.env` files, which corrupts bcrypt
+hashes otherwise. Also set `AUTH_SECRET` (any long random string) and
+`ADMIN_USERNAME` if you want a different username. See `.env.example`.
+
+**Storage:** content lives in a local SQLite file at `data/app.db`, and
+uploaded media in `public/uploads/`. Both are gitignored — they persist as
+long as this runs on a regular server/VPS with a persistent disk. On
+serverless hosts (e.g. Vercel) the filesystem resets on every deploy and
+this storage will NOT persist; that setup would need swapping in a hosted
+database and object storage (S3/Cloudinary/etc.) instead.
+
+On first run, the database auto-seeds itself from the site's original
+content so nothing is lost.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:

@@ -16,7 +16,6 @@ import { Container } from "@/components/ui/Container";
 import { Icon } from "@/components/ui/Icon";
 import { buttonVariants } from "@/components/ui/button-variants";
 import { MagneticButton } from "@/components/animations/MagneticButton";
-import { siteConfig } from "@/config/site";
 import { EASE_OUT_EXPO } from "@/lib/motion";
 
 const AuroraBackground = dynamic(
@@ -42,17 +41,23 @@ const itemVariants = {
   },
 };
 
-export function Hero() {
+interface HeroProps {
+  name: string;
+  roles: string[];
+  badge: string;
+}
+
+export function Hero({ name, roles, badge }: HeroProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const prefersReducedMotion = useReducedMotion();
   const [roleIndex, setRoleIndex] = useState(0);
 
   useEffect(() => {
     const id = setInterval(() => {
-      setRoleIndex((i) => (i + 1) % siteConfig.roles.length);
+      setRoleIndex((i) => (i + 1) % roles.length);
     }, ROLE_INTERVAL);
     return () => clearInterval(id);
-  }, []);
+  }, [roles.length]);
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -122,14 +127,14 @@ export function Hero() {
               variants={itemVariants}
               className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/15 px-4 py-1.5 font-mono text-xs tracking-[0.15em] text-white/70 uppercase"
             >
-              Portfolio — 2026
+              {badge}
             </motion.span>
 
             <motion.h1
               variants={itemVariants}
               className="text-display-lg leading-[0.95] font-medium tracking-tight text-white"
             >
-              {siteConfig.author.name}
+              {name}
             </motion.h1>
 
             <motion.div
@@ -138,14 +143,14 @@ export function Hero() {
             >
               <AnimatePresence mode="wait">
                 <motion.span
-                  key={siteConfig.roles[roleIndex]}
+                  key={roles[roleIndex]}
                   initial={{ y: 16, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   exit={{ y: -16, opacity: 0 }}
                   transition={{ duration: 0.45, ease: EASE_OUT_EXPO }}
                   className="text-accent-blue block text-lg font-medium sm:text-xl"
                 >
-                  {siteConfig.roles[roleIndex]}
+                  {roles[roleIndex]}
                 </motion.span>
               </AnimatePresence>
             </motion.div>
