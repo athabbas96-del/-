@@ -14,7 +14,7 @@ import {
 import { ArrowDown } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Icon } from "@/components/ui/Icon";
-import { buttonVariants } from "@/components/ui/Button";
+import { buttonVariants } from "@/components/ui/button-variants";
 import { siteConfig } from "@/config/site";
 import { EASE_OUT_EXPO } from "@/lib/motion";
 

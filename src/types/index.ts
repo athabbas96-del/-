@@ -38,3 +38,21 @@ export interface NavItem {
   label: string;
   href: string;
 }
+
+export interface Milestone {
+  year: string;
+  title: string;
+  description: string;
+}
+
+export interface Stat {
+  value: number;
+  suffix?: string;
+  label: string;
+}
+
+export interface FeatureItem {
+  icon: string;
+  title: string;
+  description: string;
+}

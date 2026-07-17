@@ -22,7 +22,7 @@ export const navItems: { label: string; href: string }[] = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Work", href: "/work" },
-  { label: "Experience", href: "/experience" },
+  { label: "Clients", href: "/clients" },
   { label: "Contact", href: "/contact" },
 ];
 
