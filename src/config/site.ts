@@ -26,4 +26,21 @@ export const navItems: { label: string; href: string }[] = [
   { label: "Contact", href: "/contact" },
 ];
 
-export const socialLinks: { label: string; href: string }[] = [];
+export const socialLinks: { label: string; href: string; icon: string }[] = [
+  {
+    label: "Instagram",
+    href: "https://instagram.com/designedatheer96",
+    icon: "Camera",
+  },
+  {
+    label: "WhatsApp",
+    href: "https://wa.me/966566514226",
+    icon: "MessageCircle",
+  },
+  { label: "Email", href: "mailto:ath.abbas96@gmail.com", icon: "Mail" },
+];
+
+export const downloads = {
+  cv: "/downloads/Atheer-Abbas-CV.pdf",
+  portfolio: "/downloads/Atheer-Abbas-Portfolio.pdf",
+};
