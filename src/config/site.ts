@@ -38,6 +38,43 @@ export const socialLinks: { label: string; href: string; icon: string }[] = [
     icon: "MessageCircle",
   },
   { label: "Email", href: "mailto:ath.abbas96@gmail.com", icon: "Mail" },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/atheer-hamza-%F0%9F%92%AB-6b7798153?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
+    icon: "Briefcase",
+  },
+];
+
+export const contactChannels: {
+  label: string;
+  value: string;
+  href: string;
+  icon: string;
+}[] = [
+  {
+    label: "WhatsApp",
+    value: "0566 514 226",
+    href: "https://wa.me/966566514226",
+    icon: "MessageCircle",
+  },
+  {
+    label: "Email",
+    value: "Atheerabbas96@gmail.com",
+    href: "mailto:Atheerabbas96@gmail.com",
+    icon: "Mail",
+  },
+  {
+    label: "LinkedIn",
+    value: "Atheer Hamza",
+    href: "https://www.linkedin.com/in/atheer-hamza-%F0%9F%92%AB-6b7798153?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
+    icon: "Briefcase",
+  },
+  {
+    label: "Instagram",
+    value: "@designedatheer96",
+    href: "https://instagram.com/designedatheer96",
+    icon: "Camera",
+  },
 ];
 
 export const downloads = {

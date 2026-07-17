@@ -1,4 +1,10 @@
-import { Camera, MessageCircle, Mail, type LucideIcon } from "lucide-react";
+import {
+  Camera,
+  MessageCircle,
+  Mail,
+  Briefcase,
+  type LucideIcon,
+} from "lucide-react";
 import { Icon } from "@/components/ui/Icon";
 import { socialLinks } from "@/config/site";
 
@@ -6,6 +12,7 @@ const iconMap: Record<string, LucideIcon> = {
   Camera,
   MessageCircle,
   Mail,
+  Briefcase,
 };
 
 interface SocialLinksProps {

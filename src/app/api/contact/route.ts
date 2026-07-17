@@ -1,11 +1,5 @@
 import { NextResponse } from "next/server";
-import { z } from "zod";
-
-const contactSchema = z.object({
-  name: z.string().min(1),
-  email: z.string().email(),
-  message: z.string().min(1),
-});
+import { contactSchema } from "@/lib/contact-schema";
 
 export async function POST(request: Request) {
   const body = await request.json();
