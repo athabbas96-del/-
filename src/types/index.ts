@@ -25,6 +25,13 @@ export interface Testimonial {
   quote: string;
   author: string;
   role: string;
+  rating?: number;
+}
+
+export interface Client {
+  name: string;
+  logo: string;
+  slug?: string;
 }
 
 export interface Project {
