@@ -4,11 +4,14 @@ import { type ReactNode } from "react";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { pageTransition } from "@/lib/motion";
+import { useI18n } from "@/i18n/DictionaryProvider";
+import { localizedHref } from "@/i18n/config";
 
 export function PageTransition({ children }: { children: ReactNode }) {
   const pathname = usePathname();
+  const { locale } = useI18n();
   const prefersReducedMotion = useReducedMotion();
-  const isHome = pathname === "/";
+  const isHome = pathname === localizedHref(locale, "/");
 
   return (
     <AnimatePresence mode="wait" initial={false}>

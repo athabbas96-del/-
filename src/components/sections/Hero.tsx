@@ -95,7 +95,7 @@ export function Hero({ name, roles, badge }: HeroProps) {
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(120% 90% at 50% 20%, #16213d 0%, #0b1220 55%, #060a14 100%)",
+              "radial-gradient(120% 90% at 50% 20%, #3a2650 0%, #110f14 55%, #08070a 100%)",
           }}
         />
         {!prefersReducedMotion && <AuroraBackground />}
@@ -151,7 +151,7 @@ export function Hero({ name, roles, badge }: HeroProps) {
                   animate={{ y: 0, opacity: 1 }}
                   exit={{ y: -16, opacity: 0 }}
                   transition={{ duration: 0.45, ease: EASE_OUT_EXPO }}
-                  className="text-accent-blue block text-lg font-medium sm:text-xl"
+                  className="text-accent-violet block text-lg font-medium sm:text-xl"
                 >
                   {roles[roleIndex]}
                 </motion.span>

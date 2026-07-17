@@ -50,7 +50,7 @@ export default async function ClientsPage({ params }: ClientsPageProps) {
         <Section as="header" className="pb-10">
           <Container className="text-center">
             <EnterReveal>
-              <span className="text-accent-blue font-mono text-xs tracking-[0.15em] uppercase">
+              <span className="text-accent-violet font-mono text-xs tracking-[0.15em] uppercase">
                 {dict.clients.eyebrow}
               </span>
               <h1 className="text-display-sm mx-auto mt-4 max-w-[22ch] leading-[1.05] font-medium tracking-tight text-white">

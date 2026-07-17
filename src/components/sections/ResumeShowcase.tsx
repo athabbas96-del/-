@@ -35,7 +35,7 @@ export function ResumeShowcase({ cvUrl, portfolioUrl }: ResumeShowcaseProps) {
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(120% 90% at 50% 15%, #16213d 0%, #0b1220 55%, #060a14 100%)",
+              "radial-gradient(120% 90% at 50% 15%, #3a2650 0%, #110f14 55%, #08070a 100%)",
           }}
         />
         <AuroraBackground />
@@ -51,7 +51,7 @@ export function ResumeShowcase({ cvUrl, portfolioUrl }: ResumeShowcaseProps) {
         >
           <motion.span
             variants={fadeInUp}
-            className="text-accent-blue font-mono text-xs tracking-[0.15em] uppercase"
+            className="text-accent-violet font-mono text-xs tracking-[0.15em] uppercase"
           >
             {dict.resume.eyebrow}
           </motion.span>

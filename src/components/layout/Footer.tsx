@@ -29,7 +29,7 @@ export function Footer() {
               <Icon
                 icon={ArrowUpRight}
                 size="lg"
-                className="text-accent-blue transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 rtl:-scale-x-100 rtl:group-hover:-translate-x-1"
+                className="text-accent-violet transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 rtl:-scale-x-100 rtl:group-hover:-translate-x-1"
               />
             </a>
           </MagneticButton>
@@ -88,7 +88,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-2 border-t border-white/10 pt-6 text-xs text-white/40 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-col gap-2 border-t border-white/10 pt-6 text-xs text-white/50 sm:flex-row sm:items-center sm:justify-between">
           <span>
             &copy; {year} {siteConfig.author.name}. {dict.footer.copyright}
           </span>

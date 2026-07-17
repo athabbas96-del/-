@@ -16,6 +16,7 @@ import { Icon } from "@/components/ui/Icon";
 import { buttonVariants } from "@/components/ui/button-variants";
 import { MagneticButton } from "@/components/animations/MagneticButton";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
+import { ThemeToggle } from "@/components/layout/ThemeToggle";
 import { navItems, siteConfig } from "@/config/site";
 import { localizedHref } from "@/i18n/config";
 import { useI18n } from "@/i18n/DictionaryProvider";
@@ -77,7 +78,7 @@ export function Header() {
                 >
                   {dict.nav[item.labelKey]}
                   <span
-                    className={`bg-accent-blue absolute inset-x-0 -bottom-0.5 h-px origin-left transition-transform duration-300 ${
+                    className={`bg-accent-violet absolute inset-x-0 -bottom-0.5 h-px origin-left transition-transform duration-300 ${
                       isActive
                         ? "scale-x-100"
                         : "scale-x-0 group-hover:scale-x-100"
@@ -89,6 +90,7 @@ export function Header() {
           </nav>
 
           <div className="hidden items-center gap-4 md:flex">
+            <ThemeToggle />
             <LanguageSwitcher />
             <MagneticButton>
               <Link
@@ -101,6 +103,7 @@ export function Header() {
           </div>
 
           <div className="flex items-center gap-3 md:hidden">
+            <ThemeToggle />
             <LanguageSwitcher />
             <button
               type="button"

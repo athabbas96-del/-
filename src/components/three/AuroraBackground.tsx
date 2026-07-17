@@ -72,9 +72,9 @@ function AuroraPlane() {
   const uniforms = useMemo(
     () => ({
       uTime: { value: 0 },
-      uColorA: { value: new THREE.Color("#0b1220") },
-      uColorB: { value: new THREE.Color("#2f6bff") },
-      uColorC: { value: new THREE.Color("#111a2e") },
+      uColorA: { value: new THREE.Color("#110f14") },
+      uColorB: { value: new THREE.Color("#a795c4") },
+      uColorC: { value: new THREE.Color("#2f1d42") },
     }),
     [],
   );

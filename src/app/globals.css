@@ -4,15 +4,18 @@
 /* Design tokens — semantic (theme-aware)                              */
 /* ------------------------------------------------------------------ */
 :root {
-  /* raw palette */
+  /* raw palette — extracted from Atheer's brand identity PDF (cover/divider
+     pages: deep violet silk gradient + solid diamond-logo purple + light
+     content-page background + mid-violet accent text sampled by pixel from
+     the source file; see brand identity compliance note below). */
   --palette-white: #ffffff;
   --palette-black: #0a0a0a;
-  --palette-navy: #0b1220;
-  --palette-navy-light: #111a2e;
-  --palette-gray-light: #f4f5f7;
-  --palette-gray: #9aa3af;
-  --palette-accent: #2f6bff;
-  --palette-accent-dark: #4c82ff;
+  --palette-navy: #110f14;
+  --palette-navy-light: #2f1d42;
+  --palette-gray-light: #e8e8e9;
+  --palette-gray: #9992a3;
+  --palette-accent: #54456f;
+  --palette-accent-dark: #a795c4;
 
   /* semantic — light mode */
   --background: var(--palette-white);
@@ -34,7 +37,7 @@
   --shadow-rt-md: 0 8px 24px rgba(var(--shadow-color), 0.07);
   --shadow-rt-lg: 0 16px 48px rgba(var(--shadow-color), 0.09);
   --shadow-rt-xl: 0 32px 80px rgba(var(--shadow-color), 0.12);
-  --shadow-rt-glow: 0 0 48px rgba(47, 107, 255, 0.35);
+  --shadow-rt-glow: 0 0 48px rgba(167, 149, 196, 0.4);
 
   /* layout rhythm */
   --container-max: 1440px;
@@ -48,15 +51,43 @@
     --background: var(--palette-navy);
     --foreground: #f5f6f8;
     --surface: var(--palette-navy-light);
-    --muted: #94a3b8;
+    --muted: #b8afc4;
     --border: rgba(255, 255, 255, 0.09);
     --accent: var(--palette-accent-dark);
 
-    --glass-bg: rgba(17, 26, 46, 0.45);
+    --glass-bg: rgba(24, 16, 33, 0.45);
     --glass-border: rgba(255, 255, 255, 0.1);
 
     --shadow-color: 0, 0, 0;
   }
+}
+
+:root[data-theme="dark"] {
+  --background: var(--palette-navy);
+  --foreground: #f5f6f8;
+  --surface: var(--palette-navy-light);
+  --muted: #b8afc4;
+  --border: rgba(255, 255, 255, 0.09);
+  --accent: var(--palette-accent-dark);
+
+  --glass-bg: rgba(24, 16, 33, 0.45);
+  --glass-border: rgba(255, 255, 255, 0.1);
+
+  --shadow-color: 0, 0, 0;
+}
+
+:root[data-theme="light"] {
+  --background: var(--palette-white);
+  --foreground: var(--palette-black);
+  --surface: var(--palette-gray-light);
+  --muted: #6b7280;
+  --border: rgba(10, 10, 10, 0.1);
+  --accent: var(--palette-accent);
+
+  --glass-bg: rgba(255, 255, 255, 0.55);
+  --glass-border: rgba(10, 10, 10, 0.08);
+
+  --shadow-color: 10, 10, 10;
 }
 
 /* ------------------------------------------------------------------ */
@@ -71,19 +102,20 @@
   --color-border: var(--border);
   --color-accent: var(--accent);
 
-  /* raw palette exposed as utilities: bg-white, bg-navy, text-accent-blue... */
+  /* raw palette exposed as utilities: bg-white, bg-navy, text-accent-violet... */
   --color-white: var(--palette-white);
   --color-black: var(--palette-black);
   --color-navy: var(--palette-navy);
   --color-navy-light: var(--palette-navy-light);
   --color-gray-light: var(--palette-gray-light);
   --color-gray: var(--palette-gray);
-  --color-accent-blue: var(--palette-accent);
+  --color-accent-violet: var(--palette-accent);
 
   /* typography */
   --font-sans: var(--font-inter);
   --font-arabic: var(--font-cairo);
   --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-bodoni);
 
   /* cinematic display scale */
   --text-display-sm: clamp(2.5rem, 5vw, 3.5rem);
@@ -130,6 +162,21 @@ body {
 [dir="rtl"] body {
   font-family:
     var(--font-arabic), var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Brand identity: the high-contrast Didone serif from the PDF cover
+   ("PORTFOLIO") is reserved for the cinematic display scale. It has no
+   Arabic glyphs, so Arabic runs fall back to Cairo automatically. */
+.text-display-sm,
+.text-display-md,
+.text-display-lg {
+  font-family: var(--font-display), var(--font-arabic), var(--font-sans);
+}
+
+[dir="rtl"] .text-display-sm,
+[dir="rtl"] .text-display-md,
+[dir="rtl"] .text-display-lg {
+  font-family: var(--font-arabic), var(--font-sans);
 }
 
 /* ------------------------------------------------------------------ */

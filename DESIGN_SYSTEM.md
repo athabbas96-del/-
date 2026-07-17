@@ -2,41 +2,56 @@
 
 الهوية: **Minimal Luxury · Modern · Creative Agency · Future**
 
+> هذا الملف يعكس الهوية البصرية الرسمية والوحيدة للمشروع كما وردت في
+> `Portfolio_Atheer_Abbas.pdf` — أي تعارض بين اقتراح تصميمي وهذا الملف يُحسم
+> دائماً لصالح الملف.
+
 كل القيم أدناه معرّفة كـ design tokens قابلة لإعادة الاستخدام، وتتبدّل تلقائياً بين
-الوضع الفاتح والداكن (`prefers-color-scheme`). لا تكتب قيم لون/مسافة/ظل يدوياً
-داخل أي مكوّن — استخدم الـ tokens أو المكوّنات الجاهزة أدناه فقط.
+الوضع الفاتح والداكن (`prefers-color-scheme`، أو يدوياً عبر `data-theme` على
+`<html>`). لا تكتب قيم لون/مسافة/ظل يدوياً داخل أي مكوّن — استخدم الـ tokens
+أو المكوّنات الجاهزة أدناه فقط.
 
 ## الألوان — `src/app/globals.css`
 
-| Token                           | Light      | Dark       | الاستخدام                   |
-| ------------------------------- | ---------- | ---------- | --------------------------- |
-| `--color-white`                 | `#FFFFFF`  | —          | ثابت                        |
-| `--color-black`                 | `#0A0A0A`  | —          | ثابت                        |
-| `--color-navy`                  | `#0B1220`  | —          | خلفية الوضع الداكن          |
-| `--color-gray-light`            | `#F4F5F7`  | —          | أسطح فاتحة                  |
-| `--color-accent-blue`           | `#2F6BFF`  | `#4C82FF`  | العنصر البارز (Accent Blue) |
-| `--color-background` (semantic) | white      | navy       | خلفية الصفحة                |
-| `--color-foreground` (semantic) | black      | near-white | النص الأساسي                |
-| `--color-surface` (semantic)    | gray-light | navy-light | خلفيات البطاقات             |
-| `--color-muted` (semantic)      | gray-600   | slate-400  | نص ثانوي                    |
-| `--color-border` (semantic)     | black/10%  | white/9%   | حدود                        |
+| Token                           | Light      | Dark       | الاستخدام                         |
+| ------------------------------- | ---------- | ---------- | --------------------------------- |
+| `--color-white`                 | `#FFFFFF`  | —          | ثابت                              |
+| `--color-black`                 | `#0A0A0A`  | —          | ثابت                              |
+| `--color-navy`                  | `#110F14`  | —          | خلفية داكنة (غلاف/فواصل الملف)    |
+| `--color-navy-light`            | `#2F1D42`  | —          | البنفسجي الصلب (شعار المعينات)    |
+| `--color-gray-light`            | `#E8E8E9`  | —          | خلفية صفحات المحتوى الفاتحة       |
+| `--color-accent-violet`         | `#54456F`  | `#A795C4`  | العنصر البارز (نص/بُلِت من الملف) |
+| `--color-background` (semantic) | white      | navy       | خلفية الصفحة                      |
+| `--color-foreground` (semantic) | black      | near-white | النص الأساسي                      |
+| `--color-surface` (semantic)    | gray-light | navy-light | خلفيات البطاقات                   |
+| `--color-muted` (semantic)      | gray-600   | violet-200 | نص ثانوي                          |
+| `--color-border` (semantic)     | black/10%  | white/9%   | حدود                              |
+
+> **مرجع الهوية**: القيم أعلاه مستخرجة حرفياً (pixel-sampled) من
+> `Portfolio_Atheer_Abbas.pdf` — البنفسجي الداكن من صفحات الغلاف/الفواصل
+> ("liquid silk" gradient) وشعار المعينات الصلب، والرمادي الفاتح ولون
+> النص/البُلِت البنفسجي من صفحات المحتوى. **ممنوع** أي أزرق أو أي لون خارج
+> هذا الجدول — الهوية القديمة (Accent Blue `#2F6BFF`) أُزيلت بالكامل.
 
 استخدم utilities مباشرة: `bg-background`, `text-foreground`, `bg-surface`,
-`text-muted`, `border-border`, `bg-accent`, `text-accent-blue`.
+`text-muted`, `border-border`, `bg-accent`, `text-accent-violet`.
 
 ## Typography
 
-| Token         | الخط       | الاستخدام                       |
-| ------------- | ---------- | ------------------------------- |
-| `font-sans`   | Geist Sans | لاتيني (إنجليزي) — عناوين ونصوص |
-| `font-arabic` | Cairo      | عربي — عناوين ونصوص             |
-| `font-mono`   | Geist Mono | eyebrow labels / أرقام / أكواد  |
+| Token          | الخط        | الاستخدام                                                         |
+| -------------- | ----------- | ----------------------------------------------------------------- |
+| `font-sans`    | Inter       | لاتيني (إنجليزي) — نصوص وعناوين عادية                             |
+| `font-arabic`  | Cairo       | عربي — عناوين ونصوص                                               |
+| `font-display` | Bodoni Moda | سيريف Didone عالي التباين، يطابق عنوان "PORTFOLIO" على غلاف الملف |
+| `font-mono`    | Geist Mono  | eyebrow labels / أرقام / أكواد                                    |
 
 - `<html dir="ltr">` افتراضياً؛ أي قسم/صفحة عربية تضبط `dir="rtl"` محلياً —
   `[dir="rtl"] body` تبدّل أولوية الخط إلى Cairo تلقائياً.
 - سلّم العناوين السينمائي (hero): `text-display-sm` (2.5–3.5rem) ·
   `text-display-md` (3–5rem) · `text-display-lg` (4–7.5rem), كلها `clamp()`
-  متجاوبة. باقي السلّم (`text-sm` → `text-7xl`) هو سلّم Tailwind الافتراضي.
+  متجاوبة، وتُطبَّق عليها `font-display` (Bodoni Moda) تلقائياً عبر CSS —
+  ما عدا في `dir="rtl"` حيث ترجع إلى Cairo لأن Bodoni Moda لا يحوي حروفاً
+  عربية. باقي السلّم (`text-sm` → `text-7xl`) هو سلّم Tailwind الافتراضي.
 
 ## المسافات وإيقاع الصفحة (Spacing)
 
@@ -55,9 +70,9 @@
 ## Shadow System
 
 `shadow-xs → shadow-xl`: ظلال ناعمة منخفضة التباين (0.04–0.12 opacity) لإحساس
-فاخر minimal لا يظهر ثقيلاً. `shadow-glow`: توهّج بلون الـ accent
-(`rgba(47,107,255,.35)`), يُستخدم فقط لعناصر بارزة (CTA رئيسي، hero element)
-وليس كظل عام.
+فاخر minimal لا يظهر ثقيلاً. `shadow-glow`: توهّج بلون البنفسجي الفاتح
+(`rgba(167,149,196,.4)` — مأخوذ من لمعة التدرّج على صفحة الغلاف)، يُستخدم فقط
+لعناصر بارزة (CTA رئيسي، hero element) وليس كظل عام.
 
 ## Glass Effect
 
@@ -114,7 +129,7 @@ class جاهزة: `.glass` (background شفاف + `backdrop-filter: blur(20px)` 
 
 ```
 src/app/globals.css                     tokens: colors, radius, shadow, spacing, .glass
-src/lib/fonts.ts                        Geist Sans / Cairo / Geist Mono
+src/lib/fonts.ts                        Inter / Cairo / Bodoni Moda / Geist Mono
 src/lib/motion.ts                       durations, easings, variants
 src/lib/gsap.ts                         GSAP + ScrollTrigger registration
 src/hooks/useLenis.ts                   Lenis smooth scroll

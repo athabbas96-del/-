@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { logoutAction } from "@/lib/actions/auth";
 import { Icon } from "@/components/ui/Icon";
+import { ThemeToggle } from "@/components/layout/ThemeToggle";
 import { useI18n } from "@/i18n/DictionaryProvider";
 import { locales, type Locale } from "@/i18n/config";
 import { cn } from "@/lib/utils";
@@ -81,7 +82,10 @@ export function AdminShell({
           >
             ATH Admin
           </Link>
-          <AdminLocaleToggle />
+          <div className="flex items-center gap-1">
+            <ThemeToggle className="text-muted hover:text-foreground h-8 w-8" />
+            <AdminLocaleToggle />
+          </div>
         </div>
 
         <nav className="mt-8 flex flex-col gap-1">
@@ -141,6 +145,7 @@ export function AdminShell({
               ATH Admin
             </span>
             <div className="flex items-center gap-3">
+              <ThemeToggle className="text-muted hover:text-foreground h-8 w-8" />
               <AdminLocaleToggle />
               <form action={logoutAction}>
                 <button type="submit" className="text-muted text-xs">

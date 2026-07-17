@@ -48,7 +48,7 @@ export function LoadingScreen() {
                 animate={{ scaleX: 1 }}
                 transition={{ duration: 1.1, ease: EASE_OUT_EXPO, delay: 0.2 }}
                 style={{ transformOrigin: "left" }}
-                className="bg-accent-blue absolute inset-0"
+                className="bg-accent-violet absolute inset-0"
               />
             </div>
           </div>
