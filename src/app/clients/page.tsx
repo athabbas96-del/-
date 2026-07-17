@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/metadata";
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
+import { EnterReveal } from "@/components/animations/EnterReveal";
 import { LogoMarquee } from "@/components/ui/LogoMarquee";
 import { LogoWall } from "@/components/ui/LogoWall";
 import { SuccessStories } from "@/components/sections/SuccessStories";
@@ -25,16 +26,18 @@ export default function ClientsPage() {
       <div className="bg-navy">
         <Section as="header" className="pb-10">
           <Container className="text-center">
-            <span className="text-accent-blue font-mono text-xs tracking-[0.15em] uppercase">
-              Clients
-            </span>
-            <h1 className="text-display-sm mx-auto mt-4 max-w-[22ch] leading-[1.05] font-medium tracking-tight text-white">
-              Fifteen brands, one throughline
-            </h1>
-            <p className="mx-auto mt-6 max-w-[55ch] text-base text-white/70 sm:text-lg">
-              Cafés, clinics, fashion labels, and agencies across Saudi Arabia —
-              each partnered with for the long run, not a single logo drop.
-            </p>
+            <EnterReveal>
+              <span className="text-accent-blue font-mono text-xs tracking-[0.15em] uppercase">
+                Clients
+              </span>
+              <h1 className="text-display-sm mx-auto mt-4 max-w-[22ch] leading-[1.05] font-medium tracking-tight text-white">
+                Fifteen brands, one throughline
+              </h1>
+              <p className="mx-auto mt-6 max-w-[55ch] text-base text-white/70 sm:text-lg">
+                Cafés, clinics, fashion labels, and agencies across Saudi Arabia
+                — each partnered with for the long run, not a single logo drop.
+              </p>
+            </EnterReveal>
           </Container>
         </Section>
 

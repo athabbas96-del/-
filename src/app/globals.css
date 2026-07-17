@@ -160,3 +160,10 @@ body {
     animation: none;
   }
 }
+
+@media (pointer: fine) {
+  html.has-custom-cursor,
+  html.has-custom-cursor * {
+    cursor: none !important;
+  }
+}

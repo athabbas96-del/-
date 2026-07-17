@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { Section } from "@/components/ui/Section";
 import { Reveal } from "@/components/animations/Reveal";
-import { fadeInUp } from "@/lib/motion";
+import { MagneticButton } from "@/components/animations/MagneticButton";
+import { fadeInBlur } from "@/lib/motion";
 import { buttonVariants } from "@/components/ui/button-variants";
 import { cn } from "@/lib/utils";
 
@@ -21,7 +22,7 @@ export function CtaBand({
   return (
     <Section className="bg-navy">
       <Reveal
-        variants={fadeInUp}
+        variants={fadeInBlur}
         className="flex flex-col items-center gap-6 text-center"
       >
         <h2 className="max-w-[22ch] text-2xl font-medium tracking-tight text-white sm:text-3xl">
@@ -30,15 +31,17 @@ export function CtaBand({
         {description && (
           <p className="max-w-[50ch] text-base text-white/70">{description}</p>
         )}
-        <Link
-          href={ctaHref}
-          className={cn(
-            buttonVariants({ variant: "accent", size: "lg" }),
-            "shadow-glow",
-          )}
-        >
-          {ctaLabel}
-        </Link>
+        <MagneticButton>
+          <Link
+            href={ctaHref}
+            className={cn(
+              buttonVariants({ variant: "accent", size: "lg" }),
+              "shadow-glow",
+            )}
+          >
+            {ctaLabel}
+          </Link>
+        </MagneticButton>
       </Reveal>
     </Section>
   );

@@ -76,6 +76,16 @@ export const scaleIn: Variants = {
   },
 };
 
+export const fadeInBlur: Variants = {
+  hidden: { opacity: 0, y: 20, filter: "blur(12px)" },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: { duration: DURATION.slow, ease: EASE_OUT_EXPO },
+  },
+};
+
 export const staggerChildren = (stagger = 0.08): Variants => ({
   hidden: {},
   visible: {

@@ -15,6 +15,7 @@ import { ArrowDown } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Icon } from "@/components/ui/Icon";
 import { buttonVariants } from "@/components/ui/button-variants";
+import { MagneticButton } from "@/components/animations/MagneticButton";
 import { siteConfig } from "@/config/site";
 import { EASE_OUT_EXPO } from "@/lib/motion";
 
@@ -153,18 +154,22 @@ export function Hero() {
               variants={itemVariants}
               className="mt-10 flex flex-col gap-4 sm:flex-row"
             >
-              <Link
-                href="/work"
-                className={buttonVariants({ variant: "accent", size: "lg" })}
-              >
-                View Work
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-flex h-14 items-center justify-center gap-2 rounded-[var(--radius-xs)] border border-white/25 px-8 text-base font-medium text-white transition-colors hover:bg-white/10"
-              >
-                Let&rsquo;s Talk
-              </Link>
+              <MagneticButton>
+                <Link
+                  href="/work"
+                  className={buttonVariants({ variant: "accent", size: "lg" })}
+                >
+                  View Work
+                </Link>
+              </MagneticButton>
+              <MagneticButton>
+                <Link
+                  href="/contact"
+                  className="inline-flex h-14 items-center justify-center gap-2 rounded-[var(--radius-xs)] border border-white/25 px-8 text-base font-medium text-white transition-colors hover:bg-white/10"
+                >
+                  Let&rsquo;s Talk
+                </Link>
+              </MagneticButton>
             </motion.div>
           </motion.div>
         </Container>

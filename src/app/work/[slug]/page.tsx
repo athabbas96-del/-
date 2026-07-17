@@ -6,6 +6,8 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { buildMetadata } from "@/lib/metadata";
 import { Section } from "@/components/ui/Section";
 import { Icon } from "@/components/ui/Icon";
+import { EnterReveal } from "@/components/animations/EnterReveal";
+import { Parallax } from "@/components/animations/Parallax";
 import { MetricsRow } from "@/components/ui/MetricsRow";
 import { CaseStudyNarrative } from "@/components/sections/CaseStudyNarrative";
 import { CaseStudyGallery } from "@/components/sections/CaseStudyGallery";
@@ -65,30 +67,34 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
   return (
     <main className="flex flex-1 flex-col">
       <Section as="header" className="pb-0">
-        <div className="text-muted flex items-center gap-2 font-mono text-xs">
-          <Link href="/work" className="hover:text-foreground">
-            Work
-          </Link>
-          <span>/</span>
-          <span>{categoryLabel(project.category)}</span>
-        </div>
+        <EnterReveal>
+          <div className="text-muted flex items-center gap-2 font-mono text-xs">
+            <Link href="/work" className="hover:text-foreground">
+              Work
+            </Link>
+            <span>/</span>
+            <span>{categoryLabel(project.category)}</span>
+          </div>
 
-        <h1 className="text-display-sm text-foreground mt-5 max-w-[26ch] leading-[1.05] font-medium tracking-tight">
-          {project.title}
-        </h1>
-        <p className="text-muted mt-5 max-w-[60ch] text-base sm:text-lg">
-          {project.summary}
-        </p>
+          <h1 className="text-display-sm text-foreground mt-5 max-w-[26ch] leading-[1.05] font-medium tracking-tight">
+            {project.title}
+          </h1>
+          <p className="text-muted mt-5 max-w-[60ch] text-base sm:text-lg">
+            {project.summary}
+          </p>
+        </EnterReveal>
 
         <div className="bg-surface relative mt-10 aspect-[16/9] w-full overflow-hidden rounded-[var(--radius-lg)]">
-          <Image
-            src={project.coverImage}
-            alt={project.coverAlt}
-            fill
-            priority
-            className="object-cover"
-            sizes="(min-width: 1024px) 1100px, 100vw"
-          />
+          <Parallax distance={20} className="absolute inset-x-0 -inset-y-6">
+            <Image
+              src={project.coverImage}
+              alt={project.coverAlt}
+              fill
+              priority
+              className="object-cover"
+              sizes="(min-width: 1024px) 1100px, 100vw"
+            />
+          </Parallax>
         </div>
       </Section>
 
