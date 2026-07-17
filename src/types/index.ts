@@ -21,19 +21,32 @@ export interface BeforeAfter {
   caption?: string;
 }
 
+export interface Testimonial {
+  quote: string;
+  author: string;
+  role: string;
+}
+
 export interface Project {
   slug: string;
   title: string;
   client: string;
   category: ProjectCategory;
   summary: string;
-  brief: string;
+  problem: string;
+  goal: string;
+  strategy: string;
+  execution: string;
+  results: string;
+  metrics: Stat[];
   year: number;
   tools: string[];
   coverImage: string;
   coverAlt: string;
   gallery: MediaItem[];
+  video?: MediaItem;
   beforeAfter?: BeforeAfter;
+  testimonial?: Testimonial;
   featured?: boolean;
 }
 
