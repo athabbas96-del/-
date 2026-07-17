@@ -7,15 +7,17 @@ import { ProjectCard } from "@/components/ui/ProjectCard";
 import { categories } from "@/content/projects";
 import { staggerChildren, viewportOnce } from "@/lib/motion";
 import { cn } from "@/lib/utils";
+import type { Dictionary } from "@/i18n/getDictionary";
 import type { Project, ProjectCategory } from "@/types";
 
 interface WorkGalleryProps {
   projects: Project[];
+  dict: Dictionary;
 }
 
 type FilterValue = "all" | ProjectCategory;
 
-export function WorkGallery({ projects }: WorkGalleryProps) {
+export function WorkGallery({ projects, dict }: WorkGalleryProps) {
   const [filter, setFilter] = useState<FilterValue>("all");
 
   const filtered = useMemo(
@@ -30,7 +32,7 @@ export function WorkGallery({ projects }: WorkGalleryProps) {
     <div>
       <div className="mb-10 flex flex-wrap gap-2">
         <FilterPill active={filter === "all"} onClick={() => setFilter("all")}>
-          All
+          {dict.work.filterAll}
         </FilterPill>
         {categories.map((category) => (
           <FilterPill
@@ -38,7 +40,7 @@ export function WorkGallery({ projects }: WorkGalleryProps) {
             active={filter === category.slug}
             onClick={() => setFilter(category.slug)}
           >
-            {category.label}
+            {dict.workCategories[category.slug]}
           </FilterPill>
         ))}
       </div>
@@ -60,7 +62,7 @@ export function WorkGallery({ projects }: WorkGalleryProps) {
 
       {filtered.length === 0 && (
         <p className="text-muted py-16 text-center text-sm">
-          No projects in this category yet.
+          {dict.work.emptyState}
         </p>
       )}
     </div>

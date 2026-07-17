@@ -5,6 +5,8 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Grid } from "@/components/ui/Grid";
 import { fadeInUp, viewportOnce, staggerChildren } from "@/lib/motion";
+import { localizedHref } from "@/i18n/config";
+import { useI18n } from "@/i18n/DictionaryProvider";
 import type { Client } from "@/types";
 
 interface LogoWallProps {
@@ -12,6 +14,7 @@ interface LogoWallProps {
 }
 
 export function LogoWall({ clients }: LogoWallProps) {
+  const { locale } = useI18n();
   return (
     <motion.div
       initial="hidden"
@@ -38,7 +41,10 @@ export function LogoWall({ clients }: LogoWallProps) {
           return (
             <motion.div key={client.name} variants={fadeInUp} className="group">
               {client.slug ? (
-                <Link href={`/work/${client.slug}`} aria-label={client.name}>
+                <Link
+                  href={localizedHref(locale, `/work/${client.slug}`)}
+                  aria-label={client.name}
+                >
                   {tile}
                 </Link>
               ) : (

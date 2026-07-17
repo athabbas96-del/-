@@ -4,15 +4,31 @@ import { Section } from "@/components/ui/Section";
 import { EnterReveal } from "@/components/animations/EnterReveal";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { getSettings } from "@/lib/repo/settings";
+import { getDictionary } from "@/i18n/getDictionary";
+import { isLocale, defaultLocale, type Locale } from "@/i18n/config";
 
-export const metadata: Metadata = buildMetadata({
-  title: "Contact",
-  description:
-    "Start a conversation about your brand — form, WhatsApp, email, LinkedIn, and Instagram.",
-  path: "/contact",
-});
+interface ContactPageProps {
+  params: Promise<{ locale: string }>;
+}
 
-export default function ContactPage() {
+export async function generateMetadata({
+  params,
+}: ContactPageProps): Promise<Metadata> {
+  const { locale: rawLocale } = await params;
+  const locale: Locale = isLocale(rawLocale) ? rawLocale : defaultLocale;
+  const dict = await getDictionary(locale);
+  return buildMetadata({
+    locale,
+    title: dict.meta.contact.title,
+    description: dict.meta.contact.description,
+    path: "/contact",
+  });
+}
+
+export default async function ContactPage({ params }: ContactPageProps) {
+  const { locale: rawLocale } = await params;
+  const locale: Locale = isLocale(rawLocale) ? rawLocale : defaultLocale;
+  const dict = await getDictionary(locale);
   const settings = getSettings();
 
   return (
@@ -20,10 +36,10 @@ export default function ContactPage() {
       <Section as="header" className="pb-0">
         <EnterReveal>
           <span className="text-accent font-mono text-xs tracking-[0.15em] uppercase">
-            Contact
+            {dict.contact.eyebrow}
           </span>
           <h1 className="text-display-sm text-foreground mt-4 max-w-[20ch] leading-[1.05] font-medium tracking-tight">
-            Tell me about your brand
+            {dict.contact.heading}
           </h1>
           <p className="text-muted mt-6 max-w-[55ch] text-base sm:text-lg">
             {settings.contactIntro}

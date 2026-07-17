@@ -11,6 +11,8 @@ import { SocialLinks } from "@/components/ui/SocialLinks";
 import { buttonVariants } from "@/components/ui/button-variants";
 import { cn } from "@/lib/utils";
 import { showreel } from "@/content/resume";
+import { localizedHref } from "@/i18n/config";
+import { useI18n } from "@/i18n/DictionaryProvider";
 
 const AuroraBackground = dynamic(
   () => import("@/components/three/AuroraBackground"),
@@ -25,6 +27,7 @@ interface ResumeShowcaseProps {
 }
 
 export function ResumeShowcase({ cvUrl, portfolioUrl }: ResumeShowcaseProps) {
+  const { locale, dict } = useI18n();
   return (
     <section className="bg-navy relative overflow-hidden py-20 sm:py-28">
       <div className="absolute inset-0">
@@ -50,14 +53,14 @@ export function ResumeShowcase({ cvUrl, portfolioUrl }: ResumeShowcaseProps) {
             variants={fadeInUp}
             className="text-accent-blue font-mono text-xs tracking-[0.15em] uppercase"
           >
-            Interactive Resume
+            {dict.resume.eyebrow}
           </motion.span>
 
           <motion.h1
             variants={fadeInUp}
             className="text-display-sm mt-4 max-w-[20ch] leading-[1.05] font-medium tracking-tight text-white"
           >
-            A 30-second walkthrough of seven years of work
+            {dict.resume.heading}
           </motion.h1>
 
           <motion.div variants={fadeInUp} className="mt-12 w-full max-w-3xl">
@@ -81,7 +84,7 @@ export function ResumeShowcase({ cvUrl, portfolioUrl }: ResumeShowcaseProps) {
                   className={buttonVariants({ variant: "accent", size: "lg" })}
                 >
                   <Download className="h-4 w-4" />
-                  Download CV
+                  {dict.common.downloadCV}
                 </a>
               )}
               {portfolioUrl && (
@@ -93,7 +96,7 @@ export function ResumeShowcase({ cvUrl, portfolioUrl }: ResumeShowcaseProps) {
                   )}
                 >
                   <Download className="h-4 w-4" />
-                  Download Portfolio PDF
+                  {dict.common.downloadPortfolio}
                 </a>
               )}
             </motion.div>
@@ -109,13 +112,13 @@ export function ResumeShowcase({ cvUrl, portfolioUrl }: ResumeShowcaseProps) {
                 href="mailto:ath.abbas96@gmail.com"
                 className="inline-flex h-11 items-center justify-center gap-2 rounded-[var(--radius-xs)] border border-white/25 px-6 text-sm font-medium text-white transition-colors hover:bg-white/10"
               >
-                Email Me
+                {dict.common.emailMe}
               </a>
               <Link
-                href="/contact"
+                href={localizedHref(locale, "/contact")}
                 className={buttonVariants({ variant: "accent", size: "md" })}
               >
-                Let&rsquo;s Talk
+                {dict.common.letsTalk}
               </Link>
             </div>
           </motion.div>

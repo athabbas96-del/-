@@ -1,0 +1,164 @@
+{
+  "common": {
+    "viewWork": "View Work",
+    "letsTalk": "Let's Talk",
+    "startConversation": "Start a Conversation",
+    "scroll": "Scroll",
+    "previous": "Previous",
+    "next": "Next",
+    "viewLiveSite": "View live site",
+    "downloadCV": "Download CV",
+    "downloadPortfolio": "Download Portfolio PDF",
+    "emailMe": "Email Me",
+    "problem": "Problem",
+    "goal": "Goal",
+    "strategy": "Strategy",
+    "execution": "Execution",
+    "results": "Results",
+    "images": "Images",
+    "video": "Video",
+    "numbers": "Numbers",
+    "beforeAfter": "Before / After",
+    "client": "Client",
+    "category": "Category",
+    "year": "Year",
+    "tools": "Tools",
+    "ctaTitle": "Have a brand that needs this?",
+    "ctaDescription": "From a single identity to a full campaign — let's talk about what your brand needs next."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "work": "Work",
+    "clients": "Clients",
+    "articles": "Articles",
+    "contact": "Contact"
+  },
+  "footer": {
+    "ctaHeading": "Let's build something",
+    "sitemap": "Sitemap",
+    "connect": "Connect",
+    "follow": "Follow",
+    "whatsapp": "WhatsApp",
+    "copyright": "All rights reserved.",
+    "builtWith": "Designed & built with intention."
+  },
+  "about": {
+    "journeyEyebrow": "Journey",
+    "journeyHeading": "Seven years, one throughline",
+    "expertiseEyebrow": "Expertise",
+    "expertiseHeading": "Four disciplines, one practice",
+    "valuesEyebrow": "Values",
+    "valuesHeading": "What doesn't change from brief to brief"
+  },
+  "work": {
+    "eyebrow": "Work",
+    "heading": "Identity, packaging, and content that ships",
+    "description": "A selection of brand identity, printing and packaging, and social media work built for cafés, fashion labels, clinics, and agencies across Saudi Arabia.",
+    "filterAll": "All",
+    "emptyState": "No projects in this category yet.",
+    "ctaTitle": "See something close to your brand?",
+    "ctaDescription": "Every project starts the same way — a conversation about what the brand actually needs."
+  },
+  "workCategories": {
+    "brand-identity": "Brand Identity",
+    "printing-packaging": "Printing & Packaging",
+    "social-media": "Social Media"
+  },
+  "caseStudy": {
+    "workBreadcrumb": "Work"
+  },
+  "clients": {
+    "eyebrow": "Clients",
+    "heading": "Fifteen brands, one throughline",
+    "description": "Cafés, clinics, fashion labels, and agencies across Saudi Arabia — each partnered with for the long run, not a single logo drop.",
+    "successStoriesEyebrow": "Success Stories",
+    "successStoriesHeading": "A few of the partnerships behind the wall",
+    "testimonialsEyebrow": "Testimonials",
+    "ctaTitle": "Ready to join the wall?",
+    "ctaDescription": "Every partnership starts the same way — a conversation about what your brand actually needs."
+  },
+  "resume": {
+    "eyebrow": "Interactive Resume",
+    "heading": "A 30-second walkthrough of seven years of work"
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "heading": "Tell me about your brand",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "you@email.com",
+      "whatDoYouNeed": "What do you need?",
+      "message": "Message",
+      "messagePlaceholder": "Tell me a bit about the project...",
+      "send": "Send Message",
+      "sending": "Sending",
+      "successTitle": "Message sent",
+      "successMessage": "Thanks — I'll get back to you within a day or two. For anything urgent, WhatsApp is fastest.",
+      "errorMessage": "Something went wrong sending that — try WhatsApp or email directly.",
+      "nameError": "Enter your name",
+      "emailError": "Enter a valid email address",
+      "messageError": "Tell me a bit about the project",
+      "projectTypeBrandIdentity": "Brand Identity",
+      "projectTypePrintingPackaging": "Printing & Packaging",
+      "projectTypeSocialMedia": "Social Media",
+      "projectTypeOther": "Something Else"
+    }
+  },
+  "articles": {
+    "eyebrow": "Articles",
+    "heading": "Notes on brand, strategy, and AI",
+    "description": "Occasional writing on brand identity, marketing strategy, and how AI is changing creative workflows.",
+    "empty": "No articles published yet — check back soon.",
+    "back": "Articles"
+  },
+  "notFound": {
+    "heading": "Page not found",
+    "description": "The page you're looking for doesn't exist or has moved.",
+    "cta": "Back home"
+  },
+  "admin": {
+    "nav": {
+      "dashboard": "Dashboard",
+      "projects": "Projects",
+      "services": "Services",
+      "clients": "Clients",
+      "articles": "Articles",
+      "media": "Media",
+      "texts": "Site Texts"
+    },
+    "viewLiveSite": "View live site",
+    "signedInAs": "Signed in as",
+    "signOut": "Sign out",
+    "dashboardTitle": "Dashboard",
+    "dashboardDescription": "Manage every piece of content on the site — no code required."
+  },
+  "meta": {
+    "about": {
+      "title": "About",
+      "description": "Seven years from freelance designer in Jazan to creative marketing strategist and AI consultant — the story, the values, and the journey."
+    },
+    "work": {
+      "title": "Work",
+      "description": "Brand identity, printing and packaging, and social media work — case studies from seven years of design practice."
+    },
+    "clients": {
+      "title": "Clients",
+      "description": "Fifteen brands across coffee, fashion, wellness, and hospitality — and the case studies behind a few of them."
+    },
+    "resume": {
+      "title": "Interactive Resume",
+      "description": "A 30-second video walkthrough of seven years of brand identity, packaging, and content work, plus a downloadable CV and portfolio."
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Start a conversation about your brand — form, WhatsApp, email, LinkedIn, and Instagram."
+    },
+    "articles": {
+      "title": "Articles",
+      "description": "Notes on brand identity, marketing strategy, and AI-assisted creative work."
+    }
+  }
+}

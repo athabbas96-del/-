@@ -11,15 +11,36 @@ import { CtaBand } from "@/components/sections/CtaBand";
 import { testimonials } from "@/content/clients";
 import { listClients } from "@/lib/repo/clients";
 import { listProjects } from "@/lib/repo/projects";
+import { getDictionary } from "@/i18n/getDictionary";
+import {
+  localizedHref,
+  isLocale,
+  defaultLocale,
+  type Locale,
+} from "@/i18n/config";
 
-export const metadata: Metadata = buildMetadata({
-  title: "Clients",
-  description:
-    "Fifteen brands across coffee, fashion, wellness, and hospitality — and the case studies behind a few of them.",
-  path: "/clients",
-});
+interface ClientsPageProps {
+  params: Promise<{ locale: string }>;
+}
 
-export default function ClientsPage() {
+export async function generateMetadata({
+  params,
+}: ClientsPageProps): Promise<Metadata> {
+  const { locale: rawLocale } = await params;
+  const locale: Locale = isLocale(rawLocale) ? rawLocale : defaultLocale;
+  const dict = await getDictionary(locale);
+  return buildMetadata({
+    locale,
+    title: dict.meta.clients.title,
+    description: dict.meta.clients.description,
+    path: "/clients",
+  });
+}
+
+export default async function ClientsPage({ params }: ClientsPageProps) {
+  const { locale: rawLocale } = await params;
+  const locale: Locale = isLocale(rawLocale) ? rawLocale : defaultLocale;
+  const dict = await getDictionary(locale);
   const clients = listClients();
   const featuredProjects = listProjects().filter((project) => project.featured);
 
@@ -30,14 +51,13 @@ export default function ClientsPage() {
           <Container className="text-center">
             <EnterReveal>
               <span className="text-accent-blue font-mono text-xs tracking-[0.15em] uppercase">
-                Clients
+                {dict.clients.eyebrow}
               </span>
               <h1 className="text-display-sm mx-auto mt-4 max-w-[22ch] leading-[1.05] font-medium tracking-tight text-white">
-                Fifteen brands, one throughline
+                {dict.clients.heading}
               </h1>
               <p className="mx-auto mt-6 max-w-[55ch] text-base text-white/70 sm:text-lg">
-                Cafés, clinics, fashion labels, and agencies across Saudi Arabia
-                — each partnered with for the long run, not a single logo drop.
+                {dict.clients.description}
               </p>
             </EnterReveal>
           </Container>
@@ -54,10 +74,10 @@ export default function ClientsPage() {
 
       <Section>
         <span className="text-accent font-mono text-xs tracking-[0.15em] uppercase">
-          Success Stories
+          {dict.clients.successStoriesEyebrow}
         </span>
         <h2 className="text-foreground mt-4 max-w-[22ch] text-2xl font-medium tracking-tight sm:text-3xl">
-          A few of the partnerships behind the wall
+          {dict.clients.successStoriesHeading}
         </h2>
         <div className="mt-10">
           <SuccessStories projects={featuredProjects} />
@@ -67,7 +87,7 @@ export default function ClientsPage() {
       {testimonials.length > 0 && (
         <Section className="bg-surface">
           <span className="text-accent font-mono text-xs tracking-[0.15em] uppercase">
-            Testimonials
+            {dict.clients.testimonialsEyebrow}
           </span>
           <div className="mt-10">
             <TestimonialsSection testimonials={testimonials} />
@@ -76,10 +96,10 @@ export default function ClientsPage() {
       )}
 
       <CtaBand
-        title="Ready to join the wall?"
-        description="Every partnership starts the same way — a conversation about what your brand actually needs."
-        ctaLabel="Start a Conversation"
-        ctaHref="/contact"
+        title={dict.clients.ctaTitle}
+        description={dict.clients.ctaDescription}
+        ctaLabel={dict.common.startConversation}
+        ctaHref={localizedHref(locale, "/contact")}
       />
     </main>
   );

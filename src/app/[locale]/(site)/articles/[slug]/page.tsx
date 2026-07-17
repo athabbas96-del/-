@@ -8,9 +8,16 @@ import { Container } from "@/components/ui/Container";
 import { EnterReveal } from "@/components/animations/EnterReveal";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { listArticles, getArticleBySlug } from "@/lib/repo/articles";
+import { getDictionary } from "@/i18n/getDictionary";
+import {
+  localizedHref,
+  isLocale,
+  defaultLocale,
+  type Locale,
+} from "@/i18n/config";
 
 interface ArticlePageProps {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ slug: string; locale: string }>;
 }
 
 export function generateStaticParams() {
@@ -22,11 +29,13 @@ export function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: ArticlePageProps): Promise<Metadata> {
-  const { slug } = await params;
+  const { slug, locale: rawLocale } = await params;
+  const locale: Locale = isLocale(rawLocale) ? rawLocale : defaultLocale;
   const article = getArticleBySlug(slug);
   if (!article || !article.published) return {};
 
   return buildMetadata({
+    locale,
     title: article.title,
     description: article.excerpt,
     path: `/articles/${article.slug}`,
@@ -35,7 +44,9 @@ export async function generateMetadata({
 }
 
 export default async function ArticlePage({ params }: ArticlePageProps) {
-  const { slug } = await params;
+  const { slug, locale: rawLocale } = await params;
+  const locale: Locale = isLocale(rawLocale) ? rawLocale : defaultLocale;
+  const dict = await getDictionary(locale);
   const article = getArticleBySlug(slug);
 
   if (!article || !article.published) notFound();
@@ -50,14 +61,15 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
       <Section as="header" className="pb-0">
         <EnterReveal>
           <Link
-            href="/articles"
-            className="text-muted hover:text-foreground font-mono text-xs"
+            href={localizedHref(locale, "/articles")}
+            className="text-muted hover:text-foreground inline-flex items-center gap-1.5 font-mono text-xs"
           >
-            ← Articles
+            <span className="inline-block rtl:-scale-x-100">←</span>
+            {dict.articles.back}
           </Link>
           {article.publishedAt && (
             <span className="text-muted mt-5 block font-mono text-[11px] tracking-[0.1em] uppercase">
-              {new Date(article.publishedAt).toLocaleDateString(undefined, {
+              {new Date(article.publishedAt).toLocaleDateString(locale, {
                 year: "numeric",
                 month: "long",
                 day: "numeric",
@@ -111,10 +123,10 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
       </Section>
 
       <CtaBand
-        title="Have a brand that needs this?"
-        description="From a single identity to a full campaign — let's talk about what your brand needs next."
-        ctaLabel="Start a Conversation"
-        ctaHref="/contact"
+        title={dict.common.ctaTitle}
+        description={dict.common.ctaDescription}
+        ctaLabel={dict.common.startConversation}
+        ctaHref={localizedHref(locale, "/contact")}
       />
     </main>
   );

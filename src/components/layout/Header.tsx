@@ -15,11 +15,15 @@ import { Container } from "@/components/ui/Container";
 import { Icon } from "@/components/ui/Icon";
 import { buttonVariants } from "@/components/ui/button-variants";
 import { MagneticButton } from "@/components/animations/MagneticButton";
+import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 import { navItems, siteConfig } from "@/config/site";
+import { localizedHref } from "@/i18n/config";
+import { useI18n } from "@/i18n/DictionaryProvider";
 import { EASE_OUT_EXPO } from "@/lib/motion";
 
 export function Header() {
   const pathname = usePathname();
+  const { locale, dict } = useI18n();
   const prefersReducedMotion = useReducedMotion();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -29,11 +33,12 @@ export function Header() {
     setScrolled(latest > 32);
   });
 
+  const homeHref = localizedHref(locale, "/");
   // The transparent-over-hero look only makes sense on the home page,
   // where the section behind the header is dark. Every other page has a
   // light background, so the header needs a solid backing there always —
   // otherwise white nav text disappears against a white page.
-  const isHome = pathname === "/";
+  const isHome = pathname === homeHref;
   const solid = scrolled || !isHome;
 
   return (
@@ -48,9 +53,9 @@ export function Header() {
             : "border-b border-transparent bg-transparent"
         }`}
       >
-        <Container className="flex h-20 items-center justify-between">
+        <Container className="flex h-20 items-center justify-between gap-4">
           <Link
-            href="/"
+            href={homeHref}
             className="font-mono text-sm tracking-[0.1em] text-white uppercase"
             onClick={() => setMenuOpen(false)}
           >
@@ -59,17 +64,18 @@ export function Header() {
 
           <nav className="hidden items-center gap-8 md:flex">
             {navItems.map((item) => {
+              const href = localizedHref(locale, item.href);
               const isActive =
                 item.href === "/"
-                  ? pathname === "/"
-                  : pathname?.startsWith(item.href);
+                  ? pathname === homeHref
+                  : pathname?.startsWith(href);
               return (
                 <Link
                   key={item.href}
-                  href={item.href}
+                  href={href}
                   className="group relative py-1 text-sm text-white/75 transition-colors hover:text-white"
                 >
-                  {item.label}
+                  {dict.nav[item.labelKey]}
                   <span
                     className={`bg-accent-blue absolute inset-x-0 -bottom-0.5 h-px origin-left transition-transform duration-300 ${
                       isActive
@@ -82,25 +88,29 @@ export function Header() {
             })}
           </nav>
 
-          <div className="hidden md:block">
+          <div className="hidden items-center gap-4 md:flex">
+            <LanguageSwitcher />
             <MagneticButton>
               <Link
-                href="/contact"
+                href={localizedHref(locale, "/contact")}
                 className={buttonVariants({ variant: "accent", size: "sm" })}
               >
-                Let&rsquo;s Talk
+                {dict.common.letsTalk}
               </Link>
             </MagneticButton>
           </div>
 
-          <button
-            type="button"
-            aria-label={menuOpen ? "Close menu" : "Open menu"}
-            onClick={() => setMenuOpen((open) => !open)}
-            className="flex h-10 w-10 items-center justify-center text-white md:hidden"
-          >
-            <Icon icon={menuOpen ? X : Menu} size="md" />
-          </button>
+          <div className="flex items-center gap-3 md:hidden">
+            <LanguageSwitcher />
+            <button
+              type="button"
+              aria-label={menuOpen ? "Close menu" : "Open menu"}
+              onClick={() => setMenuOpen((open) => !open)}
+              className="flex h-10 w-10 items-center justify-center text-white"
+            >
+              <Icon icon={menuOpen ? X : Menu} size="md" />
+            </button>
+          </div>
         </Container>
       </motion.header>
 
@@ -125,11 +135,11 @@ export function Header() {
                 }}
               >
                 <Link
-                  href={item.href}
+                  href={localizedHref(locale, item.href)}
                   onClick={() => setMenuOpen(false)}
                   className="text-2xl font-medium text-white"
                 >
-                  {item.label}
+                  {dict.nav[item.labelKey]}
                 </Link>
               </motion.div>
             ))}

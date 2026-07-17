@@ -7,6 +7,7 @@ import { Icon } from "@/components/ui/Icon";
 import { buttonVariants } from "@/components/ui/button-variants";
 import { cn } from "@/lib/utils";
 import { EASE_OUT_EXPO } from "@/lib/motion";
+import { useI18n } from "@/i18n/DictionaryProvider";
 import {
   contactSchema,
   projectTypes,
@@ -24,9 +25,24 @@ const initialValues: ContactFormValues = {
 };
 
 export function ContactForm() {
+  const { dict } = useI18n();
+  const f = dict.contact.form;
   const [values, setValues] = useState<ContactFormValues>(initialValues);
   const [errors, setErrors] = useState<FieldErrors>({});
   const [status, setStatus] = useState<Status>("idle");
+
+  const fieldErrorMessages: Record<string, string> = {
+    name: f.nameError,
+    email: f.emailError,
+    message: f.messageError,
+  };
+
+  const projectTypeLabels: Record<string, string> = {
+    "brand-identity": f.projectTypeBrandIdentity,
+    "printing-packaging": f.projectTypePrintingPackaging,
+    "social-media": f.projectTypeSocialMedia,
+    other: f.projectTypeOther,
+  };
 
   function updateField<K extends keyof ContactFormValues>(
     field: K,
@@ -44,7 +60,9 @@ export function ContactForm() {
       const fieldErrors: FieldErrors = {};
       for (const issue of parsed.error.issues) {
         const field = issue.path[0] as keyof ContactFormValues;
-        if (!fieldErrors[field]) fieldErrors[field] = issue.message;
+        if (!fieldErrors[field]) {
+          fieldErrors[field] = fieldErrorMessages[field] ?? issue.message;
+        }
       }
       setErrors(fieldErrors);
       return;
@@ -84,38 +102,37 @@ export function ContactForm() {
         >
           <Icon icon={CheckCircle2} size="lg" className="text-accent" />
         </motion.div>
-        <h3 className="text-foreground text-lg font-semibold">Message sent</h3>
-        <p className="text-muted max-w-[40ch] text-sm">
-          Thanks — I&rsquo;ll get back to you within a day or two. For anything
-          urgent, WhatsApp is fastest.
-        </p>
+        <h3 className="text-foreground text-lg font-semibold">
+          {f.successTitle}
+        </h3>
+        <p className="text-muted max-w-[40ch] text-sm">{f.successMessage}</p>
       </motion.div>
     );
   }
 
   return (
     <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-5">
-      <Field label="Name" error={errors.name}>
+      <Field label={f.name} error={errors.name}>
         <input
           type="text"
           value={values.name}
           onChange={(event) => updateField("name", event.target.value)}
           className={inputClass(Boolean(errors.name))}
-          placeholder="Your name"
+          placeholder={f.namePlaceholder}
         />
       </Field>
 
-      <Field label="Email" error={errors.email}>
+      <Field label={f.email} error={errors.email}>
         <input
           type="email"
           value={values.email}
           onChange={(event) => updateField("email", event.target.value)}
           className={inputClass(Boolean(errors.email))}
-          placeholder="you@email.com"
+          placeholder={f.emailPlaceholder}
         />
       </Field>
 
-      <Field label="What do you need?">
+      <Field label={f.whatDoYouNeed}>
         <select
           value={values.projectType}
           onChange={(event) =>
@@ -128,26 +145,24 @@ export function ContactForm() {
         >
           {projectTypes.map((type) => (
             <option key={type.value} value={type.value}>
-              {type.label}
+              {projectTypeLabels[type.value] ?? type.label}
             </option>
           ))}
         </select>
       </Field>
 
-      <Field label="Message" error={errors.message}>
+      <Field label={f.message} error={errors.message}>
         <textarea
           rows={5}
           value={values.message}
           onChange={(event) => updateField("message", event.target.value)}
           className={cn(inputClass(Boolean(errors.message)), "resize-none")}
-          placeholder="Tell me a bit about the project..."
+          placeholder={f.messagePlaceholder}
         />
       </Field>
 
       {status === "error" && (
-        <p className="text-sm text-red-500">
-          Something went wrong sending that — try WhatsApp or email directly.
-        </p>
+        <p className="text-sm text-red-500">{f.errorMessage}</p>
       )}
 
       <button
@@ -161,11 +176,11 @@ export function ContactForm() {
         {status === "submitting" ? (
           <>
             <Icon icon={Loader2} size="sm" className="animate-spin" />
-            Sending
+            {f.sending}
           </>
         ) : (
           <>
-            Send Message
+            {f.send}
             <Icon icon={Send} size="sm" />
           </>
         )}

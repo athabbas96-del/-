@@ -2,7 +2,7 @@
 
 import { type ReactNode } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import {
   LayoutDashboard,
   Briefcase,
@@ -16,17 +16,50 @@ import {
 } from "lucide-react";
 import { logoutAction } from "@/lib/actions/auth";
 import { Icon } from "@/components/ui/Icon";
+import { useI18n } from "@/i18n/DictionaryProvider";
+import { locales, type Locale } from "@/i18n/config";
 import { cn } from "@/lib/utils";
 
 const NAV_ITEMS = [
-  { href: "/admin", label: "Dashboard", icon: LayoutDashboard, exact: true },
-  { href: "/admin/projects", label: "Projects", icon: Briefcase },
-  { href: "/admin/services", label: "Services", icon: Sparkles },
-  { href: "/admin/clients", label: "Clients", icon: Users },
-  { href: "/admin/articles", label: "Articles", icon: Newspaper },
-  { href: "/admin/media", label: "Media", icon: ImageIcon },
-  { href: "/admin/texts", label: "Site Texts", icon: Type },
+  { href: "/admin", labelKey: "dashboard", icon: LayoutDashboard, exact: true },
+  { href: "/admin/projects", labelKey: "projects", icon: Briefcase },
+  { href: "/admin/services", labelKey: "services", icon: Sparkles },
+  { href: "/admin/clients", labelKey: "clients", icon: Users },
+  { href: "/admin/articles", labelKey: "articles", icon: Newspaper },
+  { href: "/admin/media", labelKey: "media", icon: ImageIcon },
+  { href: "/admin/texts", labelKey: "texts", icon: Type },
 ] as const;
+
+function AdminLocaleToggle() {
+  const { locale } = useI18n();
+  const router = useRouter();
+
+  function setLocale(next: Locale) {
+    // eslint-disable-next-line react-hooks/immutability -- document.cookie is a native DOM API, not React state
+    document.cookie = `ADMIN_LOCALE=${next};path=/;max-age=31536000;samesite=lax`;
+    router.refresh();
+  }
+
+  return (
+    <div className="flex items-center gap-1">
+      {locales.map((entry) => (
+        <button
+          key={entry}
+          type="button"
+          onClick={() => setLocale(entry)}
+          className={cn(
+            "rounded-full px-2.5 py-1 font-mono text-[11px] uppercase transition-colors",
+            entry === locale
+              ? "bg-accent text-white"
+              : "text-muted hover:text-foreground",
+          )}
+        >
+          {entry}
+        </button>
+      ))}
+    </div>
+  );
+}
 
 export function AdminShell({
   username,
@@ -36,16 +69,20 @@ export function AdminShell({
   children: ReactNode;
 }) {
   const pathname = usePathname();
+  const { dict } = useI18n();
 
   return (
     <div className="bg-background flex min-h-svh w-full">
       <aside className="border-border bg-surface hidden w-64 shrink-0 flex-col border-e p-5 md:flex">
-        <Link
-          href="/admin"
-          className="text-foreground font-mono text-sm tracking-[0.1em] uppercase"
-        >
-          ATH Admin
-        </Link>
+        <div className="flex items-center justify-between">
+          <Link
+            href="/admin"
+            className="text-foreground font-mono text-sm tracking-[0.1em] uppercase"
+          >
+            ATH Admin
+          </Link>
+          <AdminLocaleToggle />
+        </div>
 
         <nav className="mt-8 flex flex-col gap-1">
           {NAV_ITEMS.map((item) => {
@@ -65,7 +102,7 @@ export function AdminShell({
                 )}
               >
                 <Icon icon={item.icon} size="sm" />
-                {item.label}
+                {dict.admin.nav[item.labelKey]}
               </Link>
             );
           })}
@@ -78,10 +115,12 @@ export function AdminShell({
             className="text-muted hover:text-foreground flex items-center gap-2 text-xs"
           >
             <Icon icon={ExternalLink} size="sm" />
-            View live site
+            {dict.admin.viewLiveSite}
           </Link>
           <div className="text-muted flex items-center justify-between text-xs">
-            <span className="truncate">Signed in as {username}</span>
+            <span className="truncate">
+              {dict.admin.signedInAs} {username}
+            </span>
           </div>
           <form action={logoutAction}>
             <button
@@ -89,7 +128,7 @@ export function AdminShell({
               className="text-muted hover:text-foreground flex items-center gap-2 text-xs"
             >
               <Icon icon={LogOut} size="sm" />
-              Sign out
+              {dict.admin.signOut}
             </button>
           </form>
         </div>
@@ -101,11 +140,14 @@ export function AdminShell({
             <span className="text-foreground font-mono text-sm tracking-[0.1em] uppercase">
               ATH Admin
             </span>
-            <form action={logoutAction}>
-              <button type="submit" className="text-muted text-xs">
-                Sign out
-              </button>
-            </form>
+            <div className="flex items-center gap-3">
+              <AdminLocaleToggle />
+              <form action={logoutAction}>
+                <button type="submit" className="text-muted text-xs">
+                  {dict.admin.signOut}
+                </button>
+              </form>
+            </div>
           </div>
           <nav className="flex gap-2 overflow-x-auto">
             {NAV_ITEMS.map((item) => {
@@ -124,7 +166,7 @@ export function AdminShell({
                       : "bg-background text-muted",
                   )}
                 >
-                  {item.label}
+                  {dict.admin.nav[item.labelKey]}
                 </Link>
               );
             })}

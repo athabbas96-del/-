@@ -5,16 +5,18 @@ import { Section } from "@/components/ui/Section";
 import { Grid } from "@/components/ui/Grid";
 import { FeatureCard } from "@/components/ui/FeatureCard";
 import { staggerChildren, viewportOnce } from "@/lib/motion";
+import { useI18n } from "@/i18n/DictionaryProvider";
 import { values } from "@/content/about";
 
 export function ValuesGrid() {
+  const { dict } = useI18n();
   return (
     <Section>
       <span className="text-accent font-mono text-xs tracking-[0.15em] uppercase">
-        Values
+        {dict.about.valuesEyebrow}
       </span>
       <h2 className="text-foreground mt-4 max-w-[20ch] text-2xl font-medium tracking-tight sm:text-3xl">
-        What doesn&rsquo;t change from brief to brief
+        {dict.about.valuesHeading}
       </h2>
 
       <motion.div

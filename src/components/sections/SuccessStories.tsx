@@ -12,6 +12,8 @@ import {
   staggerChildren,
   EASE_OUT_EXPO,
 } from "@/lib/motion";
+import { localizedHref } from "@/i18n/config";
+import { useI18n } from "@/i18n/DictionaryProvider";
 import type { Project } from "@/types";
 
 interface SuccessStoriesProps {
@@ -19,6 +21,7 @@ interface SuccessStoriesProps {
 }
 
 export function SuccessStories({ projects }: SuccessStoriesProps) {
+  const { locale } = useI18n();
   return (
     <motion.div
       initial="hidden"
@@ -31,7 +34,10 @@ export function SuccessStories({ projects }: SuccessStoriesProps) {
           const headline = project.metrics[0];
           return (
             <motion.div key={project.slug} variants={fadeInUp}>
-              <Link href={`/work/${project.slug}`} className="group block">
+              <Link
+                href={localizedHref(locale, `/work/${project.slug}`)}
+                className="group block"
+              >
                 <div className="bg-surface relative aspect-[16/10] overflow-hidden rounded-[var(--radius-lg)]">
                   <motion.div
                     whileHover={{ scale: 1.05 }}

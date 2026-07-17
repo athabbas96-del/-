@@ -13,8 +13,10 @@ import { listClients } from "@/lib/repo/clients";
 import { listServices } from "@/lib/repo/services";
 import { listArticles } from "@/lib/repo/articles";
 import { listMedia } from "@/lib/repo/media";
+import { getAdminDictionary } from "@/i18n/getAdminDictionary";
 
-export default function AdminDashboardPage() {
+export default async function AdminDashboardPage() {
+  const { dict } = await getAdminDictionary();
   const stats = [
     {
       label: "Projects",
@@ -51,8 +53,8 @@ export default function AdminDashboardPage() {
   return (
     <div>
       <AdminPageHeader
-        title="Dashboard"
-        description="Manage every piece of content on the site — no code required."
+        title={dict.admin.dashboardTitle}
+        description={dict.admin.dashboardDescription}
       />
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
         {stats.map((stat) => (

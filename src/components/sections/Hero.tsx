@@ -16,6 +16,8 @@ import { Container } from "@/components/ui/Container";
 import { Icon } from "@/components/ui/Icon";
 import { buttonVariants } from "@/components/ui/button-variants";
 import { MagneticButton } from "@/components/animations/MagneticButton";
+import { localizedHref } from "@/i18n/config";
+import { useI18n } from "@/i18n/DictionaryProvider";
 import { EASE_OUT_EXPO } from "@/lib/motion";
 
 const AuroraBackground = dynamic(
@@ -49,6 +51,7 @@ interface HeroProps {
 
 export function Hero({ name, roles, badge }: HeroProps) {
   const sectionRef = useRef<HTMLElement>(null);
+  const { locale, dict } = useI18n();
   const prefersReducedMotion = useReducedMotion();
   const [roleIndex, setRoleIndex] = useState(0);
 
@@ -161,18 +164,18 @@ export function Hero({ name, roles, badge }: HeroProps) {
             >
               <MagneticButton>
                 <Link
-                  href="/work"
+                  href={localizedHref(locale, "/work")}
                   className={buttonVariants({ variant: "accent", size: "lg" })}
                 >
-                  View Work
+                  {dict.common.viewWork}
                 </Link>
               </MagneticButton>
               <MagneticButton>
                 <Link
-                  href="/contact"
+                  href={localizedHref(locale, "/contact")}
                   className="inline-flex h-14 items-center justify-center gap-2 rounded-[var(--radius-xs)] border border-white/25 px-8 text-base font-medium text-white transition-colors hover:bg-white/10"
                 >
-                  Let&rsquo;s Talk
+                  {dict.common.letsTalk}
                 </Link>
               </MagneticButton>
             </motion.div>
@@ -185,7 +188,7 @@ export function Hero({ name, roles, badge }: HeroProps) {
         className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2 text-white/60"
       >
         <span className="font-mono text-[10px] tracking-[0.2em] uppercase">
-          Scroll
+          {dict.common.scroll}
         </span>
         <motion.div
           animate={prefersReducedMotion ? undefined : { y: [0, 8, 0] }}

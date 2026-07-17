@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
@@ -6,9 +8,12 @@ import { SocialLinks } from "@/components/ui/SocialLinks";
 import { Reveal } from "@/components/animations/Reveal";
 import { MagneticButton } from "@/components/animations/MagneticButton";
 import { navItems, siteConfig } from "@/config/site";
+import { localizedHref } from "@/i18n/config";
+import { useI18n } from "@/i18n/DictionaryProvider";
 import { fadeInBlur } from "@/lib/motion";
 
 export function Footer() {
+  const { locale, dict } = useI18n();
   const year = new Date().getFullYear();
 
   return (
@@ -20,11 +25,11 @@ export function Footer() {
               href="mailto:ath.abbas96@gmail.com"
               className="group text-display-sm inline-flex items-center gap-4 leading-[1.05] font-medium tracking-tight text-white"
             >
-              Let&rsquo;s build something
+              {dict.footer.ctaHeading}
               <Icon
                 icon={ArrowUpRight}
                 size="lg"
-                className="text-accent-blue transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+                className="text-accent-blue transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 rtl:-scale-x-100 rtl:group-hover:-translate-x-1"
               />
             </a>
           </MagneticButton>
@@ -42,22 +47,22 @@ export function Footer() {
 
           <div className="flex flex-col gap-3">
             <span className="font-mono text-xs tracking-[0.15em] text-white/50 uppercase">
-              Sitemap
+              {dict.footer.sitemap}
             </span>
             {navItems.map((item) => (
               <Link
                 key={item.href}
-                href={item.href}
+                href={localizedHref(locale, item.href)}
                 className="w-fit text-sm text-white/75 transition-colors hover:text-white"
               >
-                {item.label}
+                {dict.nav[item.labelKey]}
               </Link>
             ))}
           </div>
 
           <div className="flex flex-col gap-3">
             <span className="font-mono text-xs tracking-[0.15em] text-white/50 uppercase">
-              Connect
+              {dict.footer.connect}
             </span>
             <a
               href="mailto:ath.abbas96@gmail.com"
@@ -71,13 +76,13 @@ export function Footer() {
               rel="noopener noreferrer"
               className="w-fit text-sm text-white/75 transition-colors hover:text-white"
             >
-              WhatsApp
+              {dict.footer.whatsapp}
             </a>
           </div>
 
           <div className="flex flex-col gap-3">
             <span className="font-mono text-xs tracking-[0.15em] text-white/50 uppercase">
-              Follow
+              {dict.footer.follow}
             </span>
             <SocialLinks className="flex gap-3" />
           </div>
@@ -85,9 +90,9 @@ export function Footer() {
 
         <div className="flex flex-col gap-2 border-t border-white/10 pt-6 text-xs text-white/40 sm:flex-row sm:items-center sm:justify-between">
           <span>
-            &copy; {year} {siteConfig.author.name}. All rights reserved.
+            &copy; {year} {siteConfig.author.name}. {dict.footer.copyright}
           </span>
-          <span>Designed &amp; built with intention.</span>
+          <span>{dict.footer.builtWith}</span>
         </div>
       </Container>
     </footer>

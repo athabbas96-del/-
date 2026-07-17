@@ -18,13 +18,17 @@ export const siteConfig = {
   keywords: ["Atheer Abbas", "portfolio", "ATH Portfolio"],
 } as const;
 
-export const navItems: { label: string; href: string }[] = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Work", href: "/work" },
-  { label: "Clients", href: "/clients" },
-  { label: "Articles", href: "/articles" },
-  { label: "Contact", href: "/contact" },
+/** `labelKey` maps to dict.nav[labelKey] — hrefs are locale-relative (no prefix). */
+export const navItems: {
+  labelKey: "home" | "about" | "work" | "clients" | "articles" | "contact";
+  href: string;
+}[] = [
+  { labelKey: "home", href: "/" },
+  { labelKey: "about", href: "/about" },
+  { labelKey: "work", href: "/work" },
+  { labelKey: "clients", href: "/clients" },
+  { labelKey: "articles", href: "/articles" },
+  { labelKey: "contact", href: "/contact" },
 ];
 
 export const socialLinks: { label: string; href: string; icon: string }[] = [

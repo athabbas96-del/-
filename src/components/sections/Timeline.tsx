@@ -2,16 +2,17 @@ import { Section } from "@/components/ui/Section";
 import { Reveal } from "@/components/animations/Reveal";
 import { fadeInUp, fadeInDown } from "@/lib/motion";
 import { timeline } from "@/content/timeline";
+import type { Dictionary } from "@/i18n/getDictionary";
 
-export function Timeline() {
+export function Timeline({ dict }: { dict: Dictionary }) {
   return (
     <Section>
       <Reveal variants={fadeInDown}>
         <span className="text-accent font-mono text-xs tracking-[0.15em] uppercase">
-          Journey
+          {dict.about.journeyEyebrow}
         </span>
         <h2 className="text-foreground mt-4 max-w-[18ch] text-2xl font-medium tracking-tight sm:text-3xl">
-          Seven years, one throughline
+          {dict.about.journeyHeading}
         </h2>
       </Reveal>
 
