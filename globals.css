@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: #2a1e3b;
+  --ground: #eae9e9;
+  --paper: #eeefed;
+  --night: #201c1c;
+  --violet: #4c3b6c;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--ground);
+  color: var(--night);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--violet);
+  color: var(--paper);
+}
+
+/* ---------- Satin galaxy field ---------- */
+.satin {
+  position: relative;
+  isolation: isolate;
+  background-color: #151313;
+  overflow: hidden;
+}
+.satin::before {
+  content: "";
+  position: absolute;
+  inset: -12%;
+  z-index: -2;
+  background-image: url("/textures/satin-wide.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: saturate(1.05);
+}
+.satin::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(120% 90% at 15% 0%, rgba(85, 64, 111, 0.35), transparent 55%),
+    radial-gradient(110% 80% at 85% 100%, rgba(57, 42, 80, 0.45), transparent 60%),
+    linear-gradient(180deg, rgba(21, 19, 19, 0.55), rgba(35, 25, 50, 0.35) 45%, rgba(21, 19, 19, 0.7));
+}
+@media (prefers-reduced-motion: no-preference) {
+  .satin::before {
+    animation: satin-drift 38s ease-in-out infinite alternate;
+  }
+  @keyframes satin-drift {
+    from { transform: translate3d(-2.2%, -1.2%, 0) scale(1.04); }
+    to   { transform: translate3d(2.2%, 1.4%, 0) scale(1.09); }
+  }
+}
+
+/* ---------- Diamond ◆ ---------- */
+.diamond {
+  display: inline-block;
+  width: 0.5em;
+  height: 0.5em;
+  background: currentColor;
+  transform: rotate(45deg);
+  flex: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .diamond-pulse {
+    animation: diamond-float 3.2s ease-in-out infinite;
+  }
+  @keyframes diamond-float {
+    0%, 100% { transform: rotate(45deg) translateY(0); opacity: 1; }
+    50% { transform: rotate(45deg) translateY(-0.35em); opacity: 0.6; }
+  }
+}
+
+/* Four-point sparkle (soft register of the diamond) */
+.sparkle {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  color: currentColor;
+}
+
+/* ---------- Ghost echo headline (welcome section) ---------- */
+.echo {
+  position: relative;
+}
+.echo::after {
+  content: attr(data-echo);
+  position: absolute;
+  inset-inline: 0;
+  top: 78%;
+  color: var(--night);
+  opacity: 0.07;
+  transform: scaleY(-0.9);
+  pointer-events: none;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* ---------- Services ticker ---------- */
+.ticker {
+  overflow: hidden;
+  white-space: nowrap;
+}
+.ticker-track {
+  display: inline-flex;
+  gap: 3rem;
+  padding-inline-start: 3rem;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .ticker-track {
+    animation: ticker-run 32s linear infinite;
+  }
+  [dir="rtl"] .ticker-track {
+    animation-name: ticker-run-rtl;
+  }
+  @keyframes ticker-run { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @keyframes ticker-run-rtl { from { transform: translateX(0); } to { transform: translateX(50%); } }
+}
+
+/* ---------- Vertical case-study spine ---------- */
+.spine-text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  letter-spacing: 0.4em;
+}
+
+/* Focus visibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--violet);
+  outline-offset: 3px;
+}
