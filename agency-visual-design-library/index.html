@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Agency Visual Design Library</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Instrument+Serif&family=IBM+Plex+Mono:wght@400;500&family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300;1,400&family=Jost:wght@300;400;500&family=Archivo+Black&family=Archivo:wght@400;600;700&family=Space+Mono:wght@400;700&family=Fraunces:ital,wght@0,400;0,600;1,400&family=Karla:wght@400;500&family=Sora:wght@300;600&family=Manrope:wght@400;500&family=Bodoni+Moda:ital,wght@0,400;0,700;1,400;1,700&family=Libre+Franklin:wght@400;600;800&family=Fredoka:wght@500;700&family=Nunito:wght@400;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Reem+Kufi:wght@500;700&family=IBM+Plex+Sans+Arabic:wght@400;500&family=Amiri:ital@0;1&family=Anton&family=Barlow:ital,wght@0,400;0,600;0,700;1,700&family=Barlow+Condensed:ital,wght@1,600&display=swap">
+<link rel="stylesheet" href="library/library.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <p class="kicker">Reference library · <span id="style-count">10</span> visual styles</p>
+    <h1>Agency Visual Design Library</h1>
+    <p class="intro">Ten ready-to-pitch visual directions for branding, social media, websites, advertising and client presentations. Each style defines its concept, palette, typography, layout, photography and graphic language, with worked UI, social and website examples.</p>
+    <ol class="how">
+      <li><strong>Match the brief</strong><span>Filter by the client's industry and pick two or three candidate styles.</span></li>
+      <li><strong>Present the direction</strong><span>Use the cover, palette and examples as a moodboard in the pitch deck.</span></li>
+      <li><strong>Adapt, then build</strong><span>Swap in the client's logo and colours, keeping the rules and proportions.</span></li>
+    </ol>
+  </div>
+</header>
+
+<nav class="jumpbar" aria-label="Jump to style">
+  <div class="wrap" id="jump"></div>
+</nav>
+
+<main>
+  <section class="index wrap" id="index" aria-labelledby="index-title">
+    <div class="index-head">
+      <h2 id="index-title">All styles</h2>
+      <div class="filter">
+        <label for="filter">Filter by industry or keyword</label>
+        <input id="filter" type="search" placeholder="e.g. clinic, coffee, fintech, fashion" autocomplete="off">
+      </div>
+    </div>
+    <ul id="index-list"></ul>
+    <p id="filter-empty" hidden>No style lists that industry yet. Try a broader word, such as food, health or tech.</p>
+  </section>
+
+  <div class="wrap" id="styles"></div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>All client names in the examples are invented sample brands. Photo frames are art-direction placeholders: their colours show the target grade and their captions are the shot brief.</p>
+    <p>Source of truth: <code>library/styles-data.js</code>. Markdown specs and tokens in <code>visual-styles/</code> are generated from it.</p>
+  </div>
+</footer>
+
+<script src="library/styles-data.js"></script>
+<script src="library/render.js"></script>
+</body>
+</html>

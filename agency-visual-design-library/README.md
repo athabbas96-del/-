@@ -1,9 +1,33 @@
 # Agency Visual Design Library
 
 A professional visual reference library for the agency. It is **not an
-application**: there is no build step and no runtime. It is a structured set of
+application**: nothing to install or build to view it. It is a structured set of
 documented design decisions, specs and examples that designers, strategists and
 account teams use when producing work for clients.
+
+## Start here
+
+Open **`index.html`** in a browser. It is the visual library: ten styles, each
+with its palette, type specimen, photography direction, graphic elements and
+worked UI, social and website examples. You can filter it by industry.
+
+The same content is available as Markdown in [`visual-styles/`](./visual-styles/README.md),
+with CSS tokens for every style in `visual-styles/tokens.css`.
+
+## The ten styles
+
+| # | Style | Best for |
+| --- | --- | --- |
+| 01 | Quiet Luxury | Jewelry, fashion, premium real estate, boutique hotels |
+| 02 | Swiss Precision | Consulting, B2B finance, law, annual reports |
+| 03 | Neo-Brutalism | Startups, creator tools, youth brands, events |
+| 04 | Organic Earth | Natural skincare, organic food, wellness, eco brands |
+| 05 | Future Tech | SaaS, AI, fintech, cybersecurity |
+| 06 | Bold Editorial | Media, fashion campaigns, culture, personal brands |
+| 07 | Playful Pop | Desserts, FMCG, kids, delivery apps |
+| 08 | Clinical Clarity | Healthcare, pharma, insurance, education, public services |
+| 09 | Modern Heritage | Arab hospitality, Ramadan campaigns, culture, government |
+| 10 | Kinetic Sport | Sportswear, gyms, sports events, energy drinks |
 
 ## What it is used for
 
@@ -19,6 +43,10 @@ account teams use when producing work for clients.
 
 ```
 agency-visual-design-library/
+├── index.html            The visual library (open in a browser)
+├── library/              styles-data.js (source of truth), render.js, library.css
+├── visual-styles/        Generated Markdown spec per style + tokens.css
+├── scripts/              build-docs.mjs regenerates visual-styles/
 ├── 00-foundations/        Core principles every other section builds on
 │   ├── color/             Palette building, contrast rules, color roles
 │   ├── typography/        Type scales, pairings, hierarchy, Arabic + Latin
@@ -65,13 +93,15 @@ about the library itself, not about design.
 
 ## Plan
 
-1. **Structure** — folder skeleton and this overview. *(done)*
-2. **Governance & templates** — naming conventions, file formats, and one
-   standard entry template so every page in the library looks the same.
-3. **Foundations** — color, typography, grid, spacing, iconography, imagery,
-   motion. Everything after this references these rules.
-4. **Discipline sections** — branding, social media, websites, advertising,
-   presentations, each with specs, do/don't examples and checklists.
-5. **Assets & inspiration** — populate shared assets and annotated references.
-6. **Visual index (optional)** — a browsable HTML overview of the library for
-   sharing with the team and clients.
+1. **Structure:** folder skeleton and overview. *(done)*
+2. **Governance and templates:** see `_governance/` and `_templates/`. *(done)*
+3. **Ten visual styles:** visual library, Markdown specs and tokens. *(done)*
+4. **Discipline sections:** fill `00-foundations/` to `05-presentations/` with
+   cross-style guidance (social formats are started in
+   `02-social-media/formats-and-specs/`).
+5. **Assets and inspiration:** populate `06-assets/` and `07-inspiration/`.
+
+## Updating
+
+Edit `library/styles-data.js`, then run `node scripts/build-docs.mjs` from the
+repository root (Node 18+, no dependencies). See `_governance/README.md`.
