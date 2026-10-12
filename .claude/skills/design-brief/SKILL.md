@@ -27,13 +27,31 @@ file path) and stop. If it is a file path, read the file first.
   - `[Assumption]` your working guess; say what changes if it is wrong
   - `[Open question]` needed from the client
   - `[Proposal]` your recommendation, needing approval
+  - `[Library]` taken from a library file; cite the path and section
+  - `[Variation]` a deliberate departure from a documented style rule
+  - `[Not documented]` a specification the library does not define
 - **Preserve the client's brand.** Their guidelines, logo, approved colours,
   typefaces and required assets override any library style. Never redesign,
   redraw or recolour a logo; if none is supplied, specify a placeholder
   labelled CLIENT LOGO.
-- **Use only documented styles.** Recommend styles from the Agency Visual
-  Design Library by their exact names. Do not invent style names. If no style
-  fits, say so and describe the direction as "not a library style".
+- **The library is the source of truth for styles.** Recommend only styles
+  listed in `visual-styles/README.md`, spelled exactly as there. Never invent,
+  rename, abbreviate or merge styles, and never rely on memory of a style:
+  read its file. If no style fits, say so and label the direction "not a
+  library style".
+- **Cite, don't guess.** Every style rule you use must come from a file you
+  read in this session. Cite the path and section, for example
+  `visual-styles/09-modern-heritage.md § Color palette`. If the library does
+  not define something the project needs (print colour values, a packaging
+  dieline, Arabic weights, a dark version and so on), write
+  `[Not documented]`. Say where you looked and who needs to decide it.
+- **Follow or vary, explicitly.** By default, follow the documented style.
+  Using the client's colours, logo and fonts in the style's roles is
+  *following* it (see `08-project-workflow/README.md` § Identity handling).
+  Anything else that departs from a documented rule is a `[Variation]`: name
+  the rule, what changes, why the brief needs it, and that it needs approval.
+  Don't mix styles unless the user asks; a borrowed element is a
+  `[Variation]` citing both files.
 - **Be honest about status.** The brief is a direction, not artwork. Never
   describe placeholders, concepts or AI outputs as final or production-ready.
 - **No unverified numbers.** This skill cannot run code, so do not state
@@ -43,16 +61,19 @@ file path) and stop. If it is a file path, read the file first.
 
 ## Sources to consult
 
-Read these before recommending a direction (paths from the repository root):
+All library paths are under `agency-visual-design-library/` from the
+repository root. [sources.md](sources.md) maps every specification to the file
+and section that defines it. Read only what the project needs. Always read:
 
 | Need | Read |
 | --- | --- |
-| Which styles exist, what each is for | `agency-visual-design-library/visual-styles/README.md` |
-| Rules of the chosen style | `agency-visual-design-library/visual-styles/NN-<style-id>.md` |
-| Identity handling (preserve / evolve / new) | `agency-visual-design-library/08-project-workflow/README.md` |
-| Arabic or bilingual work | `agency-visual-design-library/00-foundations/arabic-and-rtl/README.md` |
-| Colour, type, grid, accessibility | `agency-visual-design-library/00-foundations/` |
-| Format specs and safe areas | `02-social-media/`, `03-websites/`, `04-advertising/`, `05-presentations/`, `01-branding/` in the library |
+| The ten styles and their exact names | `visual-styles/README.md` |
+| Each style you recommend, in full | `visual-styles/NN-<style-id>.md` |
+| Identity handling (preserve / evolve / new) | `08-project-workflow/README.md` |
+| Arabic or bilingual work | `00-foundations/arabic-and-rtl/README.md` |
+
+To shortlist, read the `Mood`, `Sectors` and `Strongest applications` lines at
+the top of each candidate style file before choosing.
 
 If the library is missing or moved, tell the user and continue using only the
 client's information, without named styles.
@@ -74,25 +95,38 @@ client's information, without named styles.
    - One single-minded message, in one sentence.
    - Deliverables, constraints and measurable success criteria. Criteria the
      client did not give are `[Proposal]`.
-4. **Recommend a creative direction.**
-   - Pick one primary library style, plus at most one alternative, by matching
-     the sector, mood and deliverables to the style docs.
-   - In two or three sentences, explain why, citing the style's own rules.
-   - Write a direction statement for this client: what the work should feel
-     like and the single idea it expresses.
-5. **Specify the design.** Use the chosen style's rules applied to the
-   client's identity:
-   - **Typography:** client typefaces first; the style's hierarchy (scale,
-     weight, case); the Arabic pairing when needed.
-   - **Colour:** client colours in the style's roles and proportions, with any
-     style colour marked `[Proposal]`. List the text/background pairs to
-     verify against 4.5:1 (text) and 3:1 (large text and UI).
-   - **Composition:** grid, layout rules, logo position.
-   - **Photography:** the direction, plus a shot list rewritten for this
-     client, and what to avoid.
-   - **Graphic elements:** supporting devices, drawn in the client's colours.
+4. **Recommend a creative direction.** Choose one primary style and at most
+   one alternative. For each, write the direction block in
+   [template.md](template.md):
+   - the exact style name and its file path;
+   - status: following the style, or an intentional variation;
+   - why it fits, with evidence from the style file (its sectors, mood,
+     strongest applications or target industries) tied to this brief. If the
+     client's sector or deliverable is not listed for the style, say so and
+     justify it;
+   - the documented rules applied, each with `§ section`;
+   - variations, if any;
+   - missing specifications.
+   Then write a direction statement: what the work should feel like and its
+   single idea.
+5. **Specify the design** from the primary style's documented rules, applied
+   to the client's identity. Use [sources.md](sources.md) to find each rule.
+   - **Typography:** client typefaces first; the style's scale, weights,
+     case and type rules; its Arabic pairing when needed.
+   - **Colour:** client colours in the style's roles and proportions (§ Color
+     palette, § Design tokens). Any style colour you add is `[Proposal]`.
+     List the text/background pairs to verify against 4.5:1 (text) and 3:1
+     (large text and UI).
+   - **Composition:** the style's grid, spacing and layout rules, plus the
+     logo position.
+   - **Photography:** the style's direction and avoid list, plus a shot list
+     rewritten for this client.
+   - **Graphic elements:** the style's documented elements, drawn in the
+     client's colours.
    - **Format requirements:** size, ratio, safe area and production notes per
-     deliverable, from the library guides.
+     deliverable, from the discipline guides.
+   - **Not documented:** collect every `[Not documented]` item in one list
+     with the decision each needs.
 6. **AI image prompt** (when imagery or concept exploration would help). Give a
    copy-ready prompt for the user to run in a tool of their choice:
    - Start with "Exploratory visual concept, not final artwork".
@@ -101,7 +135,8 @@ client's information, without named styles.
      composition,
      lighting, `{SUBJECT}` and `{RATIO}` placeholders, and the instruction
      "Do not render any text, letters, logos or watermarks".
-   - Add a negative prompt built from the style's avoid list.
+   - Add a negative prompt built from the style's § Photography direction
+     avoid list and § Do / Don't.
    - Never write a prompt to create a logo or brand mark.
    - Do not generate images yourself.
 7. **Review checklist.** Write a checklist tailored to this project for

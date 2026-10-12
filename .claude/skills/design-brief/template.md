@@ -39,14 +39,35 @@ Brand guidelines, legal lines, logo rules, timing, budget.
 Measurable outcomes and how they will be checked.
 
 ## 8. Creative direction
-- Recommended style: <exact library style name>. Why: …
-- Alternative: <style name or none>. When to choose it: …
-- Direction statement: …
+
+### Direction A (recommended): <exact style name from visual-styles/README.md>
+- **Source:** `agency-visual-design-library/visual-styles/NN-<style-id>.md`
+- **Status:** Following the documented style | Intentional variation (see below)
+- **Why it fits:** evidence from the style file (Sectors / Mood / Strongest
+  applications / § Target industries), tied to this brief. Say so if the
+  client's sector or deliverable is not listed.
+- **Documented rules applied** [Library]:
+  - Colour: … (`§ Color palette`, `§ Design tokens`)
+  - Typography: … (`§ Typography`)
+  - Layout: … (`§ Layout rules`; density from `00-foundations/spacing/README.md § 3. Density by style`)
+  - Imagery: … (`§ Photography direction`)
+  - Graphic elements: … (`§ Graphic elements`)
+- **Variations** [Variation]: the rule departed from → what changes → why → needs approval. "None" if following.
+- **Not documented** [Not documented]: each spec the project needs that the
+  library does not define, where you looked, and who decides.
+
+### Direction B (alternative): <exact style name> (optional, shorter)
+Same fields; add "Choose it if …".
+
+**Direction statement:** what the work should feel like and its single idea.
 
 ## 9. Design specification
+Every rule below cites its file and section, or is tagged [Proposal] or
+[Not documented].
+
 ### Typography
 ### Colour
-| Role | Colour | Source | Tag |
+| Role | Colour | Source (client or file § section) | Tag |
 ### Composition and layout
 ### Photography and imagery
 ### Graphic elements
@@ -54,12 +75,16 @@ Measurable outcomes and how they will be checked.
 ## 10. AI concept prompt (optional, for exploration only)
 Prompt and negative prompt in code blocks; aspect ratios for the deliverables.
 
-## 11. Assumptions
+## 11. Missing specifications ([Not documented])
+| Specification | Where looked | Decision needed from |
+| --- | --- | --- |
+
+## 12. Assumptions
 - A1 … (if wrong: …)
 
-## 12. Open questions
+## 13. Open questions
 - …
 
-## 13. Design review checklist
+## 14. Design review checklist
 - [ ] …
 ```
