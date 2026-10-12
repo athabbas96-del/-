@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-12: Project rules
+
+- `CLAUDE.md` with persistent rules: purpose, design quality, Arabic design,
+  style integrity, realism and honesty, project safety, maintenance and team
+  readiness. The repository-root `CLAUDE.md` points to it.
+
 ## 2026-10-12: Project workflow
 
 - **Project brief** page (`#brief`, `#brief-<style-id>`): choose a style, enter

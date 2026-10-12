@@ -101,6 +101,7 @@ rules.
 
 ```
 agency-visual-design-library/
+├── CLAUDE.md               Persistent project rules for Claude Code
 ├── index.html              The visual library (open in a browser)
 ├── library/
 │   ├── styles-data.js      SOURCE OF TRUTH: all ten styles + filter vocabulary
