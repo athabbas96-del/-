@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-10-12: Project workflow
+
+- **Project brief** page (`#brief`, `#brief-<style-id>`): choose a style, enter
+  project type, industry, audience, brand colours, typefaces, supplied assets,
+  deliverables and language; generate a creative direction, design brief, AI
+  concept prompt and Markdown (copy or download). Generated locally from the
+  style's rules; no AI service, no images.
+- Rules engine `library/brief.js`: identity preserved by default, missing
+  assets become open questions, colours planned by contrast with an
+  accessible-variant suggestion, fit check against the style's sectors and
+  applications, 19 deliverable specs.
+- `scripts/brief.mjs` (command line) and `scripts/test-brief.mjs` (27 tests);
+  browser QA covers the full workflow.
+- Entry points on the catalogue, every style page and the top bar.
+- `08-project-workflow/` guide with a fictional example input and its brief.
+- Fixed: elements with the `hidden` attribute could still show when a
+  component set `display`.
+
 ## 2026-10-12: Complete library
 
 - **Interface:** catalogue with search and Industry / Visual mood / Application

@@ -354,7 +354,7 @@
       '<ul class="kw">' + s.keywords.map(function (k) { return "<li>" + esc(k) + "</li>"; }).join("") + "</ul></div></header>" +
       sp(s, "cover", motif(s) + '<div class="cover-copy"><span class="eyebrow">' + esc(s.sampleBrandType) + '</span><span class="d cover-name">' + brandMark(s) + "</span>" +
         '<span class="cover-tag">' + rich(s.social.ad.headline) + "</span></div>") +
-      '<p class="cover-note">' + fict(s) + "</p>" +
+      '<p class="cover-note">' + fict(s) + '<a class="cta" href="#brief-' + s.id + '">Start a project brief with this style</a></p>' +
       "</div>" +
       '<div class="secnav" role="navigation" aria-label="Sections of this style"><div class="wrap">' + nav + "</div></div>" +
       '<div class="wrap">' +
@@ -447,14 +447,22 @@
     style: document.getElementById("view-style"),
     tokens: document.getElementById("view-tokens"),
     notfound: document.getElementById("view-notfound"),
+    brief: document.getElementById("view-brief"),
   };
   views.catalog.querySelector("[data-slot]").innerHTML = catalogue();
   views.tokens.innerHTML = tokensPage();
   document.getElementById("jump").innerHTML =
-    '<a href="#">All styles</a>' + STYLES.map(function (s, i) { return '<a href="#' + s.id + '" data-id="' + s.id + '">' + pad(i + 1) + " " + esc(s.name) + "</a>"; }).join("") + '<a href="#tokens">Tokens</a>';
+    '<a href="#">All styles</a>' + STYLES.map(function (s, i) { return '<a href="#' + s.id + '" data-id="' + s.id + '">' + pad(i + 1) + " " + esc(s.name) + "</a>"; }).join("") + '<a href="#tokens">Tokens</a><a href="#brief">Project brief</a>';
 
   window.AVDL_ROUTES = function () {
-    return ["#", "#tokens"].concat(STYLES.map(function (s) { return "#" + s.id; }));
+    return ["#", "#tokens", "#brief", "#brief-" + STYLES[0].id].concat(STYLES.map(function (s) { return "#" + s.id; }));
+  };
+
+  // True when a hash (with or without #) is a page the router can show.
+  window.AVDL_IS_ROUTE = function (hash) {
+    var h = String(hash).replace(/^#/, "");
+    var ids = STYLES.map(function (s) { return s.id; });
+    return h === "" || h === "index" || h === "tokens" || h === "brief" || ids.indexOf(h) !== -1 || (h.indexOf("brief-") === 0 && ids.indexOf(h.slice(6)) !== -1);
   };
 
   function show(name) {
@@ -467,7 +475,7 @@
     var idx = -1;
     STYLES.forEach(function (s, i) { if (s.id === h) idx = i; });
     document.querySelectorAll("#jump a").forEach(function (a) {
-      var on = a.getAttribute("href") === "#" + h || (!h && a.getAttribute("href") === "#");
+      var on = a.getAttribute("href") === "#" + h || (!h && a.getAttribute("href") === "#") || (h.indexOf("brief-") === 0 && a.getAttribute("href") === "#brief");
       if (on) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
     });
     var focusEl;
@@ -480,6 +488,12 @@
       show("style");
       document.title = s.name + " · " + LIB;
       focusEl = document.getElementById("style-title");
+    } else if (h === "brief" || h.indexOf("brief-") === 0) {
+      var pre = h.slice(6);
+      if (window.AVDL_BRIEF_UI) window.AVDL_BRIEF_UI.mount(views.brief, pre);
+      show("brief");
+      document.title = "Project brief · " + LIB;
+      focusEl = document.getElementById("brief-title");
     } else if (h === "tokens") {
       show("tokens");
       document.title = "Design tokens · " + LIB;

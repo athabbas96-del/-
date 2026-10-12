@@ -30,6 +30,7 @@ data.
    ```bash
    node agency-visual-design-library/scripts/build-docs.mjs
    node agency-visual-design-library/scripts/check-data.mjs
+   node agency-visual-design-library/scripts/test-brief.mjs
    node agency-visual-design-library/scripts/qa-browser.mjs --shots /tmp/avdl-shots
    ```
 5. Look at the screenshots for the new or changed style at desktop and phone
@@ -50,6 +51,19 @@ A change is ready when:
 - the Arabic pairing is named and, for Arabic-led styles, the examples are RTL
 - the style is visibly distinct from the other nine (compare it on the catalogue
   and the `#tokens` page)
+
+## Project brief rules
+
+`library/brief.js` encodes agency policy, so change it deliberately:
+
+- Client identity is preserved unless the designer chooses *evolve* or *new*.
+- Client brand assets are never invented; missing ones become open questions.
+- Every output states it is a brief, not final or production-ready artwork.
+- The AI prompt always forbids rendering text and logos.
+
+`test-brief.mjs` fails if any of these break. If you change the generator,
+regenerate the example in `08-project-workflow/examples/` (the test checks it
+is current).
 
 ## Sample content rules
 

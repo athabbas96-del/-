@@ -1,0 +1,23 @@
+{
+  "_note": "Fictional example client for demonstrating the workflow. Not a real brand or client.",
+  "styleId": "modern-heritage",
+  "projectName": "Ramadan gifting campaign 2027 (fictional example)",
+  "clientName": "Tamr Grove",
+  "projectType": "campaign",
+  "industry": "Food & beverage",
+  "industryOther": "",
+  "audience": "Families and corporate buyers in Riyadh and Baghdad choosing premium date gift boxes for Ramadan and Eid",
+  "objective": "Grow pre-orders of the Ramadan gift box through social media and outdoor advertising",
+  "tone": "Warm and generous, never boastful",
+  "constraints": "Arabic headline must lead on every format. Logo bottom right.",
+  "identityMode": "preserve",
+  "colors": [
+    { "name": "Date Brown", "hex": "#6B3A1F", "role": "Primary" },
+    { "name": "Palm Green", "hex": "#2F5D3A", "role": "Secondary" },
+    { "name": "Sand", "hex": "#F3EBDD", "role": "Background" }
+  ],
+  "fonts": { "headline": "", "body": "", "arabic": "" },
+  "assets": { "logo": true, "guidelines": true, "fonts": false, "photography": false, "voice": false },
+  "language": "bilingual",
+  "deliverables": ["social-feed", "social-story", "ooh-48", "display-mpu"]
+}
