@@ -10,48 +10,49 @@
 <link rel="stylesheet" href="library/library.css">
 </head>
 <body>
+<a class="skip" href="#main" data-goto="main">Skip to content</a>
 
-<header class="masthead">
-  <div class="wrap">
-    <p class="kicker">Reference library · <span id="style-count">10</span> visual styles</p>
-    <h1>Agency Visual Design Library</h1>
-    <p class="intro">Ten ready-to-pitch visual directions for branding, social media, websites, advertising and client presentations. Each style defines its concept, palette, typography, layout, photography and graphic language, with worked UI, social and website examples.</p>
-    <ol class="how">
-      <li><strong>Match the brief</strong><span>Filter by the client's industry and pick two or three candidate styles.</span></li>
-      <li><strong>Present the direction</strong><span>Use the cover, palette and examples as a moodboard in the pitch deck.</span></li>
-      <li><strong>Adapt, then build</strong><span>Swap in the client's logo and colours, keeping the rules and proportions.</span></li>
-    </ol>
-  </div>
-</header>
-
-<nav class="jumpbar" aria-label="Jump to style">
+<nav class="jumpbar" aria-label="Styles">
   <div class="wrap" id="jump"></div>
 </nav>
 
-<main>
-  <section class="index wrap" id="index" aria-labelledby="index-title">
-    <div class="index-head">
-      <h2 id="index-title">All styles</h2>
-      <div class="filter">
-        <label for="filter">Filter by industry or keyword</label>
-        <input id="filter" type="search" placeholder="e.g. clinic, coffee, fintech, fashion" autocomplete="off">
+<main id="main" tabindex="-1">
+  <section data-view="catalog" id="view-catalog" aria-labelledby="lib-title">
+    <header class="masthead">
+      <div class="wrap">
+        <p class="kicker">Reference library · 10 visual styles · fictional sample brands</p>
+        <h1 id="lib-title">Agency Visual Design Library</h1>
+        <p class="intro">Ten ready-to-pitch visual directions for branding, social media, websites, advertising and client presentations. Each style has a full specification and worked examples, with tokens you can copy straight into a project.</p>
+        <ol class="how">
+          <li><strong>Match the brief</strong><span>Filter by the client's industry, the mood they want and where the work will run.</span></li>
+          <li><strong>Present the direction</strong><span>Open a style and use its cover, palette and examples as a moodboard in the pitch.</span></li>
+          <li><strong>Adapt, then build</strong><span>Copy the tokens, swap in the client's logo and colours, and keep the rules and proportions.</span></li>
+        </ol>
       </div>
-    </div>
-    <ul id="index-list"></ul>
-    <p id="filter-empty" hidden>No style lists that industry yet. Try a broader word, such as food, health or tech.</p>
+    </header>
+    <div data-slot></div>
   </section>
 
-  <div class="wrap" id="styles"></div>
+  <section data-view="style" id="view-style" hidden></section>
+  <section data-view="tokens" id="view-tokens" hidden></section>
+  <section data-view="notfound" id="view-notfound" hidden>
+    <div class="wrap page-head">
+      <h1 id="nf-title" tabindex="-1">That page isn't in the library</h1>
+      <p class="intro">The link may point to a style that was renamed. <a href="#">Browse all styles</a>.</p>
+    </div>
+  </section>
 </main>
 
 <footer class="foot">
   <div class="wrap">
-    <p>All client names in the examples are invented sample brands. Photo frames are art-direction placeholders: their colours show the target grade and their captions are the shot brief.</p>
-    <p>Source of truth: <code>library/styles-data.js</code>. Markdown specs and tokens in <code>visual-styles/</code> are generated from it.</p>
+    <p><strong>Sample work only.</strong> Every brand, person, address and number in the examples is invented to demonstrate the styles. None of it is client work. Photo frames are art-direction placeholders: their colours show the target grade and their captions are the shot brief.</p>
+    <p>Written guidance lives next to this page in the repository: <code>00-foundations/</code> (colour, type, grid, accessibility, Arabic and RTL) and the discipline folders <code>01-branding/</code> to <code>05-presentations/</code>.</p>
+    <p>Source of truth: <code>library/styles-data.js</code>. The Markdown specs and tokens in <code>visual-styles/</code> are generated from it.</p>
   </div>
 </footer>
 
 <script src="library/styles-data.js"></script>
+<script src="library/tokens.js"></script>
 <script src="library/render.js"></script>
 </body>
 </html>

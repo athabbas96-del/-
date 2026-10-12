@@ -5,7 +5,11 @@
 > Bright, round and instantly likeable.
 
 **Keywords:** Joyful · Friendly · Energetic · Shareable · Warm  
-**Sample brand in examples:** Sprinkle Lab, dessert bar and delivery (invented)
+**Mood:** Playful · Energetic · Warm  
+**Sectors:** Food & beverage · Retail & FMCG · Hospitality & travel  
+**Strongest applications:** Social media · Packaging · Advertising · Events · Brand identity
+
+> **Fictional sample brand.** Sprinkle Lab, dessert bar and delivery, and every person, figure and address in its examples are invented to demonstrate this style. This is not client work. Domains use the reserved `.example` TLD.
 
 ## Concept
 
@@ -134,6 +138,45 @@ Bright, colourful product photography with props and personality.
 - **Actions:** Order now / See the menu
 - **Proof row:** 20 min (Average delivery time) · 36 (Flavours on rotation) · 4.9 (Rating from 12k orders)
 
+## Advertising campaign
+
+**Campaign:** Dessert First
+
+Celebrates eating dessert before dinner, with outsized products and price stickers.
+
+| Format | Eyebrow | Headline | CTA |
+| --- | --- | --- | --- |
+| Billboard 48-sheet (6096 × 3048 mm) | Sprinkle Lab | Dessert first. Dinner later. | Order in the app |
+| Display MPU 300 × 250 and leaderboard 728 × 90 | | Mango Cloud is here! | Order |
+
+- Rotate background colours across sites in the same city.
+- Book bus sides, food-delivery apps and mall screens.
+- Bouncy banner animation with spring easing, three loops at most.
+
+## Presentations
+
+- **Cover slide:** Franchise pitch · **Life's short. Eat dessert first.** · Sprinkle Lab · sample deck
+- **Content slide:** A menu built for sharing. Key figure **36** (flavours on rotation); points: Delivery in 20 minutes; Seasonal drop every month; Party boxes for 6 to 12. Figures are sample data.
+
+- Colour-block slides rotate Coral, Mango and Lagoon.
+- Stickers mark new numbers.
+- Use product cut-outs, not photos with backgrounds.
+
+## Brand applications
+
+Business card, letterhead and email signature for **Rana Saleh**, Founder (`rana@sprinklelab.example`, fictional).
+
+| Application | Specification |
+| --- | --- |
+| Cups and boxes | one brand colour per product, sticker seal |
+| Delivery bag | Coral with Cocoa wordmark and confetti dots |
+| Store | Mango tiled counter, Grape neon sign |
+| Loyalty card | rounded corners, punch-out sprinkles |
+
+- Cocoa is the text colour on every fill. White text only on Grape.
+- Each product has its own colour, kept across packaging and social.
+- Stickers carry news: new, limited, price.
+
 ## Do / Don't
 
 | Do | Don't |
@@ -144,6 +187,8 @@ Bright, colourful product photography with props and personality.
 
 ## Design tokens
 
+Text in the accent colour uses `--avdl-accent-text`, which passes WCAG AA (4.5:1) on both `bg` and `surface`.
+
 ```css
 [data-style="playful-pop"] {
   --avdl-bg: #FFF6E9;
@@ -151,6 +196,7 @@ Bright, colourful product photography with props and personality.
   --avdl-ink: #2B1B17;
   --avdl-muted: #6B4E44;
   --avdl-accent: #FF5E5B;
+  --avdl-accent-text: #C93A37;
   --avdl-accent-2: #FFB627;
   --avdl-on-accent: #2B1B17;
   --avdl-line: #2B1B17;
@@ -172,4 +218,4 @@ Bright, colourful product photography with props and personality.
 }
 ```
 
-See it rendered: open `index.html` and go to **Playful Pop** (`#playful-pop`).
+See it rendered: open `index.html#playful-pop` in a browser.

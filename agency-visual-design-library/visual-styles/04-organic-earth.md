@@ -5,7 +5,11 @@
 > Grown, not manufactured.
 
 **Keywords:** Natural · Warm · Honest · Calm · Crafted  
-**Sample brand in examples:** Fernhollow, botanical skincare (invented)
+**Mood:** Natural · Calm · Warm  
+**Sectors:** Beauty & wellness · Food & beverage · Hospitality & travel · Retail & FMCG  
+**Strongest applications:** Packaging · Social media · Websites · Brand identity · Print & editorial
+
+> **Fictional sample brand.** Fernhollow, botanical skincare, and every person, figure and address in its examples are invented to demonstrate this style. This is not client work. Domains use the reserved `.example` TLD.
 
 ## Concept
 
@@ -133,6 +137,45 @@ Ingredients, hands and landscapes in soft daylight with earthy tones.
 - **Actions:** Shop the ritual / Visit the farm
 - **Proof row:** Farm grown (80% of ingredients from our fields.) · Plastic-free (Glass bottles and compostable mailers.) · Small batch (Pressed every six weeks.)
 
+## Advertising campaign
+
+**Campaign:** From Our Fields
+
+Each execution names the field an ingredient came from and the month it was harvested.
+
+| Format | Eyebrow | Headline | CTA |
+| --- | --- | --- | --- |
+| Billboard 48-sheet (6096 × 3048 mm) | Fernhollow · Field 7 | Rosehip, picked by hand in October. | fernhollow.example |
+| Display MPU 300 × 250 and leaderboard 728 × 90 | | Refills that skip the plastic. | Shop |
+
+- Print on uncoated or recycled stock, and say so on the ad.
+- Book transit near wellness venues, organic grocers and yoga studios.
+- Banner motion is a slow leaf drift or pour, under 8 seconds.
+
+## Presentations
+
+- **Cover slide:** Retail partner deck · **Grown, not made.** · Fernhollow for natural retailers
+- **Content slide:** Why it sells through. Key figure **80%** (of ingredients from our own fields); points: Glass, refillable packaging; Small batches every six weeks; Story-led shelf display. Figures are sample data.
+
+- Rounded image masks on generous Oat backgrounds.
+- Ingredient photography between sections.
+- Slide titles are sentences, never all caps.
+
+## Brand applications
+
+Business card, letterhead and email signature for **Maren Holt**, Head of Retail (`maren@fernhollow.example`, fictional).
+
+| Application | Specification |
+| --- | --- |
+| Packaging | amber glass, uncoated label, line-drawn botanical, Clay Rose batch stamp |
+| Shipping | kraft mailer, stamp-style seal, compostable tape |
+| Retail | wooden shelf, linen backdrop, hand-lettered price cards |
+| Market stall | Moss canopy with certification stamps |
+
+- Labels print on uncoated stock, so check colour on the real paper.
+- Botanical drawings are single-weight line art, never filled.
+- Certification badges follow the issuing body's rules, not the brand palette.
+
 ## Do / Don't
 
 | Do | Don't |
@@ -143,6 +186,8 @@ Ingredients, hands and landscapes in soft daylight with earthy tones.
 
 ## Design tokens
 
+Text in the accent colour uses `--avdl-accent-text`, which passes WCAG AA (4.5:1) on both `bg` and `surface`.
+
 ```css
 [data-style="organic-earth"] {
   --avdl-bg: #E9E4D8;
@@ -150,6 +195,7 @@ Ingredients, hands and landscapes in soft daylight with earthy tones.
   --avdl-ink: #3F4F35;
   --avdl-muted: #4A3B30;
   --avdl-accent: #C98F7E;
+  --avdl-accent-text: #874B3B;
   --avdl-accent-2: #A3B18A;
   --avdl-on-accent: #2C2420;
   --avdl-line: #A3B18A;
@@ -170,4 +216,4 @@ Ingredients, hands and landscapes in soft daylight with earthy tones.
 }
 ```
 
-See it rendered: open `index.html` and go to **Organic Earth** (`#organic-earth`).
+See it rendered: open `index.html#organic-earth` in a browser.

@@ -5,7 +5,11 @@
 > Loud, honest, and a little unfinished.
 
 **Keywords:** Bold · Playful · Raw · Direct · Anti-corporate  
-**Sample brand in examples:** Klonk, project tool for creators (invented)
+**Mood:** Bold · Playful · Energetic  
+**Sectors:** Technology & SaaS · Media, arts & culture · Retail & FMCG · Education & public sector  
+**Strongest applications:** Social media · Websites · Advertising · Events · Brand identity
+
+> **Fictional sample brand.** Klonk, project tool for creators, and every person, figure and address in its examples are invented to demonstrate this style. This is not client work. Domains use the reserved `.example` TLD.
 
 ## Concept
 
@@ -134,6 +138,45 @@ Cut-out people and objects on flat colour, shot with flash.
 - **Actions:** Start for free / See templates
 - **Proof row:** Boards (Drag projects from idea to done.) · Feedback (Comments pinned right on the file.) · Templates (120+ ready-made workflows.)
 
+## Advertising campaign
+
+**Campaign:** Group Chat Graveyard
+
+Turns the everyday pain of files lost in chat threads into exaggerated, outlined evidence stickers.
+
+| Format | Eyebrow | Headline | CTA |
+| --- | --- | --- | --- |
+| Billboard 48-sheet (6096 × 3048 mm) | Klonk | Your files deserve better than 9 group chats. | klonk.example |
+| Display MPU 300 × 250 and leaderboard 728 × 90 | | Plan less. Make more. | Try free |
+
+- Every sticker in the ads can be printed and handed out at events.
+- Wild-posting, campus and co-working sites suit this style better than premium sites.
+- Banners move with hard cuts and no easing.
+
+## Presentations
+
+- **Cover slide:** Investor update · Q3 · **Klonk is growing fast.** · Sample deck · fictional numbers
+- **Content slide:** What creators told us. Key figure **9** (chat threads per project, on average); points: Files get lost; Feedback lives in screenshots; Deadlines slip. Figures are sample data.
+
+- Every slide is an outlined card on Canvas with a hard shadow.
+- A sticker flags the takeaway on each slide.
+- Product screens sit in outlined windows.
+
+## Brand applications
+
+Business card, letterhead and email signature for **Jo Mbeki**, Co-founder (`jo@klonk.example`, fictional).
+
+| Application | Specification |
+| --- | --- |
+| Stickers | die-cut, thick black outline, sold in rotated packs |
+| Merch | tote bag with one oversized word and a hard shadow |
+| Office | painted outlined boxes on the walls as wayfinding |
+| App icon | yellow square, black outline, offset shadow |
+
+- The outline weight scales with size: 3px on screen, 1.5mm in print.
+- Fills rotate across products but outlines are always Ink.
+- Humour in copy is part of the brand. Keep it kind.
+
 ## Do / Don't
 
 | Do | Don't |
@@ -144,6 +187,8 @@ Cut-out people and objects on flat colour, shot with flash.
 
 ## Design tokens
 
+Text in the accent colour uses `--avdl-accent-text`, which passes WCAG AA (4.5:1) on both `bg` and `surface`.
+
 ```css
 [data-style="neo-brutalism"] {
   --avdl-bg: #FFFDF5;
@@ -151,6 +196,7 @@ Cut-out people and objects on flat colour, shot with flash.
   --avdl-ink: #0D0D0D;
   --avdl-muted: #3D3D3D;
   --avdl-accent: #FFE14D;
+  --avdl-accent-text: #0D0D0D;
   --avdl-accent-2: #FF7AB6;
   --avdl-on-accent: #0D0D0D;
   --avdl-line: #0D0D0D;
@@ -172,4 +218,4 @@ Cut-out people and objects on flat colour, shot with flash.
 }
 ```
 
-See it rendered: open `index.html` and go to **Neo-Brutalism** (`#neo-brutalism`).
+See it rendered: open `index.html#neo-brutalism` in a browser.

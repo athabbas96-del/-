@@ -5,7 +5,11 @@
 > Every page is a cover.
 
 **Keywords:** Opinionated · Dramatic · Cultured · Sharp · Narrative  
-**Sample brand in examples:** The Margin, culture and fashion magazine (invented)
+**Mood:** Editorial · Bold · Premium  
+**Sectors:** Media, arts & culture · Luxury & fashion · Education & public sector  
+**Strongest applications:** Print & editorial · Social media · Advertising · Websites · Presentations
+
+> **Fictional sample brand.** The Margin, culture and fashion magazine, and every person, figure and address in its examples are invented to demonstrate this style. This is not client work. Domains use the reserved `.example` TLD.
 
 ## Concept
 
@@ -132,6 +136,45 @@ Fashion-editorial portraits with strong direction and dramatic light.
 - **Actions:** Read the story / All issues
 - **Proof row:** Culture (The galleries rewriting the Gulf art map.) · Fashion (Inside the last tailoring house in Baghdad.) · Ideas (Why we stopped trusting algorithms.)
 
+## Advertising campaign
+
+**Campaign:** Have a Point of View
+
+Cover lines from the current issue become the ads. Each one is a strong opinion in quotation marks.
+
+| Format | Eyebrow | Headline | CTA |
+| --- | --- | --- | --- |
+| Billboard 48-sheet (6096 × 3048 mm) | The Margin · Issue 27 | “Style is a decision.” | On newsstands now |
+| Display MPU 300 × 250 and leaderboard 728 × 90 | | Six issues. One point of view. | Subscribe |
+
+- Treat every ad like a cover: masthead, cover line, issue number.
+- Book newsstand, metro and cultural-district sites.
+- Animated banners turn like pages, two frames at most.
+
+## Presentations
+
+- **Cover slide:** Media kit 2027 · **The slow issue.** · Advertising partnerships · sample deck
+- **Content slide:** Who reads The Margin. Key figure **48 min** (average time spent with each issue); points: Culture-led professionals, 28–45; Print and digital editions; Quarterly events in Dubai and Beirut. Figures are sample data.
+
+- Slides look like spreads: kicker, headline, columns.
+- Full-bleed portraits open each chapter.
+- Use pull quotes at display size instead of bullet lists.
+
+## Brand applications
+
+Business card, letterhead and email signature for **Noor Haddad**, Editor-in-Chief (`noor@themargin.example`, fictional).
+
+| Application | Specification |
+| --- | --- |
+| Magazine cover | fixed masthead, cover lines change per issue |
+| Tote bag | masthead in Bodoni, red issue number |
+| Event invitation | black card, red kicker, serif headline |
+| Newsletter | single column, drop cap, red kicker |
+
+- The masthead is never recoloured except in Paper on Ink.
+- Issue numbers are part of the identity system.
+- Photography credits are always printed.
+
 ## Do / Don't
 
 | Do | Don't |
@@ -142,6 +185,8 @@ Fashion-editorial portraits with strong direction and dramatic light.
 
 ## Design tokens
 
+Text in the accent colour uses `--avdl-accent-text`, which passes WCAG AA (4.5:1) on both `bg` and `surface`.
+
 ```css
 [data-style="bold-editorial"] {
   --avdl-bg: #FAFAF7;
@@ -149,6 +194,7 @@ Fashion-editorial portraits with strong direction and dramatic light.
   --avdl-ink: #0E0E0E;
   --avdl-muted: #4A4A48;
   --avdl-accent: #C8102E;
+  --avdl-accent-text: #C8102E;
   --avdl-accent-2: #0E0E0E;
   --avdl-on-accent: #FFFFFF;
   --avdl-line: #0E0E0E;
@@ -169,4 +215,4 @@ Fashion-editorial portraits with strong direction and dramatic light.
 }
 ```
 
-See it rendered: open `index.html` and go to **Bold Editorial** (`#bold-editorial`).
+See it rendered: open `index.html#bold-editorial` in a browser.

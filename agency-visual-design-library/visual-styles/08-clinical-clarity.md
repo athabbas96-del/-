@@ -5,7 +5,11 @@
 > Calm, clear and easy to trust.
 
 **Keywords:** Trustworthy · Clean · Caring · Accessible · Reassuring  
-**Sample brand in examples:** Clearpoint Clinics, multi-specialty clinic group (invented)
+**Mood:** Trustworthy · Calm · Minimal  
+**Sectors:** Health & medical · Education & public sector · Finance & professional services · Beauty & wellness  
+**Strongest applications:** Websites · Social media · Print & editorial · Brand identity · Presentations
+
+> **Fictional sample brand.** Clearpoint Clinics, multi-specialty clinic group, and every person, figure and address in its examples are invented to demonstrate this style. This is not client work. Domains use the reserved `.example` TLD.
 
 ## Concept
 
@@ -134,6 +138,45 @@ Real staff and patients in bright, clean spaces with warm human moments.
 - **Actions:** Book an appointment / Find a doctor
 - **Proof row:** 80+ (Specialists across 22 fields) · Same day (Appointments at every clinic) · JCI (Internationally accredited)
 
+## Advertising campaign
+
+**Campaign:** Care That Listens
+
+Real patient questions answered by named specialists, each with one clear next step.
+
+| Format | Eyebrow | Headline | CTA |
+| --- | --- | --- | --- |
+| Billboard 48-sheet (6096 × 3048 mm) | Clearpoint Clinics | Same-day appointments. Six clinics. | Book at clearpoint.example |
+| Display MPU 300 × 250 and leaderboard 728 × 90 | | Specialists for every age. | Book online |
+
+- Plain language and one clear action on every ad.
+- Book pharmacy, metro and community sites near the clinics.
+- Never use fear. Show recovery and care, not symptoms.
+
+## Presentations
+
+- **Cover slide:** Patient experience review · **Care that listens.** · Board update · sample data
+- **Content slide:** Waiting times this quarter. Key figure **18 min** (average wait, down from 31); points: Online booking is now 64% of visits; Arabic and English on every form; New paediatric clinic opens in March. Figures are sample data.
+
+- White slides with Mist panels to group data.
+- Charts in Care Teal with direct labels instead of legends.
+- 24pt minimum text so the back of the boardroom can read it.
+
+## Brand applications
+
+Business card, letterhead and email signature for **Dr. Sara Al-Amin**, Medical Director (`s.alamin@clearpoint.example`, fictional).
+
+| Application | Specification |
+| --- | --- |
+| Wayfinding | teal icons in circles, bilingual Arabic and English signs |
+| Patient forms | 16pt minimum, large tick boxes, plain language |
+| Uniforms | Mist scrubs with embroidered teal mark |
+| Appointment SMS and email | plain language, one action |
+
+- Signage meets local accessibility code first; brand second.
+- Icons always have a text label.
+- Arabic and English get equal size on signs.
+
 ## Do / Don't
 
 | Do | Don't |
@@ -144,6 +187,8 @@ Real staff and patients in bright, clean spaces with warm human moments.
 
 ## Design tokens
 
+Text in the accent colour uses `--avdl-accent-text`, which passes WCAG AA (4.5:1) on both `bg` and `surface`.
+
 ```css
 [data-style="clinical-clarity"] {
   --avdl-bg: #FFFFFF;
@@ -151,6 +196,7 @@ Real staff and patients in bright, clean spaces with warm human moments.
   --avdl-ink: #13293D;
   --avdl-muted: #4A5D6E;
   --avdl-accent: #0F7C80;
+  --avdl-accent-text: #0F7C80;
   --avdl-accent-2: #F4A259;
   --avdl-on-accent: #FFFFFF;
   --avdl-line: #D5E4E6;
@@ -172,4 +218,4 @@ Real staff and patients in bright, clean spaces with warm human moments.
 }
 ```
 
-See it rendered: open `index.html` and go to **Clinical Clarity** (`#clinical-clarity`).
+See it rendered: open `index.html#clinical-clarity` in a browser.

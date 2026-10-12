@@ -7,6 +7,12 @@
  *
  * Every client name in the examples is an invented sample brand.
  */
+window.AVDL_VOCAB = {
+  sectors: ["Luxury & fashion", "Finance & professional services", "Technology & SaaS", "Food & beverage", "Health & medical", "Beauty & wellness", "Hospitality & travel", "Retail & FMCG", "Media, arts & culture", "Sports & fitness", "Education & public sector", "Real estate"],
+  moods: ["Premium", "Calm", "Minimal", "Bold", "Playful", "Energetic", "Natural", "Warm", "Technical", "Trustworthy", "Editorial", "Cultural"],
+  applications: ["Brand identity", "Social media", "Websites", "Advertising", "Presentations", "Packaging", "Print & editorial", "Events"],
+};
+
 window.AVDL_STYLES = [
   /* ------------------------------------------------------------------ 01 */
   {
@@ -128,8 +134,72 @@ window.AVDL_STYLES = [
     },
     dos: ["Let one image fill the frame", "Use italics for emphasis", "Keep copy under 12 words per frame"],
     donts: ["Discount badges or urgency copy", "More than one accent colour", "Drop shadows or gradients"],
+    domain: "maisonvelline.example",
+    sectors: ["Luxury & fashion", "Real estate", "Hospitality & travel", "Beauty & wellness", "Finance & professional services"],
+    moods: ["Premium", "Calm", "Minimal"],
+    applications: ["Brand identity", "Print & editorial", "Websites", "Packaging", "Social media"],
+    advertising: {
+      "campaign": "Made to Be Kept",
+      "idea": "Each execution isolates one piece on stone with a single line about permanence. The scarcity of words is the message.",
+      "billboard": {
+        "eyebrow": "Maison Velline · Paris",
+        "headline": "Made to be *kept*.",
+        "cta": "maisonvelline.example"
+      },
+      "banner": {
+        "headline": "Private viewings, by appointment.",
+        "cta": "Book"
+      },
+      "notes": [
+        "Billboards carry one image and five words at most.",
+        "Book premium districts, airports and hotel lobbies. Avoid cluttered roadside sites.",
+        "Digital banners use the same still with a slow 6-second zoom and no other animation."
+      ]
+    },
+    presentation: {
+      "cover": {
+        "kicker": "Brand presentation · 2027",
+        "title": "The Solène *collection*",
+        "sub": "Launch plan for Paris and Dubai"
+      },
+      "content": {
+        "title": "Who we are designing for",
+        "metric": {
+          "value": "35–55",
+          "label": "core collector age range"
+        },
+        "points": [
+          "Buy once, keep for decades",
+          "Expect privacy, not promotion",
+          "Visit by appointment"
+        ]
+      },
+      "notes": [
+        "One idea per slide, set in the light display weight.",
+        "Full-bleed stills between sections to slow the pace.",
+        "Charts in Onyx and Greige only. Champagne marks the key value."
+      ]
+    },
+    brand: {
+      "person": {
+        "name": "Camille Roux",
+        "role": "Client Director"
+      },
+      "email": "camille@maisonvelline.example",
+      "applications": [
+        "Packaging: Pearl rigid box, blind-embossed monogram, Champagne grosgrain ribbon",
+        "Stationery: cotton paper, Onyx letterpress, no full-colour printing",
+        "Retail: plaster walls, one spotlight per vitrine",
+        "Signage: brushed brass monogram, never illuminated letters"
+      ],
+      "notes": [
+        "The monogram works alone at small sizes. The full wordmark needs 40mm width or more.",
+        "Print with one or two inks plus blind embossing.",
+        "Touch matters: specify paper weight and finish on every print job."
+      ]
+    },
     tokens: {
-      bg: "#EEEBE6", surface: "#F7F5F1", ink: "#1A1918", muted: "#6E655C", accent: "#B49A6A", accent2: "#1A1918", onAccent: "#F7F5F1", line: "#B5ADA3",
+      bg: "#EEEBE6", surface: "#F7F5F1", ink: "#1A1918", muted: "#6E655C", accent: "#B49A6A", accentText: "#7D6436", accent2: "#1A1918", onAccent: "#1A1918", line: "#B5ADA3",
       fontDisplay: "'Cormorant Garamond', Georgia, serif", fontBody: "'Jost', 'Helvetica Neue', Arial, sans-serif",
       displayWeight: "300", displayCase: "none", displayTracking: "-0.01em", displayStyle: "normal",
       radius: "0px", btnRadius: "0px", borderWidth: "1px", shadow: "none",
@@ -257,8 +327,72 @@ window.AVDL_STYLES = [
     },
     dos: ["Align everything to the grid", "Let numbers carry the message", "Keep one colour accent"],
     donts: ["Centred text blocks", "Decorative illustrations", "More than one font family"],
+    domain: "boa.example",
+    sectors: ["Finance & professional services", "Real estate", "Education & public sector", "Technology & SaaS"],
+    moods: ["Trustworthy", "Minimal", "Technical"],
+    applications: ["Presentations", "Print & editorial", "Websites", "Brand identity", "Advertising"],
+    advertising: {
+      "campaign": "Numbers First",
+      "idea": "Every execution leads with one verified figure from the firm's own research, with the source printed underneath.",
+      "billboard": {
+        "eyebrow": "Brandt Okafor Advisory",
+        "headline": "62% of deals stall at *due diligence*.",
+        "cta": "boa.example/insight-04"
+      },
+      "banner": {
+        "headline": "Market outlook 2027. 36 pages.",
+        "cta": "Download"
+      },
+      "notes": [
+        "Every figure carries its source in mono below it.",
+        "Book airport, business-district and financial-press placements, plus LinkedIn.",
+        "The red square sits in the same corner in every format."
+      ]
+    },
+    presentation: {
+      "cover": {
+        "kicker": "Report 04.2",
+        "title": "Market outlook *2027*",
+        "sub": "Board briefing · sample deck"
+      },
+      "content": {
+        "title": "2.1 Where deals stall",
+        "metric": {
+          "value": "62%",
+          "label": "stall at due diligence"
+        },
+        "points": [
+          "Data room not ready: 41%",
+          "Valuation gap: 33%",
+          "Regulatory review: 26%"
+        ]
+      },
+      "notes": [
+        "Number slides and sections (2.1, 2.2) so the deck can be cited in meetings.",
+        "The slide title states the conclusion, not the topic.",
+        "One red data point per chart."
+      ]
+    },
+    brand: {
+      "person": {
+        "name": "Daniel Okafor",
+        "role": "Managing Partner"
+      },
+      "email": "d.okafor@boa.example",
+      "applications": [
+        "Reports: A4, 12-column grid, mono figure captions",
+        "Signage: black letters on white walls, red square as floor marker",
+        "Email signature: name, title, one red square, no image logos",
+        "Proposal covers: title at 88pt, report number in mono"
+      ],
+      "notes": [
+        "The logo is a word plus the red square. Never redraw it in another colour.",
+        "Templates (Word, PowerPoint) are part of the identity. Ship them with the logo.",
+        "Keep one weight change per document level."
+      ]
+    },
     tokens: {
-      bg: "#FFFFFF", surface: "#F3F3F1", ink: "#111111", muted: "#5C5C5C", accent: "#E2231A", accent2: "#111111", onAccent: "#FFFFFF", line: "#111111",
+      bg: "#FFFFFF", surface: "#F3F3F1", ink: "#111111", muted: "#5C5C5C", accent: "#E2231A", accentText: "#C41E16", accent2: "#111111", onAccent: "#FFFFFF", line: "#111111",
       fontDisplay: "'Instrument Sans', 'Helvetica Neue', Arial, sans-serif", fontBody: "'Instrument Sans', 'Helvetica Neue', Arial, sans-serif",
       displayWeight: "700", displayCase: "none", displayTracking: "-0.03em", displayStyle: "normal",
       radius: "0px", btnRadius: "0px", borderWidth: "1px", shadow: "none",
@@ -386,8 +520,72 @@ window.AVDL_STYLES = [
     },
     dos: ["Commit to thick outlines everywhere", "Use humour in copy", "Let things overlap"],
     donts: ["Soft shadows or blur", "Thin hairline borders", "Muted pastel tints"],
+    domain: "klonk.example",
+    sectors: ["Technology & SaaS", "Media, arts & culture", "Retail & FMCG", "Education & public sector"],
+    moods: ["Bold", "Playful", "Energetic"],
+    applications: ["Social media", "Websites", "Advertising", "Events", "Brand identity"],
+    advertising: {
+      "campaign": "Group Chat Graveyard",
+      "idea": "Turns the everyday pain of files lost in chat threads into exaggerated, outlined evidence stickers.",
+      "billboard": {
+        "eyebrow": "Klonk",
+        "headline": "Your files deserve better than *9 group chats*.",
+        "cta": "klonk.example"
+      },
+      "banner": {
+        "headline": "Plan less. Make more.",
+        "cta": "Try free"
+      },
+      "notes": [
+        "Every sticker in the ads can be printed and handed out at events.",
+        "Wild-posting, campus and co-working sites suit this style better than premium sites.",
+        "Banners move with hard cuts and no easing."
+      ]
+    },
+    presentation: {
+      "cover": {
+        "kicker": "Investor update · Q3",
+        "title": "Klonk is growing *fast*.",
+        "sub": "Sample deck · fictional numbers"
+      },
+      "content": {
+        "title": "What creators told us",
+        "metric": {
+          "value": "9",
+          "label": "chat threads per project, on average"
+        },
+        "points": [
+          "Files get lost",
+          "Feedback lives in screenshots",
+          "Deadlines slip"
+        ]
+      },
+      "notes": [
+        "Every slide is an outlined card on Canvas with a hard shadow.",
+        "A sticker flags the takeaway on each slide.",
+        "Product screens sit in outlined windows."
+      ]
+    },
+    brand: {
+      "person": {
+        "name": "Jo Mbeki",
+        "role": "Co-founder"
+      },
+      "email": "jo@klonk.example",
+      "applications": [
+        "Stickers: die-cut, thick black outline, sold in rotated packs",
+        "Merch: tote bag with one oversized word and a hard shadow",
+        "Office: painted outlined boxes on the walls as wayfinding",
+        "App icon: yellow square, black outline, offset shadow"
+      ],
+      "notes": [
+        "The outline weight scales with size: 3px on screen, 1.5mm in print.",
+        "Fills rotate across products but outlines are always Ink.",
+        "Humour in copy is part of the brand. Keep it kind."
+      ]
+    },
     tokens: {
-      bg: "#FFFDF5", surface: "#FFFFFF", ink: "#0D0D0D", muted: "#3D3D3D", accent: "#FFE14D", accent2: "#FF7AB6", onAccent: "#0D0D0D", line: "#0D0D0D",
+      bg: "#FFFDF5", surface: "#FFFFFF", ink: "#0D0D0D", muted: "#3D3D3D", accent: "#FFE14D", accentText: "#0D0D0D", accent2: "#FF7AB6", onAccent: "#0D0D0D", line: "#0D0D0D",
       fontDisplay: "'Archivo Black', 'Arial Black', Impact, sans-serif", fontBody: "'Archivo', Arial, sans-serif",
       displayWeight: "400", displayCase: "none", displayTracking: "-0.02em", displayStyle: "normal",
       radius: "10px", btnRadius: "10px", borderWidth: "3px", shadow: "6px 6px 0 #0D0D0D",
@@ -514,8 +712,72 @@ window.AVDL_STYLES = [
     },
     dos: ["Use real texture", "Show where things come from", "Round every corner"],
     donts: ["Neon or synthetic colours", "Hard geometric grids", "All-caps headlines"],
+    domain: "fernhollow.example",
+    sectors: ["Beauty & wellness", "Food & beverage", "Hospitality & travel", "Retail & FMCG"],
+    moods: ["Natural", "Calm", "Warm"],
+    applications: ["Packaging", "Social media", "Websites", "Brand identity", "Print & editorial"],
+    advertising: {
+      "campaign": "From Our Fields",
+      "idea": "Each execution names the field an ingredient came from and the month it was harvested.",
+      "billboard": {
+        "eyebrow": "Fernhollow · Field 7",
+        "headline": "Rosehip, picked by hand in *October*.",
+        "cta": "fernhollow.example"
+      },
+      "banner": {
+        "headline": "Refills that skip the plastic.",
+        "cta": "Shop"
+      },
+      "notes": [
+        "Print on uncoated or recycled stock, and say so on the ad.",
+        "Book transit near wellness venues, organic grocers and yoga studios.",
+        "Banner motion is a slow leaf drift or pour, under 8 seconds."
+      ]
+    },
+    presentation: {
+      "cover": {
+        "kicker": "Retail partner deck",
+        "title": "Grown, *not made*.",
+        "sub": "Fernhollow for natural retailers"
+      },
+      "content": {
+        "title": "Why it sells through",
+        "metric": {
+          "value": "80%",
+          "label": "of ingredients from our own fields"
+        },
+        "points": [
+          "Glass, refillable packaging",
+          "Small batches every six weeks",
+          "Story-led shelf display"
+        ]
+      },
+      "notes": [
+        "Rounded image masks on generous Oat backgrounds.",
+        "Ingredient photography between sections.",
+        "Slide titles are sentences, never all caps."
+      ]
+    },
+    brand: {
+      "person": {
+        "name": "Maren Holt",
+        "role": "Head of Retail"
+      },
+      "email": "maren@fernhollow.example",
+      "applications": [
+        "Packaging: amber glass, uncoated label, line-drawn botanical, Clay Rose batch stamp",
+        "Shipping: kraft mailer, stamp-style seal, compostable tape",
+        "Retail: wooden shelf, linen backdrop, hand-lettered price cards",
+        "Market stall: Moss canopy with certification stamps"
+      ],
+      "notes": [
+        "Labels print on uncoated stock, so check colour on the real paper.",
+        "Botanical drawings are single-weight line art, never filled.",
+        "Certification badges follow the issuing body's rules, not the brand palette."
+      ]
+    },
     tokens: {
-      bg: "#E9E4D8", surface: "#F3F0E8", ink: "#3F4F35", muted: "#4A3B30", accent: "#C98F7E", accent2: "#A3B18A", onAccent: "#2C2420", line: "#A3B18A",
+      bg: "#E9E4D8", surface: "#F3F0E8", ink: "#3F4F35", muted: "#4A3B30", accent: "#C98F7E", accentText: "#874B3B", accent2: "#A3B18A", onAccent: "#2C2420", line: "#A3B18A",
       fontDisplay: "'Fraunces', Georgia, serif", fontBody: "'Karla', Helvetica, Arial, sans-serif",
       displayWeight: "400", displayCase: "none", displayTracking: "-0.01em", displayStyle: "normal",
       radius: "24px", btnRadius: "999px", borderWidth: "1px", shadow: "none",
@@ -544,7 +806,7 @@ window.AVDL_STYLES = [
       { name: "Void", hex: "#0A0B14", role: "Primary background", share: 55 },
       { name: "Hull", hex: "#151830", role: "Panels, cards", share: 20 },
       { name: "Frost", hex: "#E6E8F2", role: "Text", share: 12 },
-      { name: "Ion Violet", hex: "#7B61FF", role: "Primary accent, gradients", share: 7 },
+      { name: "Ion Violet", hex: "#6C55F2", role: "Primary accent, gradients", share: 7 },
       { name: "Plasma Cyan", hex: "#2DE2E6", role: "Data highlights, links", share: 4 },
       { name: "Signal Pink", hex: "#FF5CA8", role: "Alerts, gradient end", share: 2 },
     ],
@@ -590,8 +852,8 @@ window.AVDL_STYLES = [
         "Abstract fibre-optic or data-flow imagery as backgrounds.",
       ],
       shots: [
-        { caption: "Engineer lit by monitor glow, low key", tone: ["#2A2560", "#7B61FF", "#0A0B14"] },
-        { caption: "Abstract light trails, long exposure", tone: ["#2DE2E6", "#7B61FF", "#0A0B14"] },
+        { caption: "Engineer lit by monitor glow, low key", tone: ["#2A2560", "#6C55F2", "#0A0B14"] },
+        { caption: "Abstract light trails, long exposure", tone: ["#2DE2E6", "#6C55F2", "#0A0B14"] },
         { caption: "3D glass shape with pink rim light", tone: ["#FF5CA8", "#3B2D8F", "#0A0B14"] },
       ],
       avoid: ["Bright daylight office stock", "Warm colour grades", "Cluttered desk shots"],
@@ -644,11 +906,75 @@ window.AVDL_STYLES = [
     },
     dos: ["Show the real product", "Use glow sparingly as light, not decoration", "Keep text contrast high"],
     donts: ["Gradients on light backgrounds", "Accent-coloured paragraphs", "Generic robot or circuit-board imagery"],
+    domain: "ortelia.example",
+    sectors: ["Technology & SaaS", "Finance & professional services", "Media, arts & culture"],
+    moods: ["Technical", "Bold", "Premium"],
+    applications: ["Websites", "Presentations", "Social media", "Advertising", "Events"],
+    advertising: {
+      "campaign": "Ask Anything",
+      "idea": "The ad is the product: a real business question typed into Ortelia, with the answer appearing beneath it.",
+      "billboard": {
+        "eyebrow": "Ortelia · AI analytics",
+        "headline": "Ask your data *anything*.",
+        "cta": "ortelia.example"
+      },
+      "banner": {
+        "headline": "Forecasts in 3 seconds.",
+        "cta": "Start free"
+      },
+      "notes": [
+        "Prefer digital and illuminated sites: dark creative glows at night.",
+        "Show real UI fragments, never robots or circuit boards.",
+        "Banner loop: the question types, the answer appears, 6 seconds."
+      ]
+    },
+    presentation: {
+      "cover": {
+        "kicker": "Product keynote 2027",
+        "title": "Ask your data *anything*.",
+        "sub": "Ortelia 4.2 launch · sample deck"
+      },
+      "content": {
+        "title": "Why teams switch",
+        "metric": {
+          "value": "3s",
+          "label": "median answer time"
+        },
+        "points": [
+          "200+ native connectors",
+          "Answers cite their source tables",
+          "SOC 2 Type II"
+        ]
+      },
+      "notes": [
+        "Dark slides with one glow field each.",
+        "Gradient text on one keyword per section.",
+        "Live product demos instead of screenshots where possible."
+      ]
+    },
+    brand: {
+      "person": {
+        "name": "Lina Haddad",
+        "role": "Head of Product Marketing"
+      },
+      "email": "lina@ortelia.example",
+      "applications": [
+        "Event stage: LED wall with glow field, glass lecterns",
+        "Swag: matte black notebooks with cyan foil logo",
+        "Office: dark meeting rooms with violet edge lighting",
+        "App icon: violet orb with cyan rim on Void"
+      ],
+      "notes": [
+        "Glows need a dark ground. On white, use the flat Ion Violet logo.",
+        "Foil and LED replace gradients in physical applications.",
+        "Motion is part of the brand: logo assembles from data points in 1.2s."
+      ]
+    },
     tokens: {
-      bg: "#0A0B14", surface: "#151830", ink: "#E6E8F2", muted: "#A3A8C3", accent: "#7B61FF", accent2: "#2DE2E6", onAccent: "#FFFFFF", line: "rgba(230,232,242,0.14)",
+      bg: "#0A0B14", surface: "#151830", ink: "#E6E8F2", muted: "#A3A8C3", accent: "#6C55F2", accentText: "#9C88FF", accent2: "#2DE2E6", onAccent: "#FFFFFF", line: "rgba(230,232,242,0.14)",
       fontDisplay: "'Sora', 'Segoe UI', Arial, sans-serif", fontBody: "'Manrope', 'Segoe UI', Arial, sans-serif",
       displayWeight: "600", displayCase: "none", displayTracking: "-0.03em", displayStyle: "normal",
-      radius: "16px", btnRadius: "10px", borderWidth: "1px", shadow: "0 0 40px rgba(123,97,255,0.35)",
+      radius: "16px", btnRadius: "10px", borderWidth: "1px", shadow: "0 0 40px rgba(108,85,242,0.35)",
     },
   },
 
@@ -771,8 +1097,72 @@ window.AVDL_STYLES = [
     },
     dos: ["Be dramatic with scale", "Use real, specific headlines", "Let images bleed"],
     donts: ["Small, timid headlines", "Rounded corners", "Colourful UI accents"],
+    domain: "themargin.example",
+    sectors: ["Media, arts & culture", "Luxury & fashion", "Education & public sector"],
+    moods: ["Editorial", "Bold", "Premium"],
+    applications: ["Print & editorial", "Social media", "Advertising", "Websites", "Presentations"],
+    advertising: {
+      "campaign": "Have a Point of View",
+      "idea": "Cover lines from the current issue become the ads. Each one is a strong opinion in quotation marks.",
+      "billboard": {
+        "eyebrow": "The Margin · Issue 27",
+        "headline": "“Style is a *decision*.”",
+        "cta": "On newsstands now"
+      },
+      "banner": {
+        "headline": "Six issues. One point of view.",
+        "cta": "Subscribe"
+      },
+      "notes": [
+        "Treat every ad like a cover: masthead, cover line, issue number.",
+        "Book newsstand, metro and cultural-district sites.",
+        "Animated banners turn like pages, two frames at most."
+      ]
+    },
+    presentation: {
+      "cover": {
+        "kicker": "Media kit 2027",
+        "title": "The *slow* issue.",
+        "sub": "Advertising partnerships · sample deck"
+      },
+      "content": {
+        "title": "Who reads The Margin",
+        "metric": {
+          "value": "48 min",
+          "label": "average time spent with each issue"
+        },
+        "points": [
+          "Culture-led professionals, 28–45",
+          "Print and digital editions",
+          "Quarterly events in Dubai and Beirut"
+        ]
+      },
+      "notes": [
+        "Slides look like spreads: kicker, headline, columns.",
+        "Full-bleed portraits open each chapter.",
+        "Use pull quotes at display size instead of bullet lists."
+      ]
+    },
+    brand: {
+      "person": {
+        "name": "Noor Haddad",
+        "role": "Editor-in-Chief"
+      },
+      "email": "noor@themargin.example",
+      "applications": [
+        "Magazine cover: fixed masthead, cover lines change per issue",
+        "Tote bag: masthead in Bodoni, red issue number",
+        "Event invitation: black card, red kicker, serif headline",
+        "Newsletter: single column, drop cap, red kicker"
+      ],
+      "notes": [
+        "The masthead is never recoloured except in Paper on Ink.",
+        "Issue numbers are part of the identity system.",
+        "Photography credits are always printed."
+      ]
+    },
     tokens: {
-      bg: "#FAFAF7", surface: "#F0EEE9", ink: "#0E0E0E", muted: "#4A4A48", accent: "#C8102E", accent2: "#0E0E0E", onAccent: "#FFFFFF", line: "#0E0E0E",
+      bg: "#FAFAF7", surface: "#F0EEE9", ink: "#0E0E0E", muted: "#4A4A48", accent: "#C8102E", accentText: "#C8102E", accent2: "#0E0E0E", onAccent: "#FFFFFF", line: "#0E0E0E",
       fontDisplay: "'Bodoni Moda', Didot, 'Bodoni 72', Georgia, serif", fontBody: "'Libre Franklin', 'Franklin Gothic Medium', Arial, sans-serif",
       displayWeight: "400", displayCase: "none", displayTracking: "-0.02em", displayStyle: "normal",
       radius: "0px", btnRadius: "0px", borderWidth: "1px", shadow: "none",
@@ -900,8 +1290,72 @@ window.AVDL_STYLES = [
     },
     dos: ["Rotate colours", "Use stickers for news", "Show motion and mess"],
     donts: ["Grey or muted palettes", "Sharp corners", "Formal copywriting"],
+    domain: "sprinklelab.example",
+    sectors: ["Food & beverage", "Retail & FMCG", "Hospitality & travel"],
+    moods: ["Playful", "Energetic", "Warm"],
+    applications: ["Social media", "Packaging", "Advertising", "Events", "Brand identity"],
+    advertising: {
+      "campaign": "Dessert First",
+      "idea": "Celebrates eating dessert before dinner, with outsized products and price stickers.",
+      "billboard": {
+        "eyebrow": "Sprinkle Lab",
+        "headline": "Dessert first. *Dinner later.*",
+        "cta": "Order in the app"
+      },
+      "banner": {
+        "headline": "Mango Cloud is here!",
+        "cta": "Order"
+      },
+      "notes": [
+        "Rotate background colours across sites in the same city.",
+        "Book bus sides, food-delivery apps and mall screens.",
+        "Bouncy banner animation with spring easing, three loops at most."
+      ]
+    },
+    presentation: {
+      "cover": {
+        "kicker": "Franchise pitch",
+        "title": "Life's short. *Eat dessert first.*",
+        "sub": "Sprinkle Lab · sample deck"
+      },
+      "content": {
+        "title": "A menu built for sharing",
+        "metric": {
+          "value": "36",
+          "label": "flavours on rotation"
+        },
+        "points": [
+          "Delivery in 20 minutes",
+          "Seasonal drop every month",
+          "Party boxes for 6 to 12"
+        ]
+      },
+      "notes": [
+        "Colour-block slides rotate Coral, Mango and Lagoon.",
+        "Stickers mark new numbers.",
+        "Use product cut-outs, not photos with backgrounds."
+      ]
+    },
+    brand: {
+      "person": {
+        "name": "Rana Saleh",
+        "role": "Founder"
+      },
+      "email": "rana@sprinklelab.example",
+      "applications": [
+        "Cups and boxes: one brand colour per product, sticker seal",
+        "Delivery bag: Coral with Cocoa wordmark and confetti dots",
+        "Store: Mango tiled counter, Grape neon sign",
+        "Loyalty card: rounded corners, punch-out sprinkles"
+      ],
+      "notes": [
+        "Cocoa is the text colour on every fill. White text only on Grape.",
+        "Each product has its own colour, kept across packaging and social.",
+        "Stickers carry news: new, limited, price."
+      ]
+    },
     tokens: {
-      bg: "#FFF6E9", surface: "#FFFFFF", ink: "#2B1B17", muted: "#6B4E44", accent: "#FF5E5B", accent2: "#FFB627", onAccent: "#2B1B17", line: "#2B1B17",
+      bg: "#FFF6E9", surface: "#FFFFFF", ink: "#2B1B17", muted: "#6B4E44", accent: "#FF5E5B", accentText: "#C93A37", accent2: "#FFB627", onAccent: "#2B1B17", line: "#2B1B17",
       fontDisplay: "'Fredoka', 'Arial Rounded MT Bold', Arial, sans-serif", fontBody: "'Nunito', Arial, sans-serif",
       displayWeight: "700", displayCase: "none", displayTracking: "-0.01em", displayStyle: "normal",
       radius: "20px", btnRadius: "999px", borderWidth: "2px", shadow: "0 5px 0 #2B1B17",
@@ -1029,8 +1483,72 @@ window.AVDL_STYLES = [
     },
     dos: ["Design for accessibility first", "Use plain language", "Show real people"],
     donts: ["Medical jargon in headlines", "Low-contrast pastel text", "Fear-based messaging"],
+    domain: "clearpoint.example",
+    sectors: ["Health & medical", "Education & public sector", "Finance & professional services", "Beauty & wellness"],
+    moods: ["Trustworthy", "Calm", "Minimal"],
+    applications: ["Websites", "Social media", "Print & editorial", "Brand identity", "Presentations"],
+    advertising: {
+      "campaign": "Care That Listens",
+      "idea": "Real patient questions answered by named specialists, each with one clear next step.",
+      "billboard": {
+        "eyebrow": "Clearpoint Clinics",
+        "headline": "Same-day appointments. *Six clinics.*",
+        "cta": "Book at clearpoint.example"
+      },
+      "banner": {
+        "headline": "Specialists for every age.",
+        "cta": "Book online"
+      },
+      "notes": [
+        "Plain language and one clear action on every ad.",
+        "Book pharmacy, metro and community sites near the clinics.",
+        "Never use fear. Show recovery and care, not symptoms."
+      ]
+    },
+    presentation: {
+      "cover": {
+        "kicker": "Patient experience review",
+        "title": "Care that *listens*.",
+        "sub": "Board update · sample data"
+      },
+      "content": {
+        "title": "Waiting times this quarter",
+        "metric": {
+          "value": "18 min",
+          "label": "average wait, down from 31"
+        },
+        "points": [
+          "Online booking is now 64% of visits",
+          "Arabic and English on every form",
+          "New paediatric clinic opens in March"
+        ]
+      },
+      "notes": [
+        "White slides with Mist panels to group data.",
+        "Charts in Care Teal with direct labels instead of legends.",
+        "24pt minimum text so the back of the boardroom can read it."
+      ]
+    },
+    brand: {
+      "person": {
+        "name": "Dr. Sara Al-Amin",
+        "role": "Medical Director"
+      },
+      "email": "s.alamin@clearpoint.example",
+      "applications": [
+        "Wayfinding: teal icons in circles, bilingual Arabic and English signs",
+        "Patient forms: 16pt minimum, large tick boxes, plain language",
+        "Uniforms: Mist scrubs with embroidered teal mark",
+        "Appointment SMS and email: plain language, one action"
+      ],
+      "notes": [
+        "Signage meets local accessibility code first; brand second.",
+        "Icons always have a text label.",
+        "Arabic and English get equal size on signs."
+      ]
+    },
     tokens: {
-      bg: "#FFFFFF", surface: "#EEF5F6", ink: "#13293D", muted: "#4A5D6E", accent: "#0F7C80", accent2: "#F4A259", onAccent: "#FFFFFF", line: "#D5E4E6",
+      bg: "#FFFFFF", surface: "#EEF5F6", ink: "#13293D", muted: "#4A5D6E", accent: "#0F7C80", accentText: "#0F7C80", accent2: "#F4A259", onAccent: "#FFFFFF", line: "#D5E4E6",
       fontDisplay: "'Plus Jakarta Sans', 'Segoe UI', Arial, sans-serif", fontBody: "'Plus Jakarta Sans', 'Segoe UI', Arial, sans-serif",
       displayWeight: "700", displayCase: "none", displayTracking: "-0.02em", displayStyle: "normal",
       radius: "12px", btnRadius: "10px", borderWidth: "1px", shadow: "0 6px 20px rgba(19,41,61,0.08)",
@@ -1159,8 +1677,72 @@ window.AVDL_STYLES = [
     },
     dos: ["Design Arabic first", "Use patterns as structure, not wallpaper", "Respect cultural and religious context"],
     donts: ["Faux-Arabic Latin fonts", "Sacred text used as decoration", "Orientalist stereotypes"],
+    domain: "baytalqahwa.example",
+    sectors: ["Hospitality & travel", "Food & beverage", "Media, arts & culture", "Education & public sector", "Real estate"],
+    moods: ["Cultural", "Warm", "Premium"],
+    applications: ["Brand identity", "Packaging", "Social media", "Events", "Advertising"],
+    advertising: {
+      "campaign": "Poured the Old Way",
+      "idea": "A Ramadan campaign built around the ritual of pouring coffee for guests, written in Arabic first.",
+      "billboard": {
+        "eyebrow": "بيت القهوة · Ramadan",
+        "headline": "القهوة كما عرفناها",
+        "cta": "Iftar from 6:12 pm"
+      },
+      "banner": {
+        "headline": "Gather at our table",
+        "cta": "Reserve"
+      },
+      "notes": [
+        "The Arabic headline leads. English sits smaller beneath it.",
+        "Book lantern-lit outdoor sites and malls for Ramadan evenings.",
+        "Check local rules on food and drink advertising during fasting hours."
+      ]
+    },
+    presentation: {
+      "cover": {
+        "kicker": "Ramadan 2027 plan",
+        "title": "بيت القهوة",
+        "sub": "Seasonal campaign · sample deck"
+      },
+      "content": {
+        "title": "The Ramadan evening",
+        "metric": {
+          "value": "4",
+          "label": "houses across Riyadh and Baghdad"
+        },
+        "points": [
+          "Iftar and suhoor menus",
+          "Bilingual social series",
+          "Lantern installation at each house"
+        ]
+      },
+      "notes": [
+        "Arabic-first slides with a right-to-left layout.",
+        "Pattern bands frame section openers.",
+        "Gold for line work only. Text in Sand on Midnight."
+      ]
+    },
+    brand: {
+      "person": {
+        "name": "Yousef Al-Rawi",
+        "role": "General Manager"
+      },
+      "email": "yousef@baytalqahwa.example",
+      "applications": [
+        "Coffee bags: Midnight kraft with gold-foil khatam pattern",
+        "Cups: Sand paper cup, gold arch window, bilingual name",
+        "Shopfront: arched windows, brass bilingual sign",
+        "Ramadan gift box: Turquoise box with gold pattern band"
+      ],
+      "notes": [
+        "The bilingual lockup is the master logo. Arabic alone is allowed; English alone is not.",
+        "Gold prints as foil or a metallic ink, never as a flat yellow.",
+        "Patterns are drawn on a grid, never traced from photos of real buildings."
+      ]
+    },
     tokens: {
-      bg: "#121B33", surface: "#1A2544", ink: "#E8D9BF", muted: "#B9AC94", accent: "#C99A2E", accent2: "#1F8A8A", onAccent: "#121B33", line: "#C99A2E",
+      bg: "#121B33", surface: "#1A2544", ink: "#E8D9BF", muted: "#B9AC94", accent: "#C99A2E", accentText: "#C99A2E", accent2: "#1F8A8A", onAccent: "#121B33", line: "#C99A2E",
       fontDisplay: "'Reem Kufi', 'Noto Kufi Arabic', Tahoma, sans-serif", fontBody: "'IBM Plex Sans Arabic', Tahoma, Arial, sans-serif",
       displayWeight: "700", displayCase: "none", displayTracking: "0", displayStyle: "normal",
       radius: "0px", btnRadius: "0px", borderWidth: "1px", shadow: "none",
@@ -1288,8 +1870,72 @@ window.AVDL_STYLES = [
     },
     dos: ["Imply motion in everything", "Use real stats", "Crop boldly"],
     donts: ["Rounded friendly shapes", "Lowercase headlines", "Calm, centred layouts"],
+    domain: "stridedistrict.example",
+    sectors: ["Sports & fitness", "Retail & FMCG", "Media, arts & culture"],
+    moods: ["Energetic", "Bold"],
+    applications: ["Advertising", "Social media", "Events", "Websites", "Brand identity"],
+    advertising: {
+      "campaign": "Run the City",
+      "idea": "Real routes and distances become headlines, placed on or near the routes themselves.",
+      "billboard": {
+        "eyebrow": "Stride District · Route 07",
+        "headline": "6AM. *10K.* Your city.",
+        "cta": "Join free · stridedistrict.example"
+      },
+      "banner": {
+        "headline": "Faster than yesterday.",
+        "cta": "Shop"
+      },
+      "notes": [
+        "Place ads on running routes: bridges, the corniche, metro exits.",
+        "Motion banners cut on the beat with 150ms transitions.",
+        "Use real stats only. Never invent performance claims."
+      ]
+    },
+    presentation: {
+      "cover": {
+        "kicker": "Sponsor deck 2027",
+        "title": "Run the *city*.",
+        "sub": "Stride District partnerships · sample deck"
+      },
+      "content": {
+        "title": "Who runs with us",
+        "metric": {
+          "value": "3,200",
+          "label": "members running weekly"
+        },
+        "points": [
+          "18 routes across the city",
+          "Sunday crew runs at 6AM",
+          "Night race series, 4 events"
+        ]
+      },
+      "notes": [
+        "Diagonal cuts between slides.",
+        "One huge stat per slide.",
+        "Full-bleed action photography."
+      ]
+    },
+    brand: {
+      "person": {
+        "name": "Omar Khalil",
+        "role": "Head Coach"
+      },
+      "email": "omar@stridedistrict.example",
+      "applications": [
+        "Race bibs: Blaze number block, skewed Anton numerals",
+        "Kit: Asphalt tee with a Blaze diagonal stripe across the chest",
+        "Event arch: angled cut corners and speed stripes",
+        "Water bottles: Chalk with Cobalt stripe and route map"
+      ],
+      "notes": [
+        "The skewed wordmark is the only logo. Never set it upright.",
+        "Blaze and Cobalt never touch.",
+        "Event graphics must stay legible at running speed: 5 words max."
+      ]
+    },
     tokens: {
-      bg: "#121212", surface: "#1E1E1E", ink: "#F7F7F5", muted: "#B8B8B4", accent: "#FF3D00", accent2: "#1F4BFF", onAccent: "#121212", line: "#3A3A3A",
+      bg: "#121212", surface: "#1E1E1E", ink: "#F7F7F5", muted: "#B8B8B4", accent: "#FF3D00", accentText: "#FF3D00", accent2: "#1F4BFF", onAccent: "#121212", line: "#3A3A3A",
       fontDisplay: "'Anton', Impact, 'Arial Narrow', sans-serif", fontBody: "'Barlow', 'Arial Narrow', Arial, sans-serif",
       displayWeight: "400", displayCase: "uppercase", displayTracking: "0.005em", displayStyle: "normal",
       radius: "0px", btnRadius: "0px", borderWidth: "1px", shadow: "none",

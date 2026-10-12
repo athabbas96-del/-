@@ -9,8 +9,10 @@ import vm from "node:vm";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const ctx = { window: {} };
-vm.runInNewContext(readFileSync(join(root, "library/styles-data.js"), "utf8"), ctx);
+vm.createContext(ctx);
+for (const f of ["library/styles-data.js", "library/tokens.js"]) vm.runInContext(readFileSync(join(root, f), "utf8"), ctx);
 const styles = ctx.window.AVDL_STYLES;
+const TOK = ctx.window.AVDL_TOKENS;
 const outDir = join(root, "visual-styles");
 mkdirSync(outDir, { recursive: true });
 
@@ -34,7 +36,11 @@ function styleDoc(s, i) {
     `> ${s.tagline}`,
     "",
     `**Keywords:** ${s.keywords.join(" · ")}  `,
-    `**Sample brand in examples:** ${s.sampleBrand}${s.sampleBrandArabic ? ` (${s.sampleBrandArabic})` : ""}, ${s.sampleBrandType.toLowerCase()} (invented)`,
+    `**Mood:** ${s.moods.join(" · ")}  `,
+    `**Sectors:** ${s.sectors.join(" · ")}  `,
+    `**Strongest applications:** ${s.applications.join(" · ")}`,
+    "",
+    `> **Fictional sample brand.** ${s.sampleBrand}${s.sampleBrandArabic ? ` (${s.sampleBrandArabic})` : ""}, ${s.sampleBrandType.toLowerCase()}, and every person, figure and address in its examples are invented to demonstrate this style. This is not client work. Domains use the reserved \`.example\` TLD.`,
     "",
     "## Concept",
     "",
@@ -125,6 +131,36 @@ function styleDoc(s, i) {
     `- **Actions:** ${w.hero.cta} / ${w.hero.cta2}`,
     `- **Proof row:** ${w.features.map((f) => `${f.title} (${f.text})`).join(" · ")}`,
     "",
+    "## Advertising campaign",
+    "",
+    `**Campaign:** ${s.advertising.campaign}`,
+    "",
+    s.advertising.idea,
+    "",
+    "| Format | Eyebrow | Headline | CTA |",
+    "| --- | --- | --- | --- |",
+    `| Billboard 48-sheet (6096 × 3048 mm) | ${cell(s.advertising.billboard.eyebrow)} | ${cell(s.advertising.billboard.headline)} | ${cell(s.advertising.billboard.cta)} |`,
+    `| Display MPU 300 × 250 and leaderboard 728 × 90 | | ${cell(s.advertising.banner.headline)} | ${cell(s.advertising.banner.cta)} |`,
+    "",
+    bullets(s.advertising.notes),
+    "",
+    "## Presentations",
+    "",
+    `- **Cover slide:** ${s.presentation.cover.kicker} · **${plain(s.presentation.cover.title)}** · ${s.presentation.cover.sub}`,
+    `- **Content slide:** ${s.presentation.content.title}. Key figure **${s.presentation.content.metric.value}** (${s.presentation.content.metric.label}); points: ${s.presentation.content.points.join("; ")}. Figures are sample data.`,
+    "",
+    bullets(s.presentation.notes),
+    "",
+    "## Brand applications",
+    "",
+    `Business card, letterhead and email signature for **${s.brand.person.name}**, ${s.brand.person.role} (\`${s.brand.email}\`, fictional).`,
+    "",
+    "| Application | Specification |",
+    "| --- | --- |",
+    ...s.brand.applications.map((a) => { const k = a.indexOf(":"); return `| ${cell(a.slice(0, k))} | ${cell(a.slice(k + 1).trim())} |`; }),
+    "",
+    bullets(s.brand.notes),
+    "",
     "## Do / Don't",
     "",
     "| Do | Don't |",
@@ -133,11 +169,13 @@ function styleDoc(s, i) {
     "",
     "## Design tokens",
     "",
+    "Text in the accent colour uses `--avdl-accent-text`, which passes WCAG AA (4.5:1) on both `bg` and `surface`.",
+    "",
     "```css",
     tokenBlock(s, `[data-style="${s.id}"]`),
     "```",
     "",
-    `See it rendered: open \`index.html\` and go to **${s.name}** (\`#${s.id}\`).`,
+    `See it rendered: open \`index.html#${s.id}\` in a browser.`,
     "",
   ]
     .filter((l) => l !== null)
@@ -145,16 +183,7 @@ function styleDoc(s, i) {
 }
 
 function tokenBlock(s, selector) {
-  const t = s.tokens;
-  const map = {
-    bg: t.bg, surface: t.surface, ink: t.ink, muted: t.muted, accent: t.accent, "accent-2": t.accent2,
-    "on-accent": t.onAccent, line: t.line, "font-display": t.fontDisplay, "font-body": t.fontBody,
-    "display-weight": t.displayWeight, "display-case": t.displayCase, "display-tracking": t.displayTracking,
-    radius: t.radius, "button-radius": t.btnRadius, "border-width": t.borderWidth, shadow: t.shadow,
-  };
-  const lines = Object.entries(map).map(([k, v]) => `  --avdl-${k}: ${v};`);
-  const pal = s.palette.map((c) => `  --avdl-color-${c.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}: ${c.hex};`);
-  return `${selector} {\n${lines.join("\n")}\n${pal.join("\n")}\n}`;
+  return TOK.css(s, selector);
 }
 
 styles.forEach((s, i) => writeFileSync(join(outDir, `${slug(s, i)}.md`), styleDoc(s, i)));
@@ -163,6 +192,11 @@ writeFileSync(
   join(outDir, "tokens.css"),
   `/* ${GENERATED.slice(5, -4)} */\n/* Usage: <div data-style="quiet-luxury"> … uses var(--avdl-accent) … */\n\n` +
     styles.map((s) => tokenBlock(s, `[data-style="${s.id}"]`)).join("\n\n") + "\n",
+);
+
+writeFileSync(
+  join(outDir, "tokens.json"),
+  JSON.stringify(Object.fromEntries(styles.map((s) => [s.id, JSON.parse(TOK.json(s))])), null, 2) + "\n",
 );
 
 const index = [
@@ -176,9 +210,12 @@ const index = [
   "| --- | --- | --- | --- |",
   ...styles.map((s, i) => `| ${pad(i + 1)} | [${s.name}](./${slug(s, i)}.md) | ${s.tagline} | ${s.industries.slice(0, 3).join(", ")} |`),
   "",
-  "`tokens.css` holds every style's tokens as CSS custom properties, scoped by `[data-style=\"…\"]`.",
+  "- `tokens.css`: every style's tokens as CSS custom properties, scoped by `[data-style=\"…\"]`.",
+  "- `tokens.json`: the same tokens in the W3C Design Tokens format, keyed by style ID.",
+  "",
+  "All sample brands in these files are fictional and exist only to demonstrate the styles.",
   "",
 ].join("\n");
 writeFileSync(join(outDir, "README.md"), index);
 
-console.log(`Wrote ${styles.length} style docs, README.md and tokens.css to ${outDir}`);
+console.log(`Wrote ${styles.length} style docs, README.md, tokens.css and tokens.json to ${outDir}`);

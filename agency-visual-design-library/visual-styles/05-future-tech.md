@@ -5,7 +5,11 @@
 > Light from a dark screen.
 
 **Keywords:** Intelligent · Fast · Precise · Immersive · Ambitious  
-**Sample brand in examples:** Ortelia, ai analytics platform (invented)
+**Mood:** Technical · Bold · Premium  
+**Sectors:** Technology & SaaS · Finance & professional services · Media, arts & culture  
+**Strongest applications:** Websites · Presentations · Social media · Advertising · Events
+
+> **Fictional sample brand.** Ortelia, ai analytics platform, and every person, figure and address in its examples are invented to demonstrate this style. This is not client work. Domains use the reserved `.example` TLD.
 
 ## Concept
 
@@ -27,7 +31,7 @@ Future Tech is built on a deep dark base with glowing accents, layered glass pan
 | Void | `#0A0B14` | Primary background | 55% |
 | Hull | `#151830` | Panels, cards | 20% |
 | Frost | `#E6E8F2` | Text | 12% |
-| Ion Violet | `#7B61FF` | Primary accent, gradients | 7% |
+| Ion Violet | `#6C55F2` | Primary accent, gradients | 7% |
 | Plasma Cyan | `#2DE2E6` | Data highlights, links | 4% |
 | Signal Pink | `#FF5CA8` | Alerts, gradient end | 2% |
 
@@ -80,8 +84,8 @@ Minimal photography. Product UI, 3D renders and abstract light.
 
 **Sample shot list**
 
-1. Engineer lit by monitor glow, low key (grade: `#2A2560` → `#7B61FF` → `#0A0B14`)
-2. Abstract light trails, long exposure (grade: `#2DE2E6` → `#7B61FF` → `#0A0B14`)
+1. Engineer lit by monitor glow, low key (grade: `#2A2560` → `#6C55F2` → `#0A0B14`)
+2. Abstract light trails, long exposure (grade: `#2DE2E6` → `#6C55F2` → `#0A0B14`)
 3. 3D glass shape with pink rim light (grade: `#FF5CA8` → `#3B2D8F` → `#0A0B14`)
 
 **Avoid**
@@ -135,6 +139,45 @@ Minimal photography. Product UI, 3D renders and abstract light.
 - **Actions:** Start free trial / Watch demo
 - **Proof row:** 3s (Median answer time) · 200+ (Native data connectors) · SOC 2 (Type II certified)
 
+## Advertising campaign
+
+**Campaign:** Ask Anything
+
+The ad is the product: a real business question typed into Ortelia, with the answer appearing beneath it.
+
+| Format | Eyebrow | Headline | CTA |
+| --- | --- | --- | --- |
+| Billboard 48-sheet (6096 × 3048 mm) | Ortelia · AI analytics | Ask your data anything. | ortelia.example |
+| Display MPU 300 × 250 and leaderboard 728 × 90 | | Forecasts in 3 seconds. | Start free |
+
+- Prefer digital and illuminated sites: dark creative glows at night.
+- Show real UI fragments, never robots or circuit boards.
+- Banner loop: the question types, the answer appears, 6 seconds.
+
+## Presentations
+
+- **Cover slide:** Product keynote 2027 · **Ask your data anything.** · Ortelia 4.2 launch · sample deck
+- **Content slide:** Why teams switch. Key figure **3s** (median answer time); points: 200+ native connectors; Answers cite their source tables; SOC 2 Type II. Figures are sample data.
+
+- Dark slides with one glow field each.
+- Gradient text on one keyword per section.
+- Live product demos instead of screenshots where possible.
+
+## Brand applications
+
+Business card, letterhead and email signature for **Lina Haddad**, Head of Product Marketing (`lina@ortelia.example`, fictional).
+
+| Application | Specification |
+| --- | --- |
+| Event stage | LED wall with glow field, glass lecterns |
+| Swag | matte black notebooks with cyan foil logo |
+| Office | dark meeting rooms with violet edge lighting |
+| App icon | violet orb with cyan rim on Void |
+
+- Glows need a dark ground. On white, use the flat Ion Violet logo.
+- Foil and LED replace gradients in physical applications.
+- Motion is part of the brand: logo assembles from data points in 1.2s.
+
 ## Do / Don't
 
 | Do | Don't |
@@ -145,13 +188,16 @@ Minimal photography. Product UI, 3D renders and abstract light.
 
 ## Design tokens
 
+Text in the accent colour uses `--avdl-accent-text`, which passes WCAG AA (4.5:1) on both `bg` and `surface`.
+
 ```css
 [data-style="future-tech"] {
   --avdl-bg: #0A0B14;
   --avdl-surface: #151830;
   --avdl-ink: #E6E8F2;
   --avdl-muted: #A3A8C3;
-  --avdl-accent: #7B61FF;
+  --avdl-accent: #6C55F2;
+  --avdl-accent-text: #9C88FF;
   --avdl-accent-2: #2DE2E6;
   --avdl-on-accent: #FFFFFF;
   --avdl-line: rgba(230,232,242,0.14);
@@ -163,14 +209,14 @@ Minimal photography. Product UI, 3D renders and abstract light.
   --avdl-radius: 16px;
   --avdl-button-radius: 10px;
   --avdl-border-width: 1px;
-  --avdl-shadow: 0 0 40px rgba(123,97,255,0.35);
+  --avdl-shadow: 0 0 40px rgba(108,85,242,0.35);
   --avdl-color-void: #0A0B14;
   --avdl-color-hull: #151830;
   --avdl-color-frost: #E6E8F2;
-  --avdl-color-ion-violet: #7B61FF;
+  --avdl-color-ion-violet: #6C55F2;
   --avdl-color-plasma-cyan: #2DE2E6;
   --avdl-color-signal-pink: #FF5CA8;
 }
 ```
 
-See it rendered: open `index.html` and go to **Future Tech** (`#future-tech`).
+See it rendered: open `index.html#future-tech` in a browser.

@@ -5,7 +5,11 @@
 > Tradition, drawn with a modern hand.
 
 **Keywords:** Rooted · Generous · Crafted · Proud · Hospitable  
-**Sample brand in examples:** Bayt Al Qahwa (بيت القهوة), specialty coffee house (invented)
+**Mood:** Cultural · Warm · Premium  
+**Sectors:** Hospitality & travel · Food & beverage · Media, arts & culture · Education & public sector · Real estate  
+**Strongest applications:** Brand identity · Packaging · Social media · Events · Advertising
+
+> **Fictional sample brand.** Bayt Al Qahwa (بيت القهوة), specialty coffee house, and every person, figure and address in its examples are invented to demonstrate this style. This is not client work. Domains use the reserved `.example` TLD.
 
 ## Concept
 
@@ -134,6 +138,45 @@ Warm, rich interiors and rituals of hospitality with deep shadows.
 - **Actions:** احجز طاولة / Our story
 - **Proof row:** ١٩٨٤ (Family recipes since 1984) · 4 (Houses in Riyadh and Baghdad) · 12 (Single-origin beans)
 
+## Advertising campaign
+
+**Campaign:** Poured the Old Way
+
+A Ramadan campaign built around the ritual of pouring coffee for guests, written in Arabic first.
+
+| Format | Eyebrow | Headline | CTA |
+| --- | --- | --- | --- |
+| Billboard 48-sheet (6096 × 3048 mm) | بيت القهوة · Ramadan | القهوة كما عرفناها | Iftar from 6:12 pm |
+| Display MPU 300 × 250 and leaderboard 728 × 90 | | Gather at our table | Reserve |
+
+- The Arabic headline leads. English sits smaller beneath it.
+- Book lantern-lit outdoor sites and malls for Ramadan evenings.
+- Check local rules on food and drink advertising during fasting hours.
+
+## Presentations
+
+- **Cover slide:** Ramadan 2027 plan · **بيت القهوة** · Seasonal campaign · sample deck
+- **Content slide:** The Ramadan evening. Key figure **4** (houses across Riyadh and Baghdad); points: Iftar and suhoor menus; Bilingual social series; Lantern installation at each house. Figures are sample data.
+
+- Arabic-first slides with a right-to-left layout.
+- Pattern bands frame section openers.
+- Gold for line work only. Text in Sand on Midnight.
+
+## Brand applications
+
+Business card, letterhead and email signature for **Yousef Al-Rawi**, General Manager (`yousef@baytalqahwa.example`, fictional).
+
+| Application | Specification |
+| --- | --- |
+| Coffee bags | Midnight kraft with gold-foil khatam pattern |
+| Cups | Sand paper cup, gold arch window, bilingual name |
+| Shopfront | arched windows, brass bilingual sign |
+| Ramadan gift box | Turquoise box with gold pattern band |
+
+- The bilingual lockup is the master logo. Arabic alone is allowed; English alone is not.
+- Gold prints as foil or a metallic ink, never as a flat yellow.
+- Patterns are drawn on a grid, never traced from photos of real buildings.
+
 ## Do / Don't
 
 | Do | Don't |
@@ -144,6 +187,8 @@ Warm, rich interiors and rituals of hospitality with deep shadows.
 
 ## Design tokens
 
+Text in the accent colour uses `--avdl-accent-text`, which passes WCAG AA (4.5:1) on both `bg` and `surface`.
+
 ```css
 [data-style="modern-heritage"] {
   --avdl-bg: #121B33;
@@ -151,6 +196,7 @@ Warm, rich interiors and rituals of hospitality with deep shadows.
   --avdl-ink: #E8D9BF;
   --avdl-muted: #B9AC94;
   --avdl-accent: #C99A2E;
+  --avdl-accent-text: #C99A2E;
   --avdl-accent-2: #1F8A8A;
   --avdl-on-accent: #121B33;
   --avdl-line: #C99A2E;
@@ -171,4 +217,4 @@ Warm, rich interiors and rituals of hospitality with deep shadows.
 }
 ```
 
-See it rendered: open `index.html` and go to **Modern Heritage** (`#modern-heritage`).
+See it rendered: open `index.html#modern-heritage` in a browser.

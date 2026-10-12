@@ -5,7 +5,11 @@
 > Restraint as the signal of value.
 
 **Keywords:** Understated · Timeless · Considered · Tactile · Calm  
-**Sample brand in examples:** Maison Velline, fine jewelry house (invented)
+**Mood:** Premium · Calm · Minimal  
+**Sectors:** Luxury & fashion · Real estate · Hospitality & travel · Beauty & wellness · Finance & professional services  
+**Strongest applications:** Brand identity · Print & editorial · Websites · Packaging · Social media
+
+> **Fictional sample brand.** Maison Velline, fine jewelry house, and every person, figure and address in its examples are invented to demonstrate this style. This is not client work. Domains use the reserved `.example` TLD.
 
 ## Concept
 
@@ -133,6 +137,45 @@ Still-life and slow portraiture with soft daylight, tonal backgrounds and room t
 - **Actions:** Explore the collection / Our atelier
 - **Proof row:** Made to order (Every piece is made for one client.) · Lifetime care (Free polishing and resizing, forever.) · Private viewings (By appointment in Paris and Dubai.)
 
+## Advertising campaign
+
+**Campaign:** Made to Be Kept
+
+Each execution isolates one piece on stone with a single line about permanence. The scarcity of words is the message.
+
+| Format | Eyebrow | Headline | CTA |
+| --- | --- | --- | --- |
+| Billboard 48-sheet (6096 × 3048 mm) | Maison Velline · Paris | Made to be kept. | maisonvelline.example |
+| Display MPU 300 × 250 and leaderboard 728 × 90 | | Private viewings, by appointment. | Book |
+
+- Billboards carry one image and five words at most.
+- Book premium districts, airports and hotel lobbies. Avoid cluttered roadside sites.
+- Digital banners use the same still with a slow 6-second zoom and no other animation.
+
+## Presentations
+
+- **Cover slide:** Brand presentation · 2027 · **The Solène collection** · Launch plan for Paris and Dubai
+- **Content slide:** Who we are designing for. Key figure **35–55** (core collector age range); points: Buy once, keep for decades; Expect privacy, not promotion; Visit by appointment. Figures are sample data.
+
+- One idea per slide, set in the light display weight.
+- Full-bleed stills between sections to slow the pace.
+- Charts in Onyx and Greige only. Champagne marks the key value.
+
+## Brand applications
+
+Business card, letterhead and email signature for **Camille Roux**, Client Director (`camille@maisonvelline.example`, fictional).
+
+| Application | Specification |
+| --- | --- |
+| Packaging | Pearl rigid box, blind-embossed monogram, Champagne grosgrain ribbon |
+| Stationery | cotton paper, Onyx letterpress, no full-colour printing |
+| Retail | plaster walls, one spotlight per vitrine |
+| Signage | brushed brass monogram, never illuminated letters |
+
+- The monogram works alone at small sizes. The full wordmark needs 40mm width or more.
+- Print with one or two inks plus blind embossing.
+- Touch matters: specify paper weight and finish on every print job.
+
 ## Do / Don't
 
 | Do | Don't |
@@ -143,6 +186,8 @@ Still-life and slow portraiture with soft daylight, tonal backgrounds and room t
 
 ## Design tokens
 
+Text in the accent colour uses `--avdl-accent-text`, which passes WCAG AA (4.5:1) on both `bg` and `surface`.
+
 ```css
 [data-style="quiet-luxury"] {
   --avdl-bg: #EEEBE6;
@@ -150,8 +195,9 @@ Still-life and slow portraiture with soft daylight, tonal backgrounds and room t
   --avdl-ink: #1A1918;
   --avdl-muted: #6E655C;
   --avdl-accent: #B49A6A;
+  --avdl-accent-text: #7D6436;
   --avdl-accent-2: #1A1918;
-  --avdl-on-accent: #F7F5F1;
+  --avdl-on-accent: #1A1918;
   --avdl-line: #B5ADA3;
   --avdl-font-display: 'Cormorant Garamond', Georgia, serif;
   --avdl-font-body: 'Jost', 'Helvetica Neue', Arial, sans-serif;
@@ -170,4 +216,4 @@ Still-life and slow portraiture with soft daylight, tonal backgrounds and room t
 }
 ```
 
-See it rendered: open `index.html` and go to **Quiet Luxury** (`#quiet-luxury`).
+See it rendered: open `index.html#quiet-luxury` in a browser.

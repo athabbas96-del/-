@@ -5,7 +5,11 @@
 > Clarity built on a visible grid.
 
 **Keywords:** Objective · Rational · Structured · Confident · Direct  
-**Sample brand in examples:** Brandt Okafor Advisory, strategy and finance consultancy (invented)
+**Mood:** Trustworthy · Minimal · Technical  
+**Sectors:** Finance & professional services · Real estate · Education & public sector · Technology & SaaS  
+**Strongest applications:** Presentations · Print & editorial · Websites · Brand identity · Advertising
+
+> **Fictional sample brand.** Brandt Okafor Advisory, strategy and finance consultancy, and every person, figure and address in its examples are invented to demonstrate this style. This is not client work. Domains use the reserved `.example` TLD.
 
 ## Concept
 
@@ -134,6 +138,45 @@ Documentary architecture and people at work, cropped hard to the grid.
 - **Actions:** Request a proposal / Our insights
 - **Proof row:** 120+ (Transactions advised since 2011) · 14 (Markets across Europe and the Gulf) · 4.1bn (Deal value under advisory in 2026)
 
+## Advertising campaign
+
+**Campaign:** Numbers First
+
+Every execution leads with one verified figure from the firm's own research, with the source printed underneath.
+
+| Format | Eyebrow | Headline | CTA |
+| --- | --- | --- | --- |
+| Billboard 48-sheet (6096 × 3048 mm) | Brandt Okafor Advisory | 62% of deals stall at due diligence. | boa.example/insight-04 |
+| Display MPU 300 × 250 and leaderboard 728 × 90 | | Market outlook 2027. 36 pages. | Download |
+
+- Every figure carries its source in mono below it.
+- Book airport, business-district and financial-press placements, plus LinkedIn.
+- The red square sits in the same corner in every format.
+
+## Presentations
+
+- **Cover slide:** Report 04.2 · **Market outlook 2027** · Board briefing · sample deck
+- **Content slide:** 2.1 Where deals stall. Key figure **62%** (stall at due diligence); points: Data room not ready: 41%; Valuation gap: 33%; Regulatory review: 26%. Figures are sample data.
+
+- Number slides and sections (2.1, 2.2) so the deck can be cited in meetings.
+- The slide title states the conclusion, not the topic.
+- One red data point per chart.
+
+## Brand applications
+
+Business card, letterhead and email signature for **Daniel Okafor**, Managing Partner (`d.okafor@boa.example`, fictional).
+
+| Application | Specification |
+| --- | --- |
+| Reports | A4, 12-column grid, mono figure captions |
+| Signage | black letters on white walls, red square as floor marker |
+| Email signature | name, title, one red square, no image logos |
+| Proposal covers | title at 88pt, report number in mono |
+
+- The logo is a word plus the red square. Never redraw it in another colour.
+- Templates (Word, PowerPoint) are part of the identity. Ship them with the logo.
+- Keep one weight change per document level.
+
 ## Do / Don't
 
 | Do | Don't |
@@ -144,6 +187,8 @@ Documentary architecture and people at work, cropped hard to the grid.
 
 ## Design tokens
 
+Text in the accent colour uses `--avdl-accent-text`, which passes WCAG AA (4.5:1) on both `bg` and `surface`.
+
 ```css
 [data-style="swiss-precision"] {
   --avdl-bg: #FFFFFF;
@@ -151,6 +196,7 @@ Documentary architecture and people at work, cropped hard to the grid.
   --avdl-ink: #111111;
   --avdl-muted: #5C5C5C;
   --avdl-accent: #E2231A;
+  --avdl-accent-text: #C41E16;
   --avdl-accent-2: #111111;
   --avdl-on-accent: #FFFFFF;
   --avdl-line: #111111;
@@ -171,4 +217,4 @@ Documentary architecture and people at work, cropped hard to the grid.
 }
 ```
 
-See it rendered: open `index.html` and go to **Swiss Precision** (`#swiss-precision`).
+See it rendered: open `index.html#swiss-precision` in a browser.

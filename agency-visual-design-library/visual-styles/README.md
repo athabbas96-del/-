@@ -17,4 +17,7 @@ Ten visual directions. Each file covers concept, target industries, palette, typ
 | 09 | [Modern Heritage](./09-modern-heritage.md) | Tradition, drawn with a modern hand. | Hospitality, cafés and restaurants, Ramadan and Eid campaigns, Cultural institutions and heritage tourism |
 | 10 | [Kinetic Sport](./10-kinetic-sport.md) | Built to move. | Sportswear and sneakers, Gyms, fitness studios and clubs, Energy and sports drinks |
 
-`tokens.css` holds every style's tokens as CSS custom properties, scoped by `[data-style="…"]`.
+- `tokens.css`: every style's tokens as CSS custom properties, scoped by `[data-style="…"]`.
+- `tokens.json`: the same tokens in the W3C Design Tokens format, keyed by style ID.
+
+All sample brands in these files are fictional and exist only to demonstrate the styles.

@@ -5,7 +5,11 @@
 > Built to move.
 
 **Keywords:** Fast · Powerful · Gritty · Competitive · Urban  
-**Sample brand in examples:** Stride District, running club and athletic wear (invented)
+**Mood:** Energetic · Bold  
+**Sectors:** Sports & fitness · Retail & FMCG · Media, arts & culture  
+**Strongest applications:** Advertising · Social media · Events · Websites · Brand identity
+
+> **Fictional sample brand.** Stride District, running club and athletic wear, and every person, figure and address in its examples are invented to demonstrate this style. This is not client work. Domains use the reserved `.example` TLD.
 
 ## Concept
 
@@ -134,6 +138,45 @@ Athletes in motion, gritty urban settings, hard light and grain.
 - **Actions:** Join the club / Shop the kit
 - **Proof row:** 3,200 (Members running weekly) · 18 (Routes across the city) · 6AM (Every Sunday, all paces)
 
+## Advertising campaign
+
+**Campaign:** Run the City
+
+Real routes and distances become headlines, placed on or near the routes themselves.
+
+| Format | Eyebrow | Headline | CTA |
+| --- | --- | --- | --- |
+| Billboard 48-sheet (6096 × 3048 mm) | Stride District · Route 07 | 6AM. 10K. Your city. | Join free · stridedistrict.example |
+| Display MPU 300 × 250 and leaderboard 728 × 90 | | Faster than yesterday. | Shop |
+
+- Place ads on running routes: bridges, the corniche, metro exits.
+- Motion banners cut on the beat with 150ms transitions.
+- Use real stats only. Never invent performance claims.
+
+## Presentations
+
+- **Cover slide:** Sponsor deck 2027 · **Run the city.** · Stride District partnerships · sample deck
+- **Content slide:** Who runs with us. Key figure **3,200** (members running weekly); points: 18 routes across the city; Sunday crew runs at 6AM; Night race series, 4 events. Figures are sample data.
+
+- Diagonal cuts between slides.
+- One huge stat per slide.
+- Full-bleed action photography.
+
+## Brand applications
+
+Business card, letterhead and email signature for **Omar Khalil**, Head Coach (`omar@stridedistrict.example`, fictional).
+
+| Application | Specification |
+| --- | --- |
+| Race bibs | Blaze number block, skewed Anton numerals |
+| Kit | Asphalt tee with a Blaze diagonal stripe across the chest |
+| Event arch | angled cut corners and speed stripes |
+| Water bottles | Chalk with Cobalt stripe and route map |
+
+- The skewed wordmark is the only logo. Never set it upright.
+- Blaze and Cobalt never touch.
+- Event graphics must stay legible at running speed: 5 words max.
+
 ## Do / Don't
 
 | Do | Don't |
@@ -144,6 +187,8 @@ Athletes in motion, gritty urban settings, hard light and grain.
 
 ## Design tokens
 
+Text in the accent colour uses `--avdl-accent-text`, which passes WCAG AA (4.5:1) on both `bg` and `surface`.
+
 ```css
 [data-style="kinetic-sport"] {
   --avdl-bg: #121212;
@@ -151,6 +196,7 @@ Athletes in motion, gritty urban settings, hard light and grain.
   --avdl-ink: #F7F7F5;
   --avdl-muted: #B8B8B4;
   --avdl-accent: #FF3D00;
+  --avdl-accent-text: #FF3D00;
   --avdl-accent-2: #1F4BFF;
   --avdl-on-accent: #121212;
   --avdl-line: #3A3A3A;
@@ -171,4 +217,4 @@ Athletes in motion, gritty urban settings, hard light and grain.
 }
 ```
 
-See it rendered: open `index.html` and go to **Kinetic Sport** (`#kinetic-sport`).
+See it rendered: open `index.html#kinetic-sport` in a browser.
