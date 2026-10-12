@@ -266,10 +266,15 @@
     var leader =
       '<figure class="fr-wrap">' + sp(s, "leader", '<span class="leader-logo">' + brandMark(s) + '</span><span class="d leader-head">' + rich(a.banner.headline) + '</span><span class="btn">' + esc(a.banner.cta) + "</span>") +
       "<figcaption>Display · Leaderboard 728 × 90</figcaption></figure>";
+    var mobile =
+      '<figure class="fr-wrap">' + sp(s, "leader mob", '<span class="d leader-head">' + rich(a.banner.headline) + '</span><span class="btn">' + esc(a.banner.cta) + "</span>") +
+      "<figcaption>Display · Mobile 320 × 50</figcaption></figure>";
     return (
       '<div class="campaign"><p class="campaign-name"><span>Campaign</span> ' + esc(a.campaign) + "</p>" +
       '<p class="campaign-idea">' + esc(a.idea) + "</p></div>" +
-      '<div class="ad-board">' + billboard + mpu + leader + "</div>"
+      '<div class="ad-board">' + billboard + "</div>" +
+      '<p class="hint">Display units below are shown at their real pixel sizes relative to each other.</p>' +
+      '<div class="display-units">' + leader.replace('fr-wrap"', 'fr-wrap u-728"') + mpu.replace('fr-wrap"', 'fr-wrap u-300"') + mobile.replace('fr-wrap"', 'fr-wrap u-320"') + "</div>"
     );
   }
 

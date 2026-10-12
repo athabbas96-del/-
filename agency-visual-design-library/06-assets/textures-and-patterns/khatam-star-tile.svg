@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="#C99A2E" stroke-width="1">
+  <!-- Modern Heritage: eight-point star (khatam) tile. Repeats seamlessly at 48px. -->
+  <rect x="12" y="12" width="24" height="24"/>
+  <rect x="12" y="12" width="24" height="24" transform="rotate(45 24 24)"/>
+  <circle cx="24" cy="24" r="4"/>
+  <path d="M0 0L6 6M48 0L42 6M0 48L6 42M48 48L42 42"/>
+</svg>

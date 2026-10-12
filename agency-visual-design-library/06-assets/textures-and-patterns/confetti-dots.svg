@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240">
+  <!-- Playful Pop: confetti dots on Vanilla. Tiles at 240px. -->
+  <rect width="240" height="240" fill="#FFF6E9"/>
+  <circle cx="28" cy="40" r="7" fill="#FF5E5B"/>
+  <circle cx="200" cy="30" r="9" fill="#00B2CA"/>
+  <circle cx="180" cy="190" r="7" fill="#6B4EFF"/>
+  <circle cx="70" cy="210" r="10" fill="#FFB627"/>
+  <circle cx="130" cy="24" r="6" fill="#FFB627"/>
+  <circle cx="226" cy="120" r="6" fill="#FF5E5B"/>
+  <circle cx="110" cy="120" r="5" fill="#00B2CA"/>
+</svg>

@@ -1,107 +1,150 @@
 # Agency Visual Design Library
 
-A professional visual reference library for the agency. It is **not an
-application**: nothing to install or build to view it. It is a structured set of
-documented design decisions, specs and examples that designers, strategists and
-account teams use when producing work for clients.
+A professional visual reference library for the agency: ten complete visual
+styles, the design foundations behind them, and guides for every discipline the
+agency delivers (brand identity, social media, websites, advertising and
+presentations).
 
-## Start here
+It is **not an application**. Viewing it needs only a browser; maintaining it
+needs Node.js for two small scripts.
 
-Open **`index.html`** in a browser. It is the visual library: ten styles, each
-with its palette, type specimen, photography direction, graphic elements and
-worked UI, social and website examples. You can filter it by industry.
+> **Sample work only.** Every brand, person, address, figure and domain in the
+> examples (Maison Velline, Klonk, Bayt Al Qahwa and the rest) is invented to
+> demonstrate the styles and is labelled "Fictional sample brand" wherever it
+> appears. Nothing in this folder is client work. Domains use the reserved
+> `.example` TLD.
 
-The same content is available as Markdown in [`visual-styles/`](./visual-styles/README.md),
-with CSS tokens for every style in `visual-styles/tokens.css`.
+## Preview the library
+
+**Option 1: open the file.** Open `agency-visual-design-library/index.html`
+in any current browser (double-click it, or drag it into a browser window).
+No server or build is needed. Fonts load from Google Fonts, so you need an
+internet connection for the intended typefaces; without one the page still
+works with fallback fonts.
+
+**Option 2: serve it locally** (useful if your browser restricts `file://`
+pages):
+
+```bash
+# from the repository root
+npx serve agency-visual-design-library     # or: python3 -m http.server -d agency-visual-design-library 8080
+```
+
+Then open the address it prints (for example http://localhost:3000 or
+http://localhost:8080).
+
+### Using it
+
+| Page | Address | What you can do |
+| --- | --- | --- |
+| Catalogue | `index.html` | Search; filter by **Industry**, **Visual mood** and **Application** (several chips in one group = any of them; chips in different groups = all of them) |
+| Style page | `index.html#quiet-luxury` (any style ID) | Full spec, copyable palette and tokens (CSS, W3C JSON, Tailwind), and worked examples for social, advertising, presentations, website and UI, and brand applications |
+| Token reference | `index.html#tokens` | Compare all ten styles' colour tokens and type pairings; copy any value or a whole style |
+
+Select any hex value or **Copy** button to copy it to the clipboard. If the
+browser blocks clipboard access, the value is selected so you can copy it
+manually.
 
 ## The ten styles
 
-| # | Style | Best for |
-| --- | --- | --- |
-| 01 | Quiet Luxury | Jewelry, fashion, premium real estate, boutique hotels |
-| 02 | Swiss Precision | Consulting, B2B finance, law, annual reports |
-| 03 | Neo-Brutalism | Startups, creator tools, youth brands, events |
-| 04 | Organic Earth | Natural skincare, organic food, wellness, eco brands |
-| 05 | Future Tech | SaaS, AI, fintech, cybersecurity |
-| 06 | Bold Editorial | Media, fashion campaigns, culture, personal brands |
-| 07 | Playful Pop | Desserts, FMCG, kids, delivery apps |
-| 08 | Clinical Clarity | Healthcare, pharma, insurance, education, public services |
-| 09 | Modern Heritage | Arab hospitality, Ramadan campaigns, culture, government |
-| 10 | Kinetic Sport | Sportswear, gyms, sports events, energy drinks |
+| # | Style | Mood | Best for |
+| --- | --- | --- | --- |
+| 01 | [Quiet Luxury](./visual-styles/01-quiet-luxury.md) | Premium, calm, minimal | Jewelry, fashion, premium real estate, boutique hotels |
+| 02 | [Swiss Precision](./visual-styles/02-swiss-precision.md) | Trustworthy, minimal, technical | Consulting, B2B finance, law, annual reports |
+| 03 | [Neo-Brutalism](./visual-styles/03-neo-brutalism.md) | Bold, playful, energetic | Startups, creator tools, youth brands, events |
+| 04 | [Organic Earth](./visual-styles/04-organic-earth.md) | Natural, calm, warm | Natural skincare, organic food, wellness |
+| 05 | [Future Tech](./visual-styles/05-future-tech.md) | Technical, bold, premium | SaaS, AI, fintech, cybersecurity |
+| 06 | [Bold Editorial](./visual-styles/06-bold-editorial.md) | Editorial, bold, premium | Media, fashion campaigns, culture |
+| 07 | [Playful Pop](./visual-styles/07-playful-pop.md) | Playful, energetic, warm | Desserts, FMCG, delivery apps |
+| 08 | [Clinical Clarity](./visual-styles/08-clinical-clarity.md) | Trustworthy, calm, minimal | Healthcare, insurance, education, public services |
+| 09 | [Modern Heritage](./visual-styles/09-modern-heritage.md) | Cultural, warm, premium | Arab hospitality, Ramadan campaigns, culture (Arabic-first, RTL) |
+| 10 | [Kinetic Sport](./visual-styles/10-kinetic-sport.md) | Energetic, bold | Sportswear, gyms, sports events |
 
-## What it is used for
+Each style defines: concept, target industries, sectors, moods and
+applications, colour palette with proportions, semantic colour tokens, typography
+(display, body, utility and Arabic pairing, five-level scale), layout rules,
+photography direction with shot briefs, graphic elements, UI, social media,
+advertising, presentation, website and brand-application examples, and do/don't
+rules.
 
-| Use case               | Where to look                                    |
-| ---------------------- | ------------------------------------------------ |
-| Branding               | `00-foundations/`, `01-branding/`                |
-| Social media           | `02-social-media/`                               |
-| Websites               | `03-websites/`                                   |
-| Advertising campaigns  | `04-advertising/`                                |
-| Client presentations   | `05-presentations/`                              |
+## Guides
+
+| Area | Start here |
+| --- | --- |
+| Foundations: colour, typography, grid, spacing, accessibility, Arabic and RTL, icons, imagery, motion | [`00-foundations/`](./00-foundations/README.md) |
+| Brand identity: logo systems, identity systems, brand guidelines, stationery | [`01-branding/`](./01-branding/README.md) |
+| Social media: formats, feed posts, stories and Reels, carousels, content systems | [`02-social-media/`](./02-social-media/README.md) |
+| Websites: page layouts, UI components, landing pages, responsive patterns | [`03-websites/`](./03-websites/README.md) |
+| Advertising: campaign systems, digital display, out of home, print | [`04-advertising/`](./04-advertising/README.md) |
+| Presentations: pitch decks, client reports, slide layouts | [`05-presentations/`](./05-presentations/README.md) |
+| Assets: font licences, icons, patterns, mockup spec | [`06-assets/`](./06-assets/README.md) |
+| Inspiration: moodboard briefs, case references | [`07-inspiration/`](./07-inspiration/README.md) |
+| Maintaining the library | [`_governance/`](./_governance/README.md) |
 
 ## Structure
 
 ```
 agency-visual-design-library/
-├── index.html            The visual library (open in a browser)
-├── library/              styles-data.js (source of truth), render.js, library.css
-├── visual-styles/        Generated Markdown spec per style + tokens.css
-├── scripts/              build-docs.mjs regenerates visual-styles/
-├── 00-foundations/        Core principles every other section builds on
-│   ├── color/             Palette building, contrast rules, color roles
-│   ├── typography/        Type scales, pairings, hierarchy, Arabic + Latin
-│   ├── grid-and-layout/   Grids for screen, print and social
-│   ├── spacing/           Spacing scale and rhythm
-│   ├── iconography/       Icon style rules, stroke, sizing
-│   ├── imagery/           Photography direction, cropping, treatments
-│   └── motion/            Timing, easing, transitions for digital work
-├── 01-branding/
-│   ├── logo-systems/      Logo construction, lockups, clear space, misuse
-│   ├── identity-systems/  How a full identity fits together
-│   ├── brand-guidelines/  Structure of a client brand book
-│   └── stationery/        Business cards, letterheads, envelopes
-├── 02-social-media/
-│   ├── formats-and-specs/ Platform sizes and safe zones
-│   ├── feed-posts/        Single-post layouts
-│   ├── stories-and-reels/ Vertical formats, covers, text placement
-│   ├── carousels/         Multi-slide storytelling
-│   └── content-systems/   Content pillars and feed planning
-├── 03-websites/
-│   ├── page-layouts/      Home, about, services, contact patterns
-│   ├── ui-components/     Buttons, cards, nav, forms
-│   ├── landing-pages/     Campaign landing page anatomy
-│   └── responsive-patterns/ Desktop → tablet → mobile behaviour
-├── 04-advertising/
-│   ├── digital-display/   Banner sizes, hierarchy, CTAs
-│   ├── print/             Press ads, flyers, brochures, bleed/CMYK
-│   ├── out-of-home/       Billboards, signage, viewing distance
-│   └── campaign-systems/  Keeping one idea consistent across channels
-├── 05-presentations/
-│   ├── pitch-decks/       New-business pitch structure
-│   ├── client-reports/    Performance and monthly reports
-│   └── slide-layouts/     Reusable slide layouts and rules
-├── 06-assets/             Shared working files (mockups, textures, icons,
-│                          font license records)
-├── 07-inspiration/        Moodboards and annotated external references
-├── _templates/            Templates for documenting a new library entry
-└── _governance/           Naming conventions, file rules, how to contribute
+├── index.html              The visual library (open in a browser)
+├── library/
+│   ├── styles-data.js      SOURCE OF TRUTH: all ten styles + filter vocabulary
+│   ├── tokens.js           Token export formats (CSS, W3C JSON, Tailwind), shared by page and scripts
+│   ├── render.js           Draws the catalogue, style pages and token reference
+│   └── library.css         Interface and per-style specimen styles
+├── visual-styles/          GENERATED: one Markdown spec per style, tokens.css, tokens.json
+├── scripts/
+│   ├── build-docs.mjs      Regenerates visual-styles/ from the data
+│   ├── check-data.mjs      Validates data, token contrast and Markdown links
+│   └── qa-browser.mjs      Browser QA: routes, filters, copy, layout, console, contrast
+├── 00-foundations/         Colour, typography, grid, spacing, accessibility, Arabic/RTL, icons, imagery, motion
+├── 01-branding/ … 05-presentations/   Discipline guides
+├── 06-assets/              Font licences, icon set, SVG patterns, mockup spec
+├── 07-inspiration/         Moodboard briefs, case references
+├── _templates/             Field checklist for a new style
+├── _governance/            Rules for maintaining the library
+└── CHANGELOG.md
 ```
 
-The numeric prefixes give a fixed reading order: foundations first, then each
-discipline, then shared assets and inspiration. Folders starting with `_` are
-about the library itself, not about design.
+## Maintain the library
 
-## Plan
+Requirements: Node.js 18 or later. No `npm install` is needed for the data
+and docs scripts. All commands run from the **repository root**.
 
-1. **Structure:** folder skeleton and overview. *(done)*
-2. **Governance and templates:** see `_governance/` and `_templates/`. *(done)*
-3. **Ten visual styles:** visual library, Markdown specs and tokens. *(done)*
-4. **Discipline sections:** fill `00-foundations/` to `05-presentations/` with
-   cross-style guidance (social formats are started in
-   `02-social-media/formats-and-specs/`).
-5. **Assets and inspiration:** populate `06-assets/` and `07-inspiration/`.
+```bash
+# 1. Edit the data
+#    agency-visual-design-library/library/styles-data.js
 
-## Updating
+# 2. Regenerate the Markdown specs and token files
+node agency-visual-design-library/scripts/build-docs.mjs
 
-Edit `library/styles-data.js`, then run `node scripts/build-docs.mjs` from the
-repository root (Node 18+, no dependencies). See `_governance/README.md`.
+# 3. Validate data, AA contrast of token pairs, and every Markdown link
+node agency-visual-design-library/scripts/check-data.mjs
+
+# 4. Browser QA (needs Playwright with Chromium; see below)
+node agency-visual-design-library/scripts/qa-browser.mjs
+#    add --shots <folder> to save desktop and phone screenshots of every page
+```
+
+`qa-browser.mjs` needs Playwright, which is not a dependency of this
+repository: install it once with `npm i -g playwright && npx playwright install chromium`.
+It opens every route at desktop (1360px) and phone (390px) widths, in light and
+dark mode, and fails on horizontal overflow, console errors, failed requests,
+broken in-page links, or text below WCAG AA contrast inside the examples. It
+also exercises search, each filter group, opening a style page, and a copy
+button.
+
+Commit the data change and the regenerated files together. Never edit files in
+`visual-styles/` by hand; they are overwritten. See
+[`_governance/README.md`](./_governance/README.md) for naming and quality rules
+and [`_templates/style-template.md`](./_templates/style-template.md) for the
+fields a style needs.
+
+## Known limitations
+
+- Photography in the examples is represented by art-direction placeholders
+  (the target colour grade plus the shot brief), not real photos.
+- No photographic mockup files are included yet; see
+  [`06-assets/mockups`](./06-assets/mockups/README.md).
+- Fonts load from Google Fonts; offline viewing falls back to system fonts.
+- Platform specs (social sizes, safe zones, ad limits) change; the guides say
+  where to re-check.

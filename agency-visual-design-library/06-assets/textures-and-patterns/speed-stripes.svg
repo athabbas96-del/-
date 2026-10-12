@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="200" viewBox="0 0 400 200">
+  <!-- Kinetic Sport: diagonal speed stripes in Blaze on Asphalt. -->
+  <defs>
+    <pattern id="stripes" width="30" height="30" patternUnits="userSpaceOnUse" patternTransform="rotate(28)">
+      <rect width="30" height="30" fill="#121212"/>
+      <rect x="22" width="8" height="30" fill="#FF3D00"/>
+    </pattern>
+  </defs>
+  <rect width="400" height="200" fill="url(#stripes)"/>
+</svg>

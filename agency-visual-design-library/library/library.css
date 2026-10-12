@@ -220,8 +220,11 @@ main:focus { outline: none; }
 .campaign-name { font: 400 24px/1.1 var(--f-title); }
 .campaign-name span { font: 500 11px/1 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--x-muted); vertical-align: 4px; margin-right: 6px; }
 .campaign-idea { color: var(--x-muted); max-width: 70ch; }
-.ad-board { display: grid; grid-template-columns: 5fr 7fr; gap: 16px; align-items: end; }
-.ad-board .span-all { grid-column: 1 / -1; }
+.ad-board { display: grid; gap: 16px; }
+.display-units { display: flex; flex-wrap: wrap; gap: 20px 24px; align-items: flex-end; }
+.u-728 { width: min(100%, 728px); }
+.u-300 { width: min(100%, 300px); }
+.u-320 { width: min(100%, 320px); }
 .slides-board { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .brand-board { display: grid; grid-template-columns: 1fr 1fr 0.8fr; gap: 16px; align-items: start; }
 .brand-board .letter-wrap { grid-row: span 2; }
@@ -249,7 +252,7 @@ main:focus { outline: none; }
   .two-col, .dodont { grid-template-columns: 1fr; }
   .social-board { grid-template-columns: 1fr 1fr; }
   .social-board .fr-wrap:first-child { grid-column: 1 / -1; }
-  .ad-board, .slides-board, .brand-board { grid-template-columns: 1fr; }
+  .slides-board, .brand-board { grid-template-columns: 1fr; }
   .pager { grid-template-columns: 1fr 1fr; }
   .pager a:nth-child(2) { display: none; }
   .tools { padding: 16px; }
@@ -406,6 +409,9 @@ main:focus { outline: none; }
 .leader-logo { font: 600 max(8px, 1.8cqw)/1 var(--fd); display: flex; gap: .5em; white-space: nowrap; }
 .leader-head { flex: 1; font-size: max(10px, 3.1cqw); min-width: 0; }
 .leader .btn { font-size: max(8px, 1.6cqw); padding: .8em 1.2em; }
+.mob { aspect-ratio: 320 / 50; padding: 0 3cqw; }
+.mob .leader-head { font-size: max(10px, 5cqw); }
+.mob .btn { font-size: max(8px, 3.6cqw); padding: .6em 1em; }
 
 /* presentations */
 .slide { aspect-ratio: 16 / 9; display: flex; flex-direction: column; padding: 6cqw 6cqw 9cqw; }
@@ -716,6 +722,9 @@ main:focus { outline: none; }
 [data-style="quiet-luxury"].bc-front { justify-content: center; }
 [data-style="quiet-luxury"] .bc-mark, [data-style="quiet-luxury"] .letter-head { letter-spacing: .02em; }
 [data-style="quiet-luxury"] .bb-cta, [data-style="quiet-luxury"] .slide-foot { letter-spacing: .2em; text-transform: uppercase; }
+/* The monogram is a watermark on stationery and slides, per the style's graphic rules. */
+[data-style="quiet-luxury"].bc .motif b, [data-style="quiet-luxury"].slide .motif b { opacity: .12; }
+[data-style="quiet-luxury"].slide .slide-foot { left: 10cqw; right: 10cqw; bottom: 10cqw; }
 [data-style="swiss-precision"] .metric-value { color: var(--accent-text); letter-spacing: -0.04em; }
 [data-style="swiss-precision"] .bb-cta, [data-style="swiss-precision"] .slide-foot, [data-style="swiss-precision"] .bc-contact { font-family: "IBM Plex Mono", monospace; }
 [data-style="swiss-precision"] .slide-points li { border-top-color: var(--ink); }

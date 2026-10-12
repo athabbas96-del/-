@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" fill="none">
+  <!-- Swiss Precision: 6-column visible grid with the red square marker. -->
+  <rect width="1200" height="800" fill="#FFFFFF"/>
+  <g stroke="#111111" stroke-opacity=".14">
+    <path d="M200 0v800M400 0v800M600 0v800M800 0v800M1000 0v800"/>
+  </g>
+  <rect x="1040" y="72" width="88" height="88" fill="#E2231A"/>
+</svg>
